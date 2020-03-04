@@ -1,0 +1,16 @@
+div#notebook {
+    font-size: 11pt !important;
+    padding-top: 0px !important;
+}
+
+div.text_cell_render {
+    padding: 0px 0px 0px 0px !important;
+}
+div#notebook h1 {
+    font-size: 13pt !important;
+    margin: 0px 0px 0px 0px !important;
+}
+
+div.slide {
+    font-size: 18pt !important;
+}
