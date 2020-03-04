@@ -3,6 +3,7 @@ NOTEBOOKS = $(wildcard *.ipynb)
 HTML = $(NOTEBOOKS:.ipynb=.html)
 
 all: $(HTML)
+	python3 index.py
 
 .PRECIOUS: %.notes.html %.slides.html %.worksheet.html
 
