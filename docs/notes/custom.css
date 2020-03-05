@@ -11,6 +11,11 @@ div#notebook h1 {
     margin: 0px 0px 0px 0px !important;
 }
 
+div#notebook h2 {
+    font-size: 11pt !important;
+    margin: 0px 0px 0px 0px !important;
+}
+
 div.slide {
     font-size: 18pt !important;
 }
