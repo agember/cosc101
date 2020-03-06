@@ -13202,24 +13202,6 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="2020-03-06:-Iteration-&amp;-Strings:-top-down-design">2020-03-06: Iteration &amp; Strings: top-down design<a class="anchor-link" href="#2020-03-06:-Iteration-&amp;-Strings:-top-down-design">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">&#182;</a></h1><ul>
-<li>Homework #7 due next Thursday --- string methods (e.g., <code>find</code>, <code>strip</code>) will <strong>not</strong> be on the exam</li>
-<li>Exam #2 Wednesday</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Warm-up">Warm-up<a class="anchor-link" href="#Warm-up">&#182;</a></h1><p><em>Write a function called <code>gene_simlarity</code> that takes two equal-length gene sequences and returns the number of nucleotides that match. For example:</em></p>
 <ul>
 <li><code>gene_similarity("ATAT", "ATAT")</code> should return <code>4</code></li>
@@ -13229,14 +13211,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_worksheet-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p style="height:20em;"></p>
-</div>
-</div>
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
@@ -13255,7 +13230,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13265,7 +13240,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
@@ -13288,187 +13263,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Top-down-program-design-(TDD)">Top-down program design (TDD)<a class="anchor-link" href="#Top-down-program-design-(TDD)">&#182;</a></h1><ul>
-<li>A problem solving technique where you approach a large problem by:<ol>
-<li>Starting with a general description of the problem</li>
-<li>Breaking the problem into several high-level steps</li>
-<li>Iteratively breaking the steps into smaller steps until you have steps that are easy to solve</li>
-</ol>
-</li>
-<li>Create a plan (using TDD) before you write any code</li>
-<li>After you have a plan:<ol>
-<li>Write a function for each small step in your plan</li>
-<li>Write a function for each high-level step which calls your functions for the smaller steps</li>
-<li>Write a main function which calls your functions for the high-level steps</li>
-</ol>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Breaking-a-problem-into-steps">Breaking a problem into steps<a class="anchor-link" href="#Breaking-a-problem-into-steps">&#182;</a></h1><ul>
-<li>Well-design functions (i.e., each step in your plan) should meet the <strong>SOFA</strong> criteria:<ul>
-<li><strong>S</strong>hort --- preferably less than a few dozen lines of code</li>
-<li>does <strong>O</strong>ne thing</li>
-<li>takes <strong>F</strong>ew parameters --- no more than 3 or 4 parameters</li>
-<li>maintains a single level of <strong>A</strong>bstraction</li>
-</ul>
-</li>
-<li>Your program as a whole should also meet the <strong>DRY</strong> criteria: <em>Don’t Repeat Yourself</em><ul>
-<li><em>In what context have we already discussed this criteria (just not by this name)?</em> --- for loops; while loops; functions</li>
-<li>If the same code is duplicated in multiple places, create a single function containing the code and call the function everywhere the functionality is required</li>
-<li>If the code in multiple functions is similar, create a function that contains a more general algorithm and uses the value of one or more parameters to customize the actions taken by the function</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Case-Study:-Bulls-and-Cows">Case Study: Bulls and Cows<a class="anchor-link" href="#Case-Study:-Bulls-and-Cows">&#182;</a></h1><h2 id="Gameplay">Gameplay<a class="anchor-link" href="#Gameplay">&#182;</a></h2><ul>
-<li>Player 1 writes down a secret 4-digit number; all digits must be different (e.g., <strong>1379</strong> is okay, but <strong>1371</strong> is not)</li>
-<li>Player 2 tries to guess the 4-digit number</li>
-<li>Player 1 provides feeback on the number of matching digits in Player 2's guess<ul>
-<li>If the matching digits are in the correct position, they are "bulls"</li>
-<li>If they are in different positions, they are "cows"</li>
-<li>Example: if Player 1's secret number is <strong>1379</strong> and Player 2's guess is <strong>1234</strong>, then there is one bull (for the <strong>1</strong> and one cow for the <strong>3</strong></li>
-</ul>
-</li>
-<li>Player 2 can make additional guesses, and Player 1 provides feedback for each guess</li>
-<li>If Player 2 does not guess the correct number after several (e.g., 8) attempts, then Player 2 looses</li>
-<li>Multiple (e.g., 10) rounds of the game are played to determine the winner; players alternate who selects the secret number</li>
-<li><em>Play two rounds of Bulls and Cows with the person sitting next to you to ensure you both understand how the game works</em></li>
-<li>Our goal: write a program that chooses the secret number and provides feedback on a human's guesses</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Top-down-design:-first-iteration">Top-down design: first iteration<a class="anchor-link" href="#Top-down-design:-first-iteration">&#182;</a></h2><p><em>What are the high-level steps?</em></p>
-<ol>
-<li>Generate a secret number</li>
-<li>Ask for guess</li>
-<li>Determine matches</li>
-<li>Repeat steps 2 &amp; 3 until the guess is correct or a player has made the maximum number of guesses</li>
-<li>Repeat steps 1-4</li>
-</ol>
-<p>Steps 1-4 are already breaking down the high-level step of playing one round</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Top-down-design:-second-iteration">Top-down design: second iteration<a class="anchor-link" href="#Top-down-design:-second-iteration">&#182;</a></h2><ol>
-<li>Play round<ol>
-<li>Generate a secret number</li>
-<li>Ask for guess</li>
-<li>Determine matches</li>
-<li>Repeat steps 2 &amp; 3 until the guess is correct or a user has made the maximum number of guesses</li>
-</ol>
-</li>
-<li>Repeat step 1 if user wants to play again</li>
-</ol>
-<p><em>Which steps need to be broken down further?</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Top-down-design:-third-iteration">Top-down design: third iteration<a class="anchor-link" href="#Top-down-design:-third-iteration">&#182;</a></h2><ol>
-<li>Play round<ol>
-<li>Generate a secret number</li>
-<li>Ask for guess<ol>
-<li>Ask for guess</li>
-<li>If guess is invalid, repeat step a</li>
-</ol>
-</li>
-<li>Determine matches<ol>
-<li>Count number of Bulls</li>
-<li>Count number of Cows</li>
-</ol>
-</li>
-<li>Check if round is over<ol>
-<li>If guess is correct, end round</li>
-<li>If maximum guesses have been made, end round</li>
-<li>Otherwise, repeat steps B-D</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Check if user wants to play again<ol>
-<li>Ask yes/no</li>
-<li>If input is invalid, repeat step A</li>
-</ol>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Top-down-design:--plan-functions">Top-down design:  plan functions<a class="anchor-link" href="#Top-down-design:--plan-functions">&#182;</a></h2><p>Create a function for each step. <em>What should be the names, parameters, and return values for the functions?</em></p>
-<ol>
-<li>Play round -- <code>play_round()</code><ol>
-<li>Generate a secret number -- <code>generate_secret()</code>; return secret (string)</li>
-<li>Ask for guess -- <code>get_guess()</code>; return guess (string)<ol>
-<li>Ask for guess -- use built-in function <code>input(prompt)</code>; return guess (string)</li>
-<li>If guess is invalid, repeat step a -- <code>valid_guess(guess)</code></li>
-</ol>
-</li>
-<li>Determine matches -- <code>count_matches(secret, guess)</code>; return number of bulls (int)<ol>
-<li>Count number of Bulls -- <code>count_bulls(secret, guess)</code>; return number of bulls (int)</li>
-<li>Count number of Cows -- <code>count_cows(secret, guess)</code>; return number of cows (int)</li>
-</ol>
-</li>
-<li>Check if round is over -- <code>has_won(cows, guess_count)</code>; return <code>True</code>, <code>False</code>, or <code>None</code><ol>
-<li>If guess is correct, end round -- <code>correct_guess(cows)</code>; return <code>True</code>/<code>False</code></li>
-<li>If maximum guesses have been made, end round  -- <code>reached_limit(guess_count)</code>; return <code>True</code>/<code>False</code></li>
-<li>Otherwise, repeat steps B-D</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Check if user wants to play again -- <code>play_again()</code> return <code>True</code>/<code>False</code><ol>
-<li>Ask yes/no -- use built-in function <code>input(prompt)</code>; return choice (string)</li>
-<li>If input is invalid, repeat step 1 -- <code>valid_choice(choice)</code>; return <code>True</code>/<code>False</code></li>
-</ol>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Write-functions">Write functions<a class="anchor-link" href="#Write-functions">&#182;</a></h2><ul>
-<li>Write one function at a time, starting with the smallest steps</li>
-<li>Write tests for each function, and confirm the function works as desired <strong>before</strong> writing the next function</li>
-</ul>
-
-</div>
-</div>
-</div>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13479,7 +13274,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">valid_guess</span><span class="p">(</span><span class="n">guess</span><span class="p">):</span>
@@ -13502,7 +13297,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
@@ -13516,7 +13311,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13533,10 +13328,10 @@ a.anchor-link {
 
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">valid_guess</span><span class="p">(</span><span class="n">guess</span><span class="p">):</span>
@@ -13571,10 +13366,10 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_guess</span><span class="p">():</span>
@@ -13592,10 +13387,10 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_bulls</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">guess</span><span class="p">):</span>
@@ -13620,10 +13415,10 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_cows</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">guess</span><span class="p">):</span>
@@ -13648,20 +13443,20 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">play_round</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Play a round of the game&quot;&quot;&quot;</span>
     <span class="c1"># Choose secret</span>
     <span class="n">secret</span> <span class="o">=</span> <span class="n">generate_secret</span><span class="p">()</span>
-    <span class="n">won</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">won</span> <span class="o">=</span> <span class="s1">&#39;notdone&#39;</span>
     <span class="n">guesses</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="c1"># Keep playing until player wins or looses</span>
-    <span class="k">while</span> <span class="n">won</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">won</span> <span class="o">==</span> <span class="s1">&#39;notdone&#39;</span><span class="p">:</span>
         <span class="n">guess</span> <span class="o">=</span> <span class="n">get_guess</span><span class="p">()</span>
         <span class="n">guesses</span> <span class="o">=</span> <span class="n">guesses</span> <span class="o">+</span> <span class="mi">1</span>
         <span class="n">cows</span> <span class="o">=</span> <span class="n">count_matches</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">guess</span><span class="p">)</span>
@@ -13673,10 +13468,10 @@ a.anchor-link {
 </div>
 </div>
 
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
@@ -13686,59 +13481,11 @@ a.anchor-link {
     <span class="c1"># Keep playing until player quits</span>
     <span class="k">while</span> <span class="n">again</span><span class="p">:</span>
         <span class="n">won</span> <span class="o">=</span> <span class="n">play_round</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">won</span><span class="p">:</span>
-            <span class="s2">&quot;You won :)&quot;</span>
+        <span class="k">if</span> <span class="n">won</span> <span class="o">==</span> <span class="s1">&#39;won&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">()</span><span class="s2">&quot;You won :)&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="s2">&quot;You lost :(&quot;</span>
+            <span class="nb">print</span><span class="p">()</span><span class="s2">&quot;You lost :(&quot;</span><span class="p">)</span>
         <span class="n">again</span> <span class="o">=</span> <span class="n">play_again</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="k">def</span> <span class="nf">generate_secret</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Generate a secret&quot;&quot;&quot;</span>
-    <span class="n">secret</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="n">choices</span> <span class="o">=</span> <span class="s2">&quot;0123456789&quot;</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-        <span class="n">c</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">choices</span><span class="p">))</span>
-        <span class="n">secret</span> <span class="o">=</span> <span class="n">secret</span> <span class="o">+</span> <span class="n">choices</span><span class="p">[</span><span class="n">c</span><span class="p">]</span>
-        <span class="n">choices</span> <span class="o">=</span> <span class="n">choices</span><span class="p">[:</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="n">choices</span><span class="p">[</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
-    <span class="k">return</span> <span class="n">secret</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_matches</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">guess</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Count the number of matches between secret and player&#39;s guess</span>
-<span class="sd">    </span>
-<span class="sd">    &gt;&gt;&gt; count_matches(&quot;1379&quot;, &quot;1234&quot;)</span>
-<span class="sd">    1</span>
-<span class="sd">    &gt;&gt;&gt; count_matches(&quot;1379&quot;, &quot;2378&quot;)</span>
-<span class="sd">    2</span>
-<span class="sd">    &gt;&gt;&gt; count_matches(&quot;1379&quot;, &quot;9731&quot;)</span>
-<span class="sd">    0</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">bulls</span> <span class="o">=</span> <span class="n">count_bulls</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">guess</span><span class="p">)</span>
-    <span class="n">cows</span> <span class="o">=</span> <span class="n">count_cows</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">guess</span><span class="p">)</span>
-    <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> bulls, </span><span class="si">{}</span><span class="s2"> cows&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bulls</span><span class="p">,</span> <span class="n">cows</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">bulls</span>
 </pre></div>
 
     </div>

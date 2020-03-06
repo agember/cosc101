@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="2020-03-06:-Iteration-&amp;-Strings:-top-down-design">2020-03-06: Iteration &amp; Strings: top-down design<a class="anchor-link" href="#2020-03-06:-Iteration-&amp;-Strings:-top-down-design">&#182;</a></h1>
+<h1 id="2020-03-6:-Iteration-&amp;-Strings:-top-down-design">2020-03-6: Iteration &amp; Strings: top-down design<a class="anchor-link" href="#2020-03-6:-Iteration-&amp;-Strings:-top-down-design">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13273,12 +13273,7 @@ div#notebook {
 <li>Count number of Cows</li>
 </ol>
 </li>
-<li>Check if round is over<ol>
-<li>If guess is correct, end round</li>
-<li>If maximum guesses have been made, end round</li>
-<li>Otherwise, repeat steps B-D</li>
-</ol>
-</li>
+<li>Check if round is over</li>
 </ol>
 </li>
 <li>Check if user wants to play again<ol>
@@ -13308,12 +13303,7 @@ div#notebook {
 <li>Count number of Cows -- <code>count_cows(secret, guess)</code>; return number of cows (int)</li>
 </ol>
 </li>
-<li>Check if round is over -- <code>has_won(cows, guess_count)</code>; return <code>True</code>, <code>False</code>, or <code>None</code><ol>
-<li>If guess is correct, end round -- <code>correct_guess(cows)</code>; return <code>True</code>/<code>False</code></li>
-<li>If maximum guesses have been made, end round  -- <code>reached_limit(guess_count)</code>; return <code>True</code>/<code>False</code></li>
-<li>Otherwise, repeat steps B-D</li>
-</ol>
-</li>
+<li>Check if round is over -- <code>has_won(cows, guess_count)</code>; return <code>'won'</code>, <code>'lost'</code>, or <code>'notdone'</code></li>
 </ol>
 </li>
 <li>Check if user wants to play again -- <code>play_again()</code> return <code>True</code>/<code>False</code><ol>
@@ -13347,7 +13337,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">valid_guess</span><span class="p">(</span><span class="n">guess</span><span class="p">):</span>
@@ -13373,7 +13363,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">doctest</span>
@@ -13390,13 +13380,51 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[47]:</div>
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>**********************************************************************
+File &#34;__main__&#34;, line 6, in __main__.valid_guess
+Failed example:
+    valid_guess(&#39;1371&#39;)
+Expected:
+    False
+Got:
+    True
+**********************************************************************
+File &#34;__main__&#34;, line 8, in __main__.valid_guess
+Failed example:
+    valid_guess(&#39;13346&#39;)
+Expected:
+    False
+Got:
+    True
+**********************************************************************
+File &#34;__main__&#34;, line 10, in __main__.valid_guess
+Failed example:
+    valid_guess(&#39;137X&#39;)
+Expected:
+    False
+Got:
+    True
+**********************************************************************
+1 items had failures:
+   3 of   4 in __main__.valid_guess
+***Test Failed*** 3 failures.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>TestResults(failed=0, attempted=10)</pre>
+<pre>TestResults(failed=3, attempted=4)</pre>
 </div>
 
 </div>
@@ -13424,7 +13452,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">valid_guess</span><span class="p">(</span><span class="n">guess</span><span class="p">):</span>
@@ -13462,7 +13490,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_guess</span><span class="p">():</span>
@@ -13483,7 +13511,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_bulls</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">guess</span><span class="p">):</span>
@@ -13511,7 +13539,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_cows</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">guess</span><span class="p">):</span>
@@ -13539,17 +13567,17 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">play_round</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Play a round of the game&quot;&quot;&quot;</span>
     <span class="c1"># Choose secret</span>
     <span class="n">secret</span> <span class="o">=</span> <span class="n">generate_secret</span><span class="p">()</span>
-    <span class="n">won</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">won</span> <span class="o">=</span> <span class="s1">&#39;notdone&#39;</span>
     <span class="n">guesses</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="c1"># Keep playing until player wins or looses</span>
-    <span class="k">while</span> <span class="n">won</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">won</span> <span class="o">==</span> <span class="s1">&#39;notdone&#39;</span><span class="p">:</span>
         <span class="n">guess</span> <span class="o">=</span> <span class="n">get_guess</span><span class="p">()</span>
         <span class="n">guesses</span> <span class="o">=</span> <span class="n">guesses</span> <span class="o">+</span> <span class="mi">1</span>
         <span class="n">cows</span> <span class="o">=</span> <span class="n">count_matches</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">guess</span><span class="p">)</span>
@@ -13564,7 +13592,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
@@ -13574,10 +13602,10 @@ div#notebook {
     <span class="c1"># Keep playing until player quits</span>
     <span class="k">while</span> <span class="n">again</span><span class="p">:</span>
         <span class="n">won</span> <span class="o">=</span> <span class="n">play_round</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">won</span><span class="p">:</span>
-            <span class="s2">&quot;You won :)&quot;</span>
+        <span class="k">if</span> <span class="n">won</span> <span class="o">==</span> <span class="s1">&#39;won&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">()</span><span class="s2">&quot;You won :)&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="s2">&quot;You lost :(&quot;</span>
+            <span class="nb">print</span><span class="p">()</span><span class="s2">&quot;You lost :(&quot;</span><span class="p">)</span>
         <span class="n">again</span> <span class="o">=</span> <span class="n">play_again</span><span class="p">()</span>
 </pre></div>
 
@@ -13588,7 +13616,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -13610,26 +13638,183 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_matches</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">guess</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Count the number of matches between secret and player&#39;s guess</span>
 <span class="sd">    </span>
 <span class="sd">    &gt;&gt;&gt; count_matches(&quot;1379&quot;, &quot;1234&quot;)</span>
+<span class="sd">    1 bulls, 1 cows</span>
 <span class="sd">    1</span>
 <span class="sd">    &gt;&gt;&gt; count_matches(&quot;1379&quot;, &quot;2378&quot;)</span>
+<span class="sd">    2 bulls, 0 cows</span>
 <span class="sd">    2</span>
 <span class="sd">    &gt;&gt;&gt; count_matches(&quot;1379&quot;, &quot;9731&quot;)</span>
+<span class="sd">    0 bulls, 4 cows</span>
 <span class="sd">    0</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">bulls</span> <span class="o">=</span> <span class="n">count_bulls</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">guess</span><span class="p">)</span>
     <span class="n">cows</span> <span class="o">=</span> <span class="n">count_cows</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">guess</span><span class="p">)</span>
-    <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> bulls, </span><span class="si">{}</span><span class="s2"> cows&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bulls</span><span class="p">,</span> <span class="n">cows</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> bulls, </span><span class="si">{}</span><span class="s2"> cows&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bulls</span><span class="p">,</span> <span class="n">cows</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">bulls</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">has_won</span><span class="p">(</span><span class="n">guesses</span><span class="p">,</span> <span class="n">bulls</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Determine whether the user won, the user lost, or the round is not done</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; has_won(8, 4)</span>
+<span class="sd">    &#39;won&#39;</span>
+<span class="sd">    &gt;&gt;&gt; has_won(4, 4)</span>
+<span class="sd">    &#39;won&#39;</span>
+<span class="sd">    &gt;&gt;&gt; has_won(8, 2)</span>
+<span class="sd">    &#39;lost&#39;</span>
+<span class="sd">    &gt;&gt;&gt; has_won(4, 0)</span>
+<span class="sd">    &#39;notdone&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">bulls</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;won&#39;</span>
+    <span class="k">elif</span> <span class="n">guesses</span> <span class="o">&gt;=</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;lost&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;notdone&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">valid_choice</span><span class="p">(</span><span class="n">choice</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Check whether choice is yes or no</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; valid_choice(&#39;yes&#39;)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; valid_choice(&#39;NO&#39;)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; valid_choice(&#39;maybe&#39;)</span>
+<span class="sd">    False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">choice</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span> <span class="ow">or</span> <span class="n">choice</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;no&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">play_again</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Determine whether the user wants to play another round&quot;&quot;&quot;</span>
+    <span class="n">valid</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">valid</span><span class="p">:</span>
+        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Play another round (yes/no)? &quot;</span><span class="p">)</span>
+        <span class="n">valid</span> <span class="o">=</span> <span class="n">valid_choice</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">valid</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid choice&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">choice</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>TestResults(failed=0, attempted=20)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Your guess: 1234
+0 bulls, 1 cows
+Your guess: 1567
+1 bulls, 0 cows
+Your guess: 2578
+1 bulls, 2 cows
+Your guess: 2590
+2 bulls, 1 cows
+Your guess: 2591
+1 bulls, 1 cows
+Your guess: 2567
+1 bulls, 1 cows
+Your guess: 6570
+2 bulls, 0 cows
+Your guess: 6520
+3 bulls, 0 cows
+Play another round (yes/no)? no
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
