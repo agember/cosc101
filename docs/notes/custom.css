@@ -19,3 +19,7 @@ div#notebook h2 {
 div.slide {
     font-size: 18pt !important;
 }
+
+div.input_prompt {
+    font-size: 0pt !important;
+}
