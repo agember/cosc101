@@ -2,3 +2,4 @@
 * 2020-03-06: Iteration & Strings: top-down design [[Notes]](2020-03-06.notes.html) [[Worksheet]](2020-03-06.worksheet.html) [[Slides]](2020-03-06.slides.html)
 * 2020-03-09: Exam 2 Review [[Notes]](2020-03-09.notes.html) [[Worksheet]](2020-03-09.worksheet.html) [[Slides]](2020-03-09.slides.html)
 * 2020-03-30: Lists: fundamentals [[Notes]](2020-03-30.notes.html) [[Worksheet]](2020-03-30.worksheet.html) [[Slides]](2020-03-30.slides.html)
+* 2020-04-01: Lists: references [[Notes]](2020-04-01.notes.html) [[Worksheet]](2020-04-01.worksheet.html) [[Slides]](2020-04-01.slides.html)
