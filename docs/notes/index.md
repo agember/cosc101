@@ -5,3 +5,4 @@
 * 2020-04-01: Lists: references [[Notes]](2020-04-01.notes.html) [[Worksheet]](2020-04-01.worksheet.html) [[Slides]](2020-04-01.slides.html)
 * 2020-04-03: Lists: practice [[Notes]](2020-04-03.notes.html) [[Worksheet]](2020-04-03.worksheet.html) [[Slides]](2020-04-03.slides.html)
 * 2020-04-06: Files: reading [[Notes]](2020-04-06.notes.html) [[Worksheet]](2020-04-06.worksheet.html) [[Slides]](2020-04-06.slides.html)
+* 2020-04-08: Files: writing; exceptions [[Notes]](2020-04-08.notes.html) [[Worksheet]](2020-04-08.worksheet.html) [[Slides]](2020-04-08.slides.html)
