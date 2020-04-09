@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>2020-04-08</title>
+<title>2020-04-10</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="2020-04-08:-Files:-writing;-exceptions">2020-04-08: Files: writing; exceptions<a class="anchor-link" href="#2020-04-08:-Files:-writing;-exceptions">&#182;</a></h1>
+<h1 id="2020-04-10:-Files:-exceptions;-review">2020-04-10: Files: exceptions; review<a class="anchor-link" href="#2020-04-10:-Files:-exceptions;-review">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13085,7 +13085,6 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">&#182;</a></h1><ul>
-<li>Homework #8 due Thursday @ 11pm EDT</li>
 <li>Exam #3 next Wednesday/Thursday -- study materials posted on Moodle</li>
 </ul>
 
@@ -13095,98 +13094,51 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Warm-up">Warm-up<a class="anchor-link" href="#Warm-up">&#182;</a></h1><p>Write a function called <code>odd_lines</code> that takes the name of a file and returns a list containing the 1st, 3rd, 5th, etc. line of the file.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Writing-files">Writing files<a class="anchor-link" href="#Writing-files">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Debugging-file-reading/writing">Debugging file reading/writing<a class="anchor-link" href="#Debugging-file-reading/writing">&#182;</a></h1><p>Assume the file <code>months.txt</code> contains the following data:</p>
-
-<pre><code>January
-February
-March
-April
-May
-June
-July
-August
-September
-October
-November
-December</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Identify and correct the error(s) in each of the following programs.</em></p>
+<h1 id="Warm-up">Warm-up<a class="anchor-link" href="#Warm-up">&#182;</a></h1><p><em>What is the contents of <code>seasons.txt</code> after the program has finished?</em></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Print the contents of the file</span>
-<span class="n">months</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;months.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">months</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seasons</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Winter&#39;</span><span class="p">,</span> <span class="s1">&#39;cold&#39;</span><span class="p">,</span> <span class="s1">&#39;snowy&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Spring&#39;</span><span class="p">,</span> <span class="s1">&#39;warm&#39;</span><span class="p">,</span> <span class="s1">&#39;rainy&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Summer&#39;</span><span class="p">,</span> <span class="s1">&#39;hot&#39;</span><span class="p">,</span> <span class="s1">&#39;sunny&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Autumn&#39;</span><span class="p">,</span> <span class="s1">&#39;cool&#39;</span><span class="p">,</span> <span class="s1">&#39;windy&#39;</span><span class="p">]]</span>
+<span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;seasons.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;In Hamilton:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">season</span> <span class="ow">in</span> <span class="n">seasons</span><span class="p">:</span>
+    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">season</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; is...&#39;</span><span class="p">)</span>
+    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; and &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">season</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># Display the contents of the file (NOTE: This is not Python code; this is a special feature of Google Colab)</span>
+<span class="o">!</span>cat seasons.txt
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Print the number of characters in each month</span>
-<span class="n">months</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;months.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="k">while</span> <span class="n">months</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="n">months</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
-<span class="n">months</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
+<div class="output_wrapper">
+<div class="output">
 
-    </div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>In Hamilton:
+Winter is...cold and snowy
+Spring is...warm and rainy
+Summer is...hot and sunny
+Autumn is...cool and windy
+</pre>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Store the number of lines in `months.txt` in a new file called `count.txt`</span>
-<span class="n">months</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;months.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">months</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="n">months</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">size</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;size.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
-<span class="n">size</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;lines: &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span>
-<span class="n">size</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="c1"># Display the contents of size.txt (NOTE: This is a special feature of Google Colab, this is not standard Python code)</span>
-<span class="o">!</span>cat size.txt
-</pre></div>
-
-    </div>
 </div>
 </div>
 
@@ -13194,7 +13146,82 @@ December</code></pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Exceptions">Exceptions<a class="anchor-link" href="#Exceptions">&#182;</a></h1>
+<h1 id="Exceptions">Exceptions<a class="anchor-link" href="#Exceptions">&#182;</a></h1><ul>
+<li><em>Recall: What happens if we run the following program and the user enters one?</em></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a number: &#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Enter a number: one
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-2-e5e4786827d2&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>num <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Enter a number: &#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">ValueError</span>: invalid literal for int() with base 10: &#39;one&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The <code>int</code> function raises an exception: <code>ValueError: invalid literal for int() with base 10: 'one'</code></li>
+<li>Exception --- a signal that something exceptional (i.e., unexpected or unrecoverable) has happened</li>
+<li><em>What causes an exception?</em> --- invalid input, invalid math (e.g., divide by zero), attempt to open a non-existent file, etc.</li>
+<li><em>Why do we need exceptions?</em> --- a function may not know what to do when something unexpected occurs, so it needs to notify the calling function</li>
+<li>Exceptions breaks a program’s flow of execution<ul>
+<li>Function where exception occurred stops executing --- e.g., the <code>int</code> function stops executing</li>
+<li>Exception is passed to calling function<ul>
+<li>If calling function includes code to “recover” from the exception then execution resumes in the <strong>exception handling</strong> code</li>
+<li>Otherwise, the exception is passed to the preceding function</li>
+<li>Again, if preceding function includes code to “recover” from the exception then execution resumes in the exception handling code</li>
+<li>Otherwise, the exception is passed to the preceding function</li>
+<li>If the program does not have any code to handle the exception, then it crashes</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -13202,8 +13229,165 @@ December</code></pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><em>What happens if we run the following program and the user enters <code>one</code>?</em></li>
+<li><em>What is the flow of execution for the following program?</em></li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">func3</span><span class="p">():</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a number: &#39;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">num</span>
+
+<span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
+    <span class="n">input_num</span> <span class="o">=</span> <span class="n">func3</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">input_num</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="n">doubled_num</span> <span class="o">=</span> <span class="n">func2</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">doubled_num</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">quadrupled_num</span> <span class="o">=</span> <span class="n">func1</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quadrupled:&quot;</span><span class="p">,</span> <span class="n">quadrupled_num</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Flow of execution<ul>
+<li><code>main</code> calls <code>func1</code> which calls <code>func2</code> which calls <code>func3</code> which calls <code>input</code> and <code>int</code></li>
+<li><code>int</code> raises an exception</li>
+<li><code>func3</code> has no code to recover from (i.e., handle) the exception</li>
+<li>Attempt to resume execution in caller (<code>func2</code>)</li>
+<li><code>func2</code> has no code to handle the exception</li>
+<li>Attempt to resume execution in preceding caller (<code>func1</code>)</li>
+<li><code>func1</code> has no code to handle the exception</li>
+<li>Attempt to resume execution in preceding caller (<code>main</code>)</li>
+<li><code>main</code> has no code to handle the exception</li>
+<li>Attempt to resume execution outside of function</li>
+<li>No code outside of function to handle the exception -&gt; program crashes</li>
+</ul>
+</li>
+<li><em>How could we prevent our program from crashing if the user enters invalid input?</em><ul>
+<li>Validate the user’s input <strong>before</strong> converting to an int and ask for new input if the user did not enter a valid integer</li>
+<li><strong>Catch</strong> the exception and ask for new input</li>
+</ul>
+</li>
+<li>Best practice: do not use exception handling (<code>try-except</code>) if you can easily write code to check for and recover from errors<ul>
+<li>For example, validating the user's input before converting to an int is better than catching an exception</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><em>Modify the code below such that the <code>read_data</code> function returns <code>None</code>, instead of causing the program to crash, if the file does not exist</em></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">read_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Read data from a file&#39;&#39;&#39;</span>
+    <span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">infile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">read_data</span><span class="p">(</span><span class="s1">&#39;seasons.txt&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">read_data</span><span class="p">(</span><span class="s1">&#39;does-not-exist.txt&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">read_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Read data from a file&#39;&#39;&#39;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">infile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">data</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">read_data</span><span class="p">(</span><span class="s1">&#39;seasons.txt&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">read_data</span><span class="p">(</span><span class="s1">&#39;does-not-exist.txt&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lists-review">Lists review<a class="anchor-link" href="#Lists-review">&#182;</a></h1><p>Assume the following code has been executed:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">birds</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;robin&quot;</span><span class="p">,</span> <span class="s2">&quot;bluejay&quot;</span><span class="p">,</span> <span class="s2">&quot;cardinal&quot;</span><span class="p">,</span> <span class="s2">&quot;owl&quot;</span><span class="p">]</span>
+<span class="n">trees</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;white oak&quot;</span><span class="p">,</span> <span class="s2">&quot;red oak&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;red maple&quot;</span><span class="p">,</span> <span class="s2">&quot;japanese maple&quot;</span><span class="p">,</span> <span class="s2">&quot;sugar maple&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;silver birch&quot;</span><span class="p">,</span> <span class="s2">&quot;paper birch&quot;</span><span class="p">]]</span>
+<span class="n">flowers</span> <span class="o">=</span> <span class="s2">&quot;crocus&amp;tulip&amp;daffodil&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Which of the following statements replaces <code>bluejay</code> with <code>sparrow</code> in the <code>birds</code> list?</em></p>
 
 </div>
 </div>
@@ -13213,7 +13397,274 @@ December</code></pre>
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a number: &#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">birds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sparrow&quot;</span> <span class="c1"># Option 1</span>
+<span class="n">birds</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sparrow&quot;</span> <span class="c1"># Option 2</span>
+<span class="n">birds</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sparrow&quot;</span> <span class="c1"># Option 3</span>
+<span class="n">birds</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sparrow&quot;</span><span class="p">]</span> <span class="c1"># Option 4</span>
+<span class="n">birds</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sparrow&quot;</span> <span class="c1"># Option 5</span>
+<span class="n">birds</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sparrow&quot;</span><span class="p">]</span> <span class="c1"># Option 6</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Options 1, 6</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Which of the following statements sorts the list <code>birds</code> in alphabetical order?</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only celltag_notes-code-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">birds</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">birds</span><span class="p">)</span> <span class="c1"># Option 1</span>
+<span class="n">birds</span> <span class="o">=</span> <span class="n">birds</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># Option 2</span>
+<span class="n">birds</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># Option 3</span>
+<span class="n">birds</span> <span class="o">=</span> <span class="n">birds</span><span class="p">[:]</span> <span class="c1"># Option 4</span>
+<span class="n">birds</span> <span class="o">=</span> <span class="n">birds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">birds</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">birds</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">birds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Option 5</span>
+<span class="n">birds</span> <span class="o">=</span> <span class="n">birds</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">birds</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1"># Option 6</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Options 1, 3, 6</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Which of the following expressions counts the number of oak species in the <code>trees</code> list?</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only celltag_notes-code-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">trees</span><span class="p">)</span> <span class="c1"># Option 1</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">trees</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Option 2</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">trees</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">trees</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Option 3</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">trees</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Option 4</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">trees</span><span class="p">[</span><span class="mi">0</span><span class="p">][:])</span> <span class="c1"># Option 5</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Options 2, 5</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Which of the following statements inserts <code>boxelder maple</code> into the sublist of maple species in the <code>trees</code> list?</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only celltag_notes-code-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">trees</span> <span class="o">=</span> <span class="n">trees</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;boxelder maple&quot;</span><span class="p">]</span> <span class="c1"># Option 1</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;boxelder maple&quot;</span><span class="p">]</span> <span class="c1"># Option 2</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;boxelder maple&quot;</span><span class="p">)</span> <span class="c1"># Option 3</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;boxelder maple&quot;</span><span class="p">)</span> <span class="c1"># Option 4</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;boxelder maple&quot;</span><span class="p">]</span> <span class="c1"># Option 5</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;boxelder maple&quot;</span><span class="p">]</span>  <span class="c1"># Option 6</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Options 2, 3, 6</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Which of the following statements replaces <code>japanese maple</code> with <code>norway maple</code> in the <code>trees</code> list?</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only celltag_notes-code-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;norway maple&quot;</span> <span class="c1"># Option 1</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;norway maple&quot;</span> <span class="c1"># Option 2</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;norway maple&quot;</span> <span class="c1"># Option 3</span>
+<span class="n">trees</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;norway maple&quot;</span> <span class="c1"># Option 4</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;norway maple&quot;</span><span class="p">]</span> <span class="c1"># Option 5</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;norway maple&quot;</span> <span class="c1"># Option 6</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Options 3, 5</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Which of the following sets of statements removes the sublists from the <code>trees</code> list such that <code>trees</code> contains all of the tree specifies without any sublists?</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only celltag_notes-code-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Option 1</span>
+<span class="n">trees</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">trees</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">trees</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">trees</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">trees</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">trees</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Option 2</span>
+<span class="n">trees</span> <span class="o">=</span> <span class="n">trees</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">trees</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Option 3</span>
+<span class="n">trees</span> <span class="o">=</span> <span class="n">trees</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">trees</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">trees</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">trees</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Option 4</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">trees</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">trees</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">trees</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Option 5</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">trees</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">trees</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">trees</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">trees</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Options 1, 2, 5</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Which of the following statements converts the string <code>flowers</code> to a list of flowers?</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only celltag_notes-code-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">flowers</span> <span class="o">=</span> <span class="n">flowers</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="c1"># Option 1</span>
+<span class="n">flowers</span> <span class="o">=</span> <span class="n">flowers</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="p">)</span> <span class="c1"># Option 2</span>
+<span class="n">flowers</span> <span class="o">=</span> <span class="s1">&#39;&amp;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">flowers</span><span class="p">)</span> <span class="c1"># Option 3</span>
+<span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="n">flowers</span><span class="p">[:</span><span class="mi">6</span><span class="p">],</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">12</span><span class="p">],</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">13</span><span class="p">:]]</span> <span class="c1"># Option 4</span>
+<span class="n">flowers</span> <span class="o">=</span> <span class="n">flowers</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="p">)</span> <span class="c1"># Option 5</span>
+<span class="n">flowers</span> <span class="o">=</span> <span class="p">[</span><span class="n">flowers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">flowers</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span> <span class="c1"># Option 6</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Options 2, 4</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Write a function called <code>print_trees</code> that prints the list of trees in the following format:</em></p>
+
+<pre><code>oak: white,red
+maple: red,japanese,sugar
+birch: silver,paper</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_notes-only celltag_notes-code-only">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_trees</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;Print tree species grouped by genus&#39;&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">genus</span> <span class="ow">in</span> <span class="n">trees</span><span class="p">:</span>
+        <span class="n">genus_name</span> <span class="o">=</span> <span class="n">genus</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">species_names</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">genus</span><span class="p">:</span>
+            <span class="n">species_name</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">species_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">species_name</span><span class="p">)</span>
+        <span class="n">species_names</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">species_names</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">genus_name</span><span class="o">+</span><span class="s2">&quot;: &quot;</span><span class="o">+</span><span class="n">species_names</span><span class="p">)</span>
+        
+<span class="n">print_trees</span><span class="p">()</span>
 </pre></div>
 
     </div>
