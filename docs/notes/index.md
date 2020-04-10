@@ -7,3 +7,4 @@
 * 2020-04-06: Files: reading [[Notes]](2020-04-06.notes.html) [[Worksheet]](2020-04-06.worksheet.html) [[Slides]](2020-04-06.slides.html)
 * 2020-04-08: Files: writing; exceptions [[Notes]](2020-04-08.notes.html) [[Worksheet]](2020-04-08.worksheet.html) [[Slides]](2020-04-08.slides.html)
 * 2020-04-10: Files: exceptions; review [[Notes]](2020-04-10.notes.html) [[Worksheet]](2020-04-10.worksheet.html) [[Slides]](2020-04-10.slides.html)
+* 2020-04-13: Exam 3 review [[Notes]](2020-04-13.notes.html) [[Worksheet]](2020-04-13.worksheet.html) [[Slides]](2020-04-13.slides.html)
