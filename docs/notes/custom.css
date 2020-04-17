@@ -23,3 +23,7 @@ div.slide {
 div.input_prompt {
     font-size: 0pt !important;
 }
+
+div.output_prompt {
+    font-size: 0pt !important;
+}
