@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>2020-04-20</title>
+<title>2020-04-22</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,38 +13077,43 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="2020-04-20:-Dictionaries:-references">2020-04-20: Dictionaries: references<a class="anchor-link" href="#2020-04-20:-Dictionaries:-references">&#182;</a></h1>
+<h1 id="2020-04-02:-Dictionaries:-references">2020-04-02: Dictionaries: references<a class="anchor-link" href="#2020-04-02:-Dictionaries:-references">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">&#182;</a></h1><ul>
-<li>Homework #9 due Thursday @ 11pm EDT</li>
-</ul>
+<p><em>Assume each line of the file <code>synonyms.txt</code> contains a word followed by one or more synonyms, e.g.:</em></p>
+
+<pre><code>small little compact tiny
+large big huge immense vast
+tall large towering</code></pre>
+<p><em>Write a function called <code>load_synonyms</code> that reads the file and returns a dictionary containing the words and their corresponding list of synonyms, e.g.:</em></p>
+
+<pre><code>{'small' : ['little','compact','tiny'], 'large' : ['big','huge','immense','vast'], 'tall' : ['large','towering']}</code></pre>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Warm-up">Warm-up<a class="anchor-link" href="#Warm-up">&#182;</a></h1><p><em>What is the output of the following program?</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only">
+<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">opposites</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;hot&#39;</span> <span class="p">:</span> <span class="s1">&#39;cold&#39;</span><span class="p">,</span> <span class="s1">&#39;tall&#39;</span> <span class="p">:</span> <span class="s1">&#39;short&#39;</span><span class="p">,</span> <span class="s1">&#39;up&#39;</span> <span class="p">:</span> <span class="s1">&#39;down&#39;</span><span class="p">}</span>
-<span class="n">opposites2</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">opposites</span><span class="p">:</span>
-    <span class="n">opposites2</span><span class="p">[</span><span class="n">opposites</span><span class="p">[</span><span class="n">word</span><span class="p">]]</span> <span class="o">=</span> <span class="n">word</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">opposites2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;synonyms.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;small little compact tiny</span><span class="se">\n</span><span class="s1">large big huge immense vast</span><span class="se">\n</span><span class="s1">tall large towering&#39;</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">load_synonyms</span><span class="p">():</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;synonyms.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">synonyms</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">synonyms</span><span class="p">[</span><span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">synonyms</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">load_synonyms</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -13125,399 +13130,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;cold&#39;: &#39;hot&#39;, &#39;short&#39;: &#39;tall&#39;, &#39;down&#39;: &#39;up&#39;}
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Aliasing">Aliasing<a class="anchor-link" href="#Aliasing">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><em>Recall: how do we create a new dictionary?</em> --- using curly braces: <code>{}</code></li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dictA</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;x&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span> <span class="p">:</span> <span class="mi">3</span> <span class="p">}</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><em>Recall from lists: what is aliasing?</em> --- multiple names referring to the same dictionary</li>
-<li><em>How is an alias created?</em> --- assign the name of a dictionary to a new name</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dictB</span> <span class="o">=</span> <span class="n">dictA</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Regardless which name you use, you are referring to the same dictionary; hence, changes made using one name will also be reflected if you use the other name to refer to the dictionary</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dictB</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">dictA</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><em>How can we check if two names refer to the same dictionary?</em> --- using the <code>is</code> operator</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dictA</span> <span class="ow">is</span> <span class="n">dictB</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[5]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_notes-only"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>To avoid aliasing, you must create a clone of the dictionary using the <code>copy()</code> function</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dictC</span> <span class="o">=</span> <span class="n">dictA</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Aliasing-practice">Aliasing practice<a class="anchor-link" href="#Aliasing-practice">&#182;</a></h1><p><em>What is the output of the following programs?</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">zipcodes</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">90210</span><span class="p">:</span> <span class="s1">&#39;Beverly Hills, CA&#39;</span><span class="p">,</span> <span class="mi">10001</span> <span class="p">:</span> <span class="s1">&#39;New York, NY&#39;</span> <span class="p">}</span>
-<span class="n">cities</span> <span class="o">=</span> <span class="n">zipcodes</span>
-<span class="n">zipcodes</span><span class="p">[</span><span class="mi">13346</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Hamilton, NY&#39;</span>
-<span class="n">newyork</span> <span class="o">=</span> <span class="n">zipcodes</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="k">del</span> <span class="n">newyork</span><span class="p">[</span><span class="mi">90210</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zipcodes</span> <span class="ow">is</span> <span class="n">cities</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zipcodes</span> <span class="o">==</span> <span class="n">cities</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zipcodes</span> <span class="ow">is</span> <span class="n">newyork</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zipcodes</span> <span class="o">==</span> <span class="n">newyork</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>True
-True
-False
-False
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="n">prefixes</span><span class="p">):</span>
-    <span class="n">prefixes</span><span class="p">[</span><span class="s1">&#39;India&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">91</span>
-    <span class="n">codes</span> <span class="o">=</span> <span class="n">prefixes</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">codes</span><span class="p">[</span><span class="mi">61</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Australia&#39;</span>
-    <span class="k">return</span> <span class="n">codes</span>
-
-<span class="n">areacodes</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;United States&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;China&#39;</span> <span class="p">:</span> <span class="mi">86</span> <span class="p">}</span>
-<span class="n">expandcodes</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">areacodes</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">areacodes</span><span class="p">)</span>
-<span class="k">del</span> <span class="n">areacodes</span><span class="p">[</span><span class="s1">&#39;United States&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">expandcodes</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;United States&#39;: 1, &#39;China&#39;: 86, &#39;India&#39;: 91}
-{&#39;United States&#39;: 1, &#39;China&#39;: 86, &#39;India&#39;: 91, 61: &#39;Australia&#39;}
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_worksheet-code-only">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">molecules</span> <span class="o">=</span> <span class="p">{</span> <span class="p">}</span>
-<span class="n">molecules</span><span class="p">[</span><span class="s1">&#39;water&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;H&#39;</span> <span class="p">:</span> <span class="mi">2</span> <span class="p">,</span> <span class="s1">&#39;O&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-<span class="n">molecules</span><span class="p">[</span><span class="s1">&#39;acid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;H&#39;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span> <span class="p">:</span> <span class="mi">4</span> <span class="p">}</span>
-<span class="n">molecules</span><span class="p">[</span><span class="s1">&#39;agua&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">molecules</span><span class="p">[</span><span class="s1">&#39;water&#39;</span><span class="p">]</span>
-<span class="n">chosen</span> <span class="o">=</span> <span class="n">molecules</span><span class="p">[</span><span class="s1">&#39;agua&#39;</span><span class="p">]</span>
-<span class="n">chosen</span><span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">molecules</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;water&#39;: {&#39;H&#39;: 2, &#39;O&#39;: 2}, &#39;acid&#39;: {&#39;H&#39;: 2, &#39;S&#39;: 1, &#39;O&#39;: 4}, &#39;agua&#39;: {&#39;H&#39;: 2, &#39;O&#39;: 2}}
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Dictionary-manipulation-patterns">Dictionary manipulation patterns<a class="anchor-link" href="#Dictionary-manipulation-patterns">&#182;</a></h1><ul>
-<li>Insert new key with initial value
-<pre><code>if key not in mydict:
-  mydict[key] = 0    # Choose appropriate value</code></pre>
-</li>
-<li>Accumulate value corresponding to key
-<pre><code>mydict[key] = mydict[key] + 1     # Choose appropriate accumulation</code></pre>
-</li>
-<li>Associate multiple values with key
-<pre><code>if key not in mydict:
-  mydict[key] = []    # Initialize non-existent key to empty list
-mydict[key].append(newValue)     # Add new value to list associated with key</code></pre>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Programming-practice">Programming practice<a class="anchor-link" href="#Programming-practice">&#182;</a></h1><p><em>Write a function called <code>char_count</code> that takes a string and returns a dictionary that maps characters to the number of times the character occurs in the string. For example: <code>char_count('basketball')</code> should return <code>{'b': 2, 'a': 2, 's': 1, 'k': 1, 'e': 1, 't': 1, 'l': 2}</code></em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">char_count</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
-    <span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
-            <span class="n">counts</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">counts</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">counts</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">char_count</span><span class="p">(</span><span class="s1">&#39;basketball&#39;</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;b&#39;: 2, &#39;a&#39;: 2, &#39;s&#39;: 1, &#39;k&#39;: 1, &#39;e&#39;: 1, &#39;t&#39;: 1, &#39;l&#39;: 2}
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Write a function called <code>group_data</code> that takes a list of names and data items (e.g., <code>[name1,data1, name2,data2,...]</code>) and returns a dictionary that maps names to lists of corresponding data items. For example: <code>group_data(['apples','5','pears','8','oranges','3','pears','2'])</code> should return <code>{'apples' : ['5'], 'pears' : ['8','2'], 'oranges': ['3']}</code></em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered celltag_notes-only">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">group_data</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
-    <span class="n">adict</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">alist</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">adict</span><span class="p">:</span>
-            <span class="n">adict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">adict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">adict</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">group_data</span><span class="p">([</span><span class="s1">&#39;apples&#39;</span><span class="p">,</span><span class="s1">&#39;5&#39;</span><span class="p">,</span><span class="s1">&#39;pears&#39;</span><span class="p">,</span><span class="s1">&#39;8&#39;</span><span class="p">,</span><span class="s1">&#39;oranges&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;pears&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">]))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;apples&#39;: [&#39;5&#39;], &#39;pears&#39;: [&#39;8&#39;, &#39;2&#39;], &#39;oranges&#39;: [&#39;3&#39;]}
+<pre>{&#39;small&#39;: [&#39;little&#39;, &#39;compact&#39;, &#39;tiny&#39;], &#39;large&#39;: [&#39;big&#39;, &#39;huge&#39;, &#39;immense&#39;, &#39;vast&#39;], &#39;tall&#39;: [&#39;large&#39;, &#39;towering&#39;]}
 </pre>
 </div>
 </div>
