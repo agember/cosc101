@@ -13,3 +13,4 @@
 * 2020-04-22: Dictionaries: tuples [[Notes]](2020-04-22.notes.html) [[Worksheet]](2020-04-22.worksheet.html) [[Slides]](2020-04-22.slides.html)
 * 2020-04-24: Dictionaries: practice [[Notes]](2020-04-24.notes.html) [[Worksheet]](2020-04-24.worksheet.html) [[Slides]](2020-04-24.slides.html)
 * 2020-04-27: Final exam review [[Notes]](2020-04-27.notes.html) [[Worksheet]](2020-04-27.worksheet.html) [[Slides]](2020-04-27.slides.html)
+* 2020-04-29: Final exam review [[Notes]](2020-04-29.notes.html) [[Worksheet]](2020-04-29.worksheet.html) [[Slides]](2020-04-29.slides.html)
