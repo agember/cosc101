@@ -10,7 +10,7 @@ all: $(HTML)
 %.html: %.notes.html %.slides.html %.worksheet.html ;
 
 %.notes.html: %.ipynb
-	jupyter nbconvert $< --TagRemovePreprocessor.remove_cell_tags='["none", "worksheet-only", "colab-only"]' --TagRemovePreprocessor.remove_all_outputs_tags='["notes-code-only"]' --output='$@'
+	jupyter nbconvert $< --TagRemovePreprocessor.remove_cell_tags='["none", "worksheet-only", "colab-only"]' --TagRemovePreprocessor.remove_all_outputs_tags='["notes-code-only"]' --to html --output='$@'
 
 %.slides.html: %.ipynb
 	jupyter nbconvert $< --TagRemovePreprocessor.remove_all_outputs_tags='["none", "worksheet-code-only"]' --to slides --output='$*'
