@@ -9,15 +9,22 @@ div.text_cell_render {
 
 h1 {
     font-size: 13pt !important;
-    margin: 13pt 0px 0px 0px !important;
+    margin-top: 1em !important;
+    margin-bottom: 0em !important;
 }
 
 h2 {
     font-size: 11pt !important;
-    margin: 0px 0px 0px 0px !important;
+    margin-top: 1em !important;
+    margin-bottom: 0em !important;
 }
 
 ul {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+p {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
 }
