@@ -6,12 +6,12 @@ div#notebook {
 div.text_cell_render {
     padding: 0px 0px 0px 0px !important;
 }
-div#notebook h1 {
+h1 {
     font-size: 13pt !important;
     margin: 0px 0px 0px 0px !important;
 }
 
-div#notebook h2 {
+h2 {
     font-size: 11pt !important;
     margin: 0px 0px 0px 0px !important;
 }
@@ -20,10 +20,10 @@ div.slide {
     font-size: 18pt !important;
 }
 
-div.input_prompt {
+div.input_prompt div.jp-InputPrompt div.jp-InputArea-prompt{
     font-size: 0pt !important;
 }
 
-div.output_prompt {
+div.output_prompt div.jp-OutputPrompt {
     font-size: 0pt !important;
 }

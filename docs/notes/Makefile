@@ -1,25 +1,27 @@
 NOTEBOOKS = $(wildcard *.ipynb)
 
 HTML = $(NOTEBOOKS:.ipynb=.html)
+MARKDOWN = $(NOTEBOOKS:.ipynb=.md)
 
-all: $(HTML)
+all: $(HTML) $(MARKDOWN)
 	python3 index.py
 
-.PRECIOUS: %.notes.html %.slides.html %.worksheet.html
+.PRECIOUS: %.notes.md %.slides.html %.worksheet.md
 
-%.html: %.notes.html %.slides.html %.worksheet.html ;
+%.html: %.slides.html;
+%.md: %.notes.md %.worksheet.md ;
 
-%.notes.html: %.ipynb
-	jupyter nbconvert $< --TagRemovePreprocessor.remove_cell_tags='["none", "worksheet-only", "colab-only"]' --TagRemovePreprocessor.remove_all_outputs_tags='["notes-code-only"]' --to html --output='$@'
+%.notes.md: %.ipynb
+	jupyter nbconvert $< --TagRemovePreprocessor.remove_cell_tags='["none", "worksheet-only", "colab-only"]' --TagRemovePreprocessor.remove_all_outputs_tags "notes-code-only" --to markdown --output='$@'
 
 %.slides.html: %.ipynb
-	jupyter nbconvert $< --TagRemovePreprocessor.remove_all_outputs_tags='["none", "worksheet-code-only"]' --to slides --output='$*'
+	jupyter nbconvert $< --TagRemovePreprocessor.remove_all_outputs_tags  "none" --TagRemovePreprocessor.remove_all_outputs_tags "worksheet-code-only" --to slides --output='$*'
 
-%.worksheet.html: %.ipynb
-	jupyter nbconvert $< --TagRemovePreprocessor.remove_cell_tags='["none", "notes-only", "colab-only"]' --TagRemovePreprocessor.remove_all_outputs_tags='["worksheet-code-only"]' --output='$@'
+%.worksheet.md: %.ipynb
+	jupyter nbconvert $< --TagRemovePreprocessor.remove_cell_tags='["none", "notes-only", "colab-only"]' --TagRemovePreprocessor.remove_all_outputs_tags "worksheet-code-only" --to markdown --output='$@'
 
 %.colab: %.ipynb
 	jupyter nbconvert --to notebook $< --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags='["notes-only"]' --output='$@'
 
 clean:
-	rm *.html
+	rm *.slides.html *.notes.md *.worksheet.md
