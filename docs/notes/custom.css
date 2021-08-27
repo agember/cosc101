@@ -1,4 +1,4 @@
-div#notebook {
+body {
     font-size: 11pt !important;
     padding-top: 0px !important;
 }
@@ -6,14 +6,20 @@ div#notebook {
 div.text_cell_render {
     padding: 0px 0px 0px 0px !important;
 }
+
 h1 {
     font-size: 13pt !important;
-    margin: 0px 0px 0px 0px !important;
+    margin: 13pt 0px 0px 0px !important;
 }
 
 h2 {
     font-size: 11pt !important;
     margin: 0px 0px 0px 0px !important;
+}
+
+ul {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
 
 div.slide {
