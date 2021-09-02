@@ -19,6 +19,16 @@ h2 {
     margin-bottom: 0em !important;
 }
 
+h3 {
+    font-size: 11pt !important;
+    margin-top: 1em !important;
+    margin-bottom: 0em !important;
+}
+
+code {
+    font-size: 10pt !important;
+}
+
 ul {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
