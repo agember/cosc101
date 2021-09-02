@@ -6,6 +6,7 @@ import os
 last_category = None
 
 with open('index.md', 'w') as index:
+    index.write("# COSC 101A, Fall 2021\n\n")
     for filename in sorted(os.listdir(".")):
         if filename.endswith('.ipynb'):
             with open(filename, 'r') as notebook:
@@ -20,7 +21,7 @@ with open('index.md', 'w') as index:
             date = contents["cells"][0]["source"][1].split(",")[2].strip(" _")
             print("{} ({})".format(title, date))
             if (category != last_category):
-                index.write("\n# {}\n".format(category))
+                index.write("\n## {}\n".format(category))
             index.write("* {} ({}) [[Notes]]({}) [[Worksheet]]({}) [[Slides]]({})\n".format(
                     title, date, filename.replace('.ipynb', '.notes.html'),
                     filename.replace('.ipynb', '.worksheet.html'),
