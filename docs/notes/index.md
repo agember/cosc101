@@ -5,3 +5,4 @@
 ## Hello, Python
 * computational thinking; errors & debugging (2021-08-30) [[Notes]](2021-08-30.notes.html) [[Worksheet]](2021-08-30.worksheet.html) [[Slides]](2021-08-30.slides.html)
 * types; variables; operators (2021-09-01) [[Notes]](2021-09-01.notes.html) [[Worksheet]](2021-09-01.worksheet.html) [[Slides]](2021-09-01.slides.html)
+* "input-process-output" programs; reassignment (2021-09-03) [[Notes]](2021-09-03.notes.html) [[Worksheet]](2021-09-03.worksheet.html) [[Slides]](2021-09-03.slides.html)
