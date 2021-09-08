@@ -20,8 +20,8 @@ with open('index.md', 'w') as index:
                 category = None
             date = contents["cells"][0]["source"][1].split(",")[2].strip(" _")
             print("{} ({})".format(title, date))
-            if (category != last_category):
-                index.write("\n## {}\n".format(category))
+#            if (category != last_category):
+#                index.write("\n## {}\n".format(category))
             index.write("* {} ({}) [[Notes]]({}) [[Worksheet]]({}) [[Slides]]({})\n".format(
                     title, date, filename.replace('.ipynb', '.notes.html'),
                     filename.replace('.ipynb', '.worksheet.html'),
