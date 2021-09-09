@@ -5,3 +5,4 @@
 * types; variables; operators (2021-09-01) [[Notes]](2021-09-01.notes.html) [[Worksheet]](2021-09-01.worksheet.html) [[Slides]](2021-09-01.slides.html)
 * "input-process-output" programs; reassignment (2021-09-03) [[Notes]](2021-09-03.notes.html) [[Worksheet]](2021-09-03.worksheet.html) [[Slides]](2021-09-03.slides.html)
 * boolean expressions; conditionals (2021-09-06) [[Notes]](2021-09-06.notes.html) [[Worksheet]](2021-09-06.worksheet.html) [[Slides]](2021-09-06.slides.html)
+* Nested and chained conditionals (2021-09-08) [[Notes]](2021-09-08.notes.html) [[Worksheet]](2021-09-08.worksheet.html) [[Slides]](2021-09-08.slides.html)
