@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>2021-09-15 slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>2021-09-17 slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
@@ -14099,17 +14099,31 @@ div.jp-OutputPrompt {
 <div class="slides"><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="No-warm-up;-Happy-Wednesday!">No warm-up; Happy Wednesday!<a class="anchor-link" href="#No-warm-up;-Happy-Wednesday!">&#182;</a></h2>
+<h1 id="string-indexing;-belonging-&amp;-success-in-CS">string indexing; belonging &amp; success in CS<a class="anchor-link" href="#string-indexing;-belonging-&amp;-success-in-CS">&#182;</a></h1><p><em>COSC 101, Introduction to Computing I, 2021-09-17</em></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">&#182;</a></h2><ul>
+<li>Exam 1 Wednesday during class</li>
+</ul>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Outline">Outline<a class="anchor-link" href="#Outline">&#182;</a></h2><ul>
+<li>Warm-up</li>
+<li>string indexing</li>
+<li>belonging &amp; success in CS</li>
+</ul>
+
 </div>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Range">Range<a class="anchor-link" href="#Range">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>What sequence of integers is produced by each of the following invocations of range?</em></p>
+<h2 id="Warm-up">Warm-up<a class="anchor-link" href="#Warm-up">&#182;</a></h2><p><em>Each of the following programs contains redundant code. Rewrite the program to use a loop and eliminate the redundancy.</em></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-code-only">
@@ -14119,7 +14133,13 @@ div.jp-OutputPrompt {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#1)</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="n">die1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">die2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">die3</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die 1: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">die1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die 2: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">die2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die 3: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">die3</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14127,204 +14147,32 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-code-only">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2)</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-code-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#3)</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-code-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#4)</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-code-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#5)</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-code-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#6)</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>What call to range would produce each of the following sequences of integers?</em></p>
-<p>#1) <code>[10, 20, 30, 40, 50]</code></p>
-
-</div>
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>#2) <code>[101, 102, 103, 104]</code></p>
-
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>#3) <code>[15, 12, 9, 6]</code></p>
-
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>#4) <code>[0, 2, 4, 6, 8, 10]</code></p>
-
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Accumulator-pattern">Accumulator pattern<a class="anchor-link" href="#Accumulator-pattern">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>What is the output of the following programs? If necessary, provide input of your choosing.</em></p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-code-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#1)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">i</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-code-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2)</span>
-<span class="n">word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a word: &quot;</span><span class="p">)</span>
-<span class="n">spell</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
-    <span class="n">spell</span> <span class="o">+=</span> <span class="n">c</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">spell</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-code-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#3)</span>
-<span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Hello &quot;</span>
-<span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">,</span><span class="s1">&#39;last&#39;</span><span class="p">]:</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What is your &quot;</span> <span class="o">+</span> <span class="n">part</span> <span class="o">+</span> <span class="s2">&quot; name? &quot;</span><span class="p">)</span>
-    <span class="n">greeting</span> <span class="o">=</span> <span class="n">greeting</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Mapping-patterns-to-loops">Mapping patterns to loops<a class="anchor-link" href="#Mapping-patterns-to-loops">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="kn">import</span> <span class="nn">turtle</span>
 <span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
-<span class="n">dora</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
-<span class="n">dora</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">dora</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="n">dora</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">dora</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="n">dora</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">dora</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="n">dora</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">dora</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="n">dora</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">dora</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="n">dora</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">dora</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">crush</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">70</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">crush</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
 <span class="n">window</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 
@@ -14333,31 +14181,58 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Extra-practice">Extra practice<a class="anchor-link" href="#Extra-practice">&#182;</a></h2><p>#1) <em>Write a program that asks a user how many steps they walked each day of the week and computes their step total for the week.</em></p>
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-code-only">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#3)</span>
+<span class="kn">import</span> <span class="nn">turtle</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">ash</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">ash</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">ash</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ash</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">ash</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ash</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">ash</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ash</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
+<span class="n">ash</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">ash</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ash</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">ash</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ash</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">ash</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
 
+     </div>
 </div>
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>#2) <em>Write a program that asks for the dimensions of multiple rooms and computes the total square footage of a house or apartment.</em></p>
+</div>
+</div>
 
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>#3) <em>Write a program that flips a coin as many times as the user requested and outputs the percentage of flips that were heads.</em></p>
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#4)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1 is odd&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2 is even&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3 is odd&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4 is even&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5 is odd&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;6 is even&quot;</span><span class="p">)</span>
+</pre></div>
 
+     </div>
 </div>
-</div></div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>#4) <em>Write a program that asks for ten positive numbers and outputs the largest number.</em></p>
+</div>
+</div>
 
-</div>
-</div></div></section></section>
+</div></section></section>
 </div>
 </div>
 </body>

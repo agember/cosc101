@@ -8,3 +8,4 @@
 * Nested and chained conditionals (2021-09-08) [[Notes]](2021-09-08.notes.html) [[Worksheet]](2021-09-08.worksheet.html) [[Slides]](2021-09-08.slides.html)
 * Debugging; modules; function calls; objects (2021-09-10) [[Notes]](2021-09-10.notes.html) [[Worksheet]](2021-09-10.worksheet.html) [[Slides]](2021-09-10.slides.html)
 * for loops (2021-09-13) [[Notes]](2021-09-13.notes.html) [[Worksheet]](2021-09-13.worksheet.html) [[Slides]](2021-09-13.slides.html)
+* range; accumulator pattern; mapping patterns to loops (2021-09-15) [[Notes]](2021-09-15.notes.html) [[Worksheet]](2021-09-15.worksheet.html) [[Slides]](2021-09-15.slides.html)
