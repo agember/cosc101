@@ -10,3 +10,4 @@
 * for loops (2021-09-13) [[Notes]](2021-09-13.notes.html) [[Worksheet]](2021-09-13.worksheet.html) [[Slides]](2021-09-13.slides.html)
 * range; accumulator pattern; mapping patterns to loops (2021-09-15) [[Notes]](2021-09-15.notes.html) [[Worksheet]](2021-09-15.worksheet.html) [[Slides]](2021-09-15.slides.html)
 * String indexing; belonging & success in CS (2021-09-17) [[Notes]](2021-09-17.notes.html) [[Worksheet]](2021-09-17.worksheet.html) [[Slides]](2021-09-17.slides.html)
+* Exam 1 review (2021-09-20) [[Notes]](2021-09-20.notes.html) [[Worksheet]](2021-09-20.worksheet.html) [[Slides]](2021-09-20.slides.html)
