@@ -12,3 +12,4 @@
 * String indexing; belonging & success in CS (2021-09-17) [[Notes]](2021-09-17.notes.html) [[Worksheet]](2021-09-17.worksheet.html) [[Slides]](2021-09-17.slides.html)
 * Exam 1 review (2021-09-20) [[Notes]](2021-09-20.notes.html) [[Worksheet]](2021-09-20.worksheet.html) [[Slides]](2021-09-20.slides.html)
 * Defining functions; calling functions; returning values (2021-09-24) [[Notes]](2021-09-24.notes.html) [[Worksheet]](2021-09-24.worksheet.html) [[Slides]](2021-09-24.slides.html)
+* scope; return values (2021-09-27) [[Notes]](2021-09-27.notes.html) [[Worksheet]](2021-09-27.worksheet.html) [[Slides]](2021-09-27.slides.html)
