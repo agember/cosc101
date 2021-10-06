@@ -14102,115 +14102,10 @@ div.jp-OutputPrompt {
 <h2 id="Warm-up">Warm-up<a class="anchor-link" href="#Warm-up">&#182;</a></h2><p>_Write a function called <code>only_letters</code> that takes a string and returns true if the string only contains letters, and false otherwise._</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_notes-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">doctest</span>
-<span class="kn">import</span> <span class="nn">string</span>
-<span class="k">def</span> <span class="nf">only_letters</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Checks if a string contains only letters</span>
-<span class="sd">    </span>
-<span class="sd">    &gt;&gt;&gt; only_letters(&quot;nIcE&quot;)</span>
-<span class="sd">    True</span>
-<span class="sd">    &gt;&gt;&gt; only_letters(&quot;a I&quot;)</span>
-<span class="sd">    False</span>
-<span class="sd">    &gt;&gt;&gt; only_letters(&quot;H2O&quot;)</span>
-<span class="sd">    False</span>
-<span class="sd">    &gt;&gt;&gt; only_letters(&quot;I2&quot;)</span>
-<span class="sd">    False</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">non_letter</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">:</span>
-            <span class="n">non_letter</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">if</span> <span class="n">non_letter</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span>
-
-<span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>TestResults(failed=0, attempted=4)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-
-<pre><code>
-</code></pre>
-<p>🛑 <strong>STOP HERE</strong> after completing the warm-up question; please <strong>DO NOT WORK AHEAD</strong>. If you have extra time, work on the extra practice problems at the end of the worksheet.</p>
-
-</div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Definite-vs-indefinite-iteration">Definite vs indefinite iteration<a class="anchor-link" href="#Definite-vs-indefinite-iteration">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_notes-only" data-mime-type="text/markdown">
-<h3 id="Overview">Overview<a class="anchor-link" href="#Overview">&#182;</a></h3><ul>
-<li>Do we know how many times a task needs to be repeated before beginning the repetition?<ul>
-<li>Definite — number of iterations is known before loop starts<ul>
-<li>E.g., interview 50 people for a research study</li>
-</ul>
-</li>
-<li>Indefinite — number of iterations is not known before loop starts<ul>
-<li>E.g., call potential participants until 50 people have agreed to be part of the study</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Which type of loop to use?<ul>
-<li>Definite — <code>for</code> loop</li>
-<li>Indefinite — <code>while</code> loop</li>
-<li>Can always use a <code>while</code> loop in place of a <code>for</code> loop</li>
-</ul>
-</li>
-<li>How is the number of iterations determined?<ul>
-<li><code>for</code> loop iterates over a sequence of values<ul>
-<li>E.g., <code>for person in participants</code></li>
-</ul>
-</li>
-<li><code>while</code> loop repeats as long as a condition is true<ul>
-<li>E.g., <code>while num_participants &lt; 50</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Practice">Practice<a class="anchor-link" href="#Practice">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14219,117 +14114,34 @@ div.jp-OutputPrompt {
 <p>#1) Roll a 6-sided die 20 times and count the number of times a 6 is rolled</p>
 
 </div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_notes-only" data-mime-type="text/markdown">
-<p>Definite — need exactly 20 iterations</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-
-<pre><code>
-</code></pre>
-
-</div>
-</div>
+</div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>#2) Roll a 6-sided die until a 6 is rolled</p>
 
 </div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_notes-only" data-mime-type="text/markdown">
-<p>Indefinite — number of iterations depends on the outcome of each roll</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-
-<pre><code>
-</code></pre>
-
-</div>
-</div>
+</div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>#3) Count the number of letters in a string</p>
 
 </div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_notes-only" data-mime-type="text/markdown">
-<p>Definite — the number of iterations equals the number of characters in the string</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-
-<pre><code>
-</code></pre>
-
-</div>
-</div>
+</div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>#4) Ask the user to enter words (one at a time) until they have entered 100 words</p>
 
 </div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_notes-only" data-mime-type="text/markdown">
-<p>Definite — need exactly 100 iterations</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-
-<pre><code>
-</code></pre>
-
-</div>
-</div>
+</div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>#5) Ask the user to enter words (one word at a time) until they have entered at least 100 characters</p>
 
 </div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_notes-only" data-mime-type="text/markdown">
-<p>Indefinite — number of iterations depends on the length of each word</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-
-<pre><code>
-</code></pre>
-<p>🛑 <strong>STOP HERE</strong> after completing the above questions; please <strong>DO NOT WORK AHEAD</strong>. If you have extra time, work on the extra practice problems at the end of the worksheet.</p>
-
-</div>
-</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="while-loops">while loops<a class="anchor-link" href="#while-loops">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_notes-only" data-mime-type="text/markdown">
-<h3 id="Overview">Overview<a class="anchor-link" href="#Overview">&#182;</a></h3><ul>
-<li>Use a boolean expression to determine whether or not the loop executes (again)<ul>
-<li>Similar to using a boolean expression in a conditional statement to determine whether or not to execute the if-body</li>
-</ul>
-</li>
-<li>Example code</li>
-</ul>
-
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_notes-only">
 <div class="jp-Cell-inputWrapper">
@@ -14375,20 +14187,7 @@ Done
 
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_notes-only" data-mime-type="text/markdown">
-<ul>
-<li>Control flow</li>
-</ul>
-<p><img src="figures/while_loops/while_loop_example.png" alt=""></p>
-<ul>
-<li>The body of the loop <strong>must</strong> change the value of one or more variables used in the loop condition such that eventually the loop condition is false</li>
-<li><em>What happens if the loop condition is always true?</em> — the loop runs forever; called an infinite loop</li>
-</ul>
-
-</div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Practice-understanding-while-loops">Practice understanding while loops<a class="anchor-link" href="#Practice-understanding-while-loops">&#182;</a></h3><p><em>What is the output of each of the following programs?</em></p>
@@ -14412,15 +14211,7 @@ Done
 </div>
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-
-<pre><code>
-</code></pre>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-code-only">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-code-only">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
@@ -14440,15 +14231,7 @@ Done
 </div>
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-
-<pre><code>
-</code></pre>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-code-only">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-code-only">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
@@ -14469,175 +14252,25 @@ Done
 </div>
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-
-<pre><code>
-</code></pre>
-
-</div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Practice-writing-while-loops">Practice writing while loops<a class="anchor-link" href="#Practice-writing-while-loops">&#182;</a></h3><p>#1) _Write a function called <code>ask_words</code> that takes an integer and prompts the user to enter words (one word at a time) until the total number of characters entered equals or exceeds the provided number._</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_notes-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ask_words</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">):</span>
-        <span class="n">word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a word: &quot;</span><span class="p">)</span>
-        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-
-<pre><code>
-</code></pre>
-
-</div>
-</div>
+</div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>#2) <em>In the biological process of cell division, a parent cell divides into two daughter cells. Each of these two daughter cells then divides into two grandaughter cells. Each of these four grandaughter cells then divides into two great-grandaughter cells, etc. In other words, the total number of cells doubles with each round of cell division. Write a function called <code>cells</code> that takes a number of rounds of cell division that occur and returns the total number of cells that exist after the specified number of rounds. Assume you start with a single cell.</em></p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_notes-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cells</span><span class="p">(</span><span class="n">rounds</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Determines the number of cells that will exist after the specified number of rounds of cell division</span>
-<span class="sd">    </span>
-<span class="sd">    &gt;&gt;&gt; cells(0)</span>
-<span class="sd">    1</span>
-<span class="sd">    &gt;&gt;&gt; cells(1)</span>
-<span class="sd">    2</span>
-<span class="sd">    &gt;&gt;&gt; cells(2)</span>
-<span class="sd">    4</span>
-<span class="sd">    &gt;&gt;&gt; cells(5)</span>
-<span class="sd">    32</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">total</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">rounds</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">*</span> <span class="mi">2</span>
-        <span class="n">rounds</span> <span class="o">=</span> <span class="n">rounds</span> <span class="o">-</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">total</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-
-<pre><code>
-</code></pre>
-
-</div>
-</div>
+</div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>#3) <em>Again, consider the biological process of cell division. Write a function called <code>rounds</code> that takes the number of cells that should exist, and computes the number of rounds of cell division that must occur to have at least that many cells (asuming you started with a single cell).</em></p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_notes-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">rounds</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Determines the number of rounds of cell division that must occur to have the target number of cells</span>
-<span class="sd">    </span>
-<span class="sd">    &gt;&gt;&gt; rounds(1)</span>
-<span class="sd">    0</span>
-<span class="sd">    &gt;&gt;&gt; rounds(2)</span>
-<span class="sd">    1</span>
-<span class="sd">    &gt;&gt;&gt; rounds(4)</span>
-<span class="sd">    2</span>
-<span class="sd">    &gt;&gt;&gt; rounds(5)</span>
-<span class="sd">    3</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">cells</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="n">cells</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
-        <span class="n">cells</span> <span class="o">=</span> <span class="n">cells</span> <span class="o">*</span> <span class="mi">2</span>
-        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">count</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-
-<pre><code>
-</code></pre>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_notes-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>TestResults(failed=0, attempted=12)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Extra-practice">Extra practice<a class="anchor-link" href="#Extra-practice">&#182;</a></h2>
@@ -14648,36 +14281,7 @@ Done
 <p>#1) _Write a function called <code>get_donations</code> that takes a fundraising goal (in dollars) and repeatedly asks the user for donation amounts until the fundraising goal has been met. The function should return the total number of donations entered._</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_notes-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_donations</span><span class="p">(</span><span class="n">goal</span><span class="p">):</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">raised</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">raised</span> <span class="o">&lt;</span> <span class="n">goal</span><span class="p">):</span>
-        <span class="n">contribution</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Donation amount: $&quot;</span><span class="p">))</span>
-        <span class="n">raised</span> <span class="o">=</span> <span class="n">raised</span> <span class="o">+</span> <span class="n">contribution</span>
-        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">count</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-
-<pre><code>
-</code></pre>
-
-</div>
-</div>
+</div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>#2) <em>Various measures of public health (e.g., number of active cases of COVID-19) are often reporting using a rolling average (e.g., the average over the past 7 days). A slight variation of a rolling average is an estimated weighted moving average (EWMA), which takes a fraction of the previous average and a fraction of a new value and computes a new average. For example, the 7-day EWMA of active COVID-19 cases is computed using the following formula:</em></p>
@@ -14685,58 +14289,13 @@ Done
 <p>_Write a function called <code>compute_ewma</code> that takes the previous average and the current count and computes a new average._</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_notes-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">compute_ewma</span><span class="p">(</span><span class="n">previous</span><span class="p">,</span> <span class="n">today</span><span class="p">):</span>
-    <span class="n">new</span> <span class="o">=</span> <span class="n">previous</span> <span class="o">*</span> <span class="p">(</span><span class="mi">6</span> <span class="o">/</span> <span class="mi">7</span><span class="p">)</span> <span class="o">+</span> <span class="n">today</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">7</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">new</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-
-<pre><code>
-</code></pre>
-
-</div>
-</div>
+</div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>_Write a function called <code>monitor_average</code> that takes a threshold and asks for daily case counts until the EWMA exceeds the threshold._</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_notes-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">monitor_average</span><span class="p">(</span><span class="n">threshold</span><span class="p">):</span>
-    <span class="n">day</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">average</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">average</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">):</span>
-        <span class="n">today</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Number of active cases on day &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">day</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;? &quot;</span><span class="p">))</span>
-        <span class="n">average</span> <span class="o">=</span> <span class="n">compute_ewma</span><span class="p">(</span><span class="n">average</span><span class="p">,</span> <span class="n">today</span><span class="p">)</span>
-        <span class="n">day</span> <span class="o">=</span> <span class="n">day</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The EWMA of active cases exceeded the threshold on day&quot;</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></section></section>
+</div></div></section></section>
 </div>
 </div>
 </body>
