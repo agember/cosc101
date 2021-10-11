@@ -17,3 +17,4 @@
 * docstrings; top-down vs. bottom-up programming (2021-10-01) [[Notes]](2021-10-01.notes.html) [[Worksheet]](2021-10-01.worksheet.html) [[Slides]](2021-10-01.slides.html)
 * unit testing (2021-10-04) [[Notes]](2021-10-04.notes.html) [[Worksheet]](2021-10-04.worksheet.html) [[Slides]](2021-10-04.slides.html)
 * definite vs indefinite iteration; while loops (2021-10-06) [[Notes]](2021-10-06.notes.html) [[Worksheet]](2021-10-06.worksheet.html) [[Slides]](2021-10-06.slides.html)
+* sentinel values (2021-10-08) [[Notes]](2021-10-08.notes.html) [[Worksheet]](2021-10-08.worksheet.html) [[Slides]](2021-10-08.slides.html)
