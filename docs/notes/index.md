@@ -18,3 +18,4 @@
 * unit testing (2021-10-04) [[Notes]](2021-10-04.notes.html) [[Worksheet]](2021-10-04.worksheet.html) [[Slides]](2021-10-04.slides.html)
 * definite vs indefinite iteration; while loops (2021-10-06) [[Notes]](2021-10-06.notes.html) [[Worksheet]](2021-10-06.worksheet.html) [[Slides]](2021-10-06.slides.html)
 * sentinel values (2021-10-08) [[Notes]](2021-10-08.notes.html) [[Worksheet]](2021-10-08.worksheet.html) [[Slides]](2021-10-08.slides.html)
+* nested loops (2021-10-13) [[Notes]](2021-10-13.notes.html) [[Worksheet]](2021-10-13.worksheet.html) [[Slides]](2021-10-13.slides.html)
