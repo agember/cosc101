@@ -20,3 +20,4 @@
 * sentinel values (2021-10-08) [[Notes]](2021-10-08.notes.html) [[Worksheet]](2021-10-08.worksheet.html) [[Slides]](2021-10-08.slides.html)
 * nested loops (2021-10-13) [[Notes]](2021-10-13.notes.html) [[Worksheet]](2021-10-13.worksheet.html) [[Slides]](2021-10-13.slides.html)
 * image processing (2021-10-15) [[Notes]](2021-10-15.notes.html) [[Worksheet]](2021-10-15.worksheet.html) [[Slides]](2021-10-15.slides.html)
+* Exam 2 review (2021-10-18) [[Notes]](2021-10-18.notes.html) [[Worksheet]](2021-10-18.worksheet.html) [[Slides]](2021-10-18.slides.html)
