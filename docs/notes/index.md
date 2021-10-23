@@ -21,3 +21,4 @@
 * nested loops (2021-10-13) [[Notes]](2021-10-13.notes.html) [[Worksheet]](2021-10-13.worksheet.html) [[Slides]](2021-10-13.slides.html)
 * image processing (2021-10-15) [[Notes]](2021-10-15.notes.html) [[Worksheet]](2021-10-15.worksheet.html) [[Slides]](2021-10-15.slides.html)
 * Exam 2 review (2021-10-18) [[Notes]](2021-10-18.notes.html) [[Worksheet]](2021-10-18.worksheet.html) [[Slides]](2021-10-18.slides.html)
+* Beyond 101 (2021-10-22) [[Notes]](2021-10-22.notes.html) [[Worksheet]](2021-10-22.worksheet.html) [[Slides]](2021-10-22.slides.html)
