@@ -14099,7 +14099,7 @@ div.jp-OutputPrompt {
 <div class="slides"><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Warm-up">Warm-up<a class="anchor-link" href="#Warm-up">&#182;</a></h2><p>_Write a function called pig<em>latin that takes a single word (as a string) as an argument and translates the word to pig latin. To translate a word to pig latin, move the first letter to the end of the word and add “ay” to the end. For example:</em></p>
+<h2 id="Warm-up">Warm-up<a class="anchor-link" href="#Warm-up">&#182;</a></h2><p>_Write a function called pig<em>latin that takes a single word and translates the word to pig latin by moving the first letter to the end of the word and adding “ay” to the end. For example:</em></p>
 <ul>
 <li><code>pig_latin('pig')</code> returns <code>'igpay'</code></li>
 <li><code>pig_latin('latin')</code> returns <code>'atinlay'</code></li>
@@ -14144,7 +14144,8 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">eecummings</span><span class="p">(</span><span class="n">poem</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#1)</span>
+<span class="k">def</span> <span class="nf">eecummings</span><span class="p">(</span><span class="n">poem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Converts a poem to lowercase</span>
 <span class="sd">    </span>
@@ -14191,7 +14192,8 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">emphasize</span><span class="p">(</span><span class="n">phrase</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2)</span>
+<span class="k">def</span> <span class="nf">emphasize</span><span class="p">(</span><span class="n">phrase</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Make the first occurrence of word in phrase uppercase</span>
 <span class="sd">    </span>
@@ -14215,7 +14217,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-only">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
@@ -14238,13 +14240,14 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_notes-only">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bleep</span><span class="p">(</span><span class="n">phrase</span><span class="p">,</span> <span class="n">swear_words</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#3)</span>
+<span class="k">def</span> <span class="nf">bleep</span><span class="p">(</span><span class="n">phrase</span><span class="p">,</span> <span class="n">swear_words</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Replace any words in phrase in the list of swear_words with BLEEP</span>
 <span class="sd">    </span>
@@ -14266,71 +14269,15 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>🛑 <strong>STOP HERE</strong> after completing the above problems; please <strong>DO NOT WORK AHEAD</strong>. If you have extra time, work on the extra practice problems.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="String-formatting">String formatting<a class="anchor-link" href="#String-formatting">&#182;</a></h2>
 </div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Overview">Overview<a class="anchor-link" href="#Overview">&#182;</a></h3><ul>
-<li>_Assume I wanted to write a function called <code>word_length</code> that takes a single word and prints the word and its length. For example: <code>word_length('rain')</code> should output <code>"rain is 4 characters long!"</code>. How would I write the body of the function?_</li>
-<li>_Now assume I wanted <code>word_length('rain')</code> to output <code>"rain has length 4!"</code> How would I change the body of the function?_</li>
-<li>Simpler alternative: string <code>format</code> method<ul>
-<li>Create a string that contains curly places as placeholders for values</li>
-<li>Call <code>format</code> on the string with a list of values to fill-in the placeholders</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;rain&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> has length </span><span class="si">{}</span><span class="s2">!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>rain has length 4!
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><em>Complete the following functions</em>:</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-only">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
@@ -14359,7 +14306,8 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">y2k</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#1)</span>
+<span class="k">def</span> <span class="nf">y2k</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Converts a date in the format &#39;Month DD, YY&#39; to &#39;DD Month 19YY&#39;</span>
 <span class="sd">    </span>
@@ -14380,7 +14328,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-only">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
@@ -14407,7 +14355,8 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">phone</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2)</span>
+<span class="k">def</span> <span class="nf">phone</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Converts a 10-digit integer into a phone number XXX-XXX-XXXX</span>
 <span class="sd">    </span>
@@ -14423,7 +14372,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-only">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
@@ -14450,7 +14399,8 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">date</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#3)</span>
+<span class="k">def</span> <span class="nf">date</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Converts an 8-digit string into MM/DD/YYYY</span>
 <span class="sd">    </span>
@@ -14476,7 +14426,7 @@ div.jp-OutputPrompt {
 <p><em>Complete the following functions</em>:</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-only">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
@@ -14495,13 +14445,6 @@ div.jp-OutputPrompt {
 <span class="sd">    &gt;&gt;&gt; slice(&quot;A piece of pizza&quot;, &quot;pizza&quot;)</span>
 <span class="sd">    &#39;[11:]&#39;</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">start</span> <span class="o">=</span> <span class="n">phrase</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-    <span class="n">end</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">start</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">end</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">phrase</span><span class="p">):</span>
-        <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">return</span> <span class="s2">&quot;[</span><span class="si">{}</span><span class="s2">:</span><span class="si">{}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
 </pre></div>
 
      </div>
