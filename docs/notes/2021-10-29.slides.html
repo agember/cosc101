@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>2021-10-27 slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>2021-10-29 slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
@@ -14099,37 +14099,22 @@ div.jp-OutputPrompt {
 <div class="slides"><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Warm-up">Warm-up<a class="anchor-link" href="#Warm-up">&#182;</a></h2><p>_Write a function called pig<em>latin that takes a single word and translates the word to pig latin by moving the first letter to the end of the word and adding “ay” to the end. For example:</em></p>
-<ul>
-<li><code>pig_latin('pig')</code> returns <code>'igpay'</code></li>
-<li><code>pig_latin('latin')</code> returns <code>'atinlay'</code></li>
-</ul>
+<h2 id="Warm-up">Warm-up<a class="anchor-link" href="#Warm-up">&#182;</a></h2><p><em>Complete the following functions</em>:</p>
 
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="String-methods">String methods<a class="anchor-link" href="#String-methods">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Complete the following functions</em>:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-only">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-only">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#1)</span>
-<span class="k">def</span> <span class="nf">eecummings</span><span class="p">(</span><span class="n">poem</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">phone</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Converts a poem to lowercase</span>
+<span class="sd">    Converts a 10-digit integer into a phone number XXX-XXX-XXXX</span>
 <span class="sd">    </span>
-<span class="sd">    &gt;&gt;&gt; eecummings(&quot;Still I rise&quot;)</span>
-<span class="sd">    &#39;still i rise&#39;</span>
+<span class="sd">    &gt;&gt;&gt; phone(3152886298)</span>
+<span class="sd">    &#39;315-288-6298&#39;</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 </pre></div>
 
@@ -14141,115 +14126,16 @@ div.jp-OutputPrompt {
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-only">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2)</span>
-<span class="k">def</span> <span class="nf">emphasize</span><span class="p">(</span><span class="n">phrase</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">date</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Make the first occurrence of word in phrase uppercase</span>
+<span class="sd">    Converts an 8-digit string into MM/DD/YYYY</span>
 <span class="sd">    </span>
-<span class="sd">    &gt;&gt;&gt; emphasize(&#39;&quot;We all have different gifts, so we all have different ways of saying to the world who we are.&quot; ~Fred Rogers&#39;, &quot;all&quot;)</span>
-<span class="sd">    &#39;&quot;We ALL have different gifts, so we all have different ways of saying to the world who we are.&quot; ~Fred Rogers&#39;</span>
-<span class="sd">    &gt;&gt;&gt; emphasize(&#39;&quot;We all have different gifts, so we all have different ways of saying to the world who we are.&quot; ~Fred Rogers&#39;, &quot;gifts&quot;)</span>
-<span class="sd">    &#39;&quot;We all have different GIFTS, so we all have different ways of saying to the world who we are.&quot; ~Fred Rogers&#39;</span>
-<span class="sd">    &gt;&gt;&gt; emphasize(&#39;&quot;We all have different gifts, so we all have different ways of saying to the world who we are.&quot; ~Fred Rogers&#39;, &quot;Mister&quot;)</span>
-<span class="sd">    &#39;&quot;We all have different gifts, so we all have different ways of saying to the world who we are.&quot; ~Fred Rogers&#39;</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#3)</span>
-<span class="k">def</span> <span class="nf">bleep</span><span class="p">(</span><span class="n">phrase</span><span class="p">,</span> <span class="n">swear_words</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Replace any words in phrase in the list of swear_words with BLEEP</span>
-<span class="sd">    </span>
-<span class="sd">    &gt;&gt;&gt; bleep(&quot;Oh crap!&quot;, [&quot;shit&quot;, &quot;crap&quot;])</span>
-<span class="sd">    &#39;Oh BLEEP!&#39;</span>
-<span class="sd">    &gt;&gt;&gt; bleep(&quot;Oh crap, this shit doesn&#39;t work!&quot;, [&quot;shit&quot;, &quot;crap&quot;])</span>
-<span class="sd">    &quot;Oh BLEEP, this BLEEP doesn&#39;t work!&quot;</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="String-formatting">String formatting<a class="anchor-link" href="#String-formatting">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Complete the following functions</em>:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#1)</span>
-<span class="k">def</span> <span class="nf">y2k</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Converts a date in the format &#39;Month DD, YY&#39; to &#39;DD Month 19YY&#39;</span>
-<span class="sd">    </span>
-<span class="sd">    &gt;&gt;&gt; y2k(&quot;March 02, 20&quot;)</span>
-<span class="sd">    &#39;02 March 1920&#39;</span>
-<span class="sd">    &gt;&gt;&gt; y2k(&quot;January 01, 00&quot;)</span>
-<span class="sd">    &#39;01 January 1900&#39;</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_worksheet-only" data-mime-type="text/markdown">
-<h2 id="Extra-practice">Extra practice<a class="anchor-link" href="#Extra-practice">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Complete the following functions</em>:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_worksheet-only">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">slice</span><span class="p">(</span><span class="n">phrase</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Return the slice notation (as a string) for extracting word from phrase</span>
-<span class="sd">    </span>
-<span class="sd">    &gt;&gt;&gt; slice(&quot;A piece of pizza&quot;, &quot;of&quot;)</span>
-<span class="sd">    &#39;[8:10]&#39;</span>
-<span class="sd">    &gt;&gt;&gt; slice(&quot;A piece of pizza&quot;, &quot;pie&quot;)</span>
-<span class="sd">    &#39;[2:5]&#39;</span>
-<span class="sd">    &gt;&gt;&gt; slice(&quot;A piece of pizza&quot;, &quot;A&quot;)</span>
-<span class="sd">    &#39;[:1]&#39;</span>
-<span class="sd">    &gt;&gt;&gt; slice(&quot;A piece of pizza&quot;, &quot;pizza&quot;)</span>
-<span class="sd">    &#39;[11:]&#39;</span>
+<span class="sd">    &gt;&gt;&gt; date(&quot;10272021&quot;)</span>
+<span class="sd">    &#39;10/27/2021&#39;</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 </pre></div>
 

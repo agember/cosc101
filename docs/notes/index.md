@@ -23,3 +23,4 @@
 * Exam 2 review (2021-10-18) [[Notes]](2021-10-18.notes.html) [[Worksheet]](2021-10-18.worksheet.html) [[Slides]](2021-10-18.slides.html)
 * Beyond 101 (2021-10-22) [[Notes]](2021-10-22.notes.html) [[Worksheet]](2021-10-22.worksheet.html) [[Slides]](2021-10-22.slides.html)
 * string indexing; string slicing (2021-10-25) [[Notes]](2021-10-25.notes.html) [[Worksheet]](2021-10-25.worksheet.html) [[Slides]](2021-10-25.slides.html)
+* string methods; string formatting (2021-10-27) [[Notes]](2021-10-27.notes.html) [[Worksheet]](2021-10-27.worksheet.html) [[Slides]](2021-10-27.slides.html)
