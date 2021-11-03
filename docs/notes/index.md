@@ -25,3 +25,5 @@
 * string indexing; string slicing (2021-10-25) [[Notes]](2021-10-25.notes.html) [[Worksheet]](2021-10-25.worksheet.html) [[Slides]](2021-10-25.slides.html)
 * string methods; string formatting (2021-10-27) [[Notes]](2021-10-27.notes.html) [[Worksheet]](2021-10-27.worksheet.html) [[Slides]](2021-10-27.slides.html)
 * iteration with strings (2021-10-29) [[Notes]](2021-10-29.notes.html) [[Worksheet]](2021-10-29.worksheet.html) [[Slides]](2021-10-29.slides.html)
+* lists (2021-11-01) [[Notes]](2021-11-01.notes.html) [[Worksheet]](2021-11-01.worksheet.html) [[Slides]](2021-11-01.slides.html)
+* references (2021-11-03) [[Notes]](2021-11-03.notes.html) [[Worksheet]](2021-11-03.worksheet.html) [[Slides]](2021-11-03.slides.html)
