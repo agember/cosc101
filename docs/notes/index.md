@@ -27,3 +27,4 @@
 * iteration with strings (2021-10-29) [[Notes]](2021-10-29.notes.html) [[Worksheet]](2021-10-29.worksheet.html) [[Slides]](2021-10-29.slides.html)
 * lists (2021-11-01) [[Notes]](2021-11-01.notes.html) [[Worksheet]](2021-11-01.worksheet.html) [[Slides]](2021-11-01.slides.html)
 * references (2021-11-03) [[Notes]](2021-11-03.notes.html) [[Worksheet]](2021-11-03.worksheet.html) [[Slides]](2021-11-03.slides.html)
+* strings and lists (2021-11-05) [[Notes]](2021-11-05.notes.html) [[Worksheet]](2021-11-05.worksheet.html) [[Slides]](2021-11-05.slides.html)
