@@ -14129,6 +14129,85 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Reading-data">Reading data<a class="anchor-link" href="#Reading-data">&#182;</a></h2><p>#1) <em>Write a function called <code>load_data</code> that takes the name of a comma-separated variable (CSV) file and returns a list of lists, where each sublist contains the values from a single row (i.e., line) of the CSV file.</em></p>
+<p><em>For example, assume <code>sample.csv</code> contains the following:</em></p>
+<div class="highlight"><pre><span></span><span class="n">Apricot</span><span class="p">,</span><span class="n">Orange</span><span class="p">,</span><span class="n">Fruit</span>
+<span class="n">Blueberry</span><span class="p">,</span><span class="n">Blue</span><span class="p">,</span><span class="n">Fruit</span>
+<span class="n">Carrot</span><span class="p">,</span><span class="n">Orange</span><span class="p">,</span><span class="n">Vegetable</span>
+</pre></div>
+<p><code>load_data('sample.csv')</code> should return:</p>
+<div class="highlight"><pre><span></span><span class="p">[[</span><span class="s1">&#39;Apricot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Blueberry&#39;</span><span class="p">,</span><span class="s1">&#39;Blue&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Carrot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Vegetable&#39;</span><span class="p">]]</span>
+</pre></div>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Filtering-data">Filtering data<a class="anchor-link" href="#Filtering-data">&#182;</a></h2><p>#2) <em>Write a function called <code>select_columns</code> which takes a list of lists (as returned by <code>load_data</code>), a starting index, and an ending index, and and returns a list of lists in which each sublist only contains the items from the starting index up to (but not including) the ending index.</em></p>
+<p><em>For example, assume:</em></p>
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Apricot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Blueberry&#39;</span><span class="p">,</span><span class="s1">&#39;Blue&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Carrot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Vegetable&#39;</span><span class="p">]]</span>
+</pre></div>
+<p><em><code>select_columns(data, 0, 2)</code> should return:</em></p>
+<div class="highlight"><pre><span></span><span class="p">[[</span><span class="s1">&#39;Apricot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Blueberry&#39;</span><span class="p">,</span><span class="s1">&#39;Blue&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Carrot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">]]</span>
+</pre></div>
+
+</div>
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>#3) <em>Write a function called <code>select_rows</code> which takes a list of lists (as returned by <code>load_data</code>), a column index, and a desired value, and returns a list of lists which only includes the sublists from the original list of lists that had the specified value in the specified index.</em></p>
+<p><em>For example, assume:</em></p>
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Apricot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Blueberry&#39;</span><span class="p">,</span><span class="s1">&#39;Blue&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Carrot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Vegetable&#39;</span><span class="p">]]</span>
+</pre></div>
+<p><em><code>select_rows(data, 2, 'Fruit')</code> should return:</em></p>
+<div class="highlight"><pre><span></span><span class="p">[[</span><span class="s1">&#39;Apricot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Blueberry&#39;</span><span class="p">,</span><span class="s1">&#39;Blue&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">]]</span>
+</pre></div>
+<p><em>Similarly, <code>select_rows(data, 1, 'Orange')</code> should return:</em></p>
+<div class="highlight"><pre><span></span><span class="p">[[</span><span class="s1">&#39;Apricot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Carrot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Vegetable&#39;</span><span class="p">]]</span>
+</pre></div>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Saving-data">Saving data<a class="anchor-link" href="#Saving-data">&#182;</a></h2><p>#4) <em>Write a function called <code>save_data</code> that takes a list of lists and the name of a comma-separated variable (CSV) file and writes each sublist as a "row" in the CSV file.</em></p>
+<p><em>For example, assume:</em></p>
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Blue&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Vegetable&#39;</span><span class="p">]]</span>
+</pre></div>
+<p><em><code>save_data(data, 'filtered.csv')</code> should create a file called <code>filtered.csv</code> which contains the following:</em></p>
+<div class="highlight"><pre><span></span><span class="n">Orange</span><span class="p">,</span><span class="n">Fruit</span>
+<span class="n">Blue</span><span class="p">,</span><span class="n">Fruit</span>
+<span class="n">Orange</span><span class="p">,</span><span class="n">Vegetable</span>
+</pre></div>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Extra-practice">Extra practice<a class="anchor-link" href="#Extra-practice">&#182;</a></h2><p>#5) <em>Write a function called <code>select_single_column</code> that takes a list of lists and a column index, and returns a list containing the values in that column from every row.</em></p>
+<p><em>For example, assume:</em></p>
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Apricot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Blueberry&#39;</span><span class="p">,</span><span class="s1">&#39;Blue&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Carrot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Vegetable&#39;</span><span class="p">]]</span>
+</pre></div>
+<p><em><code>select_single_column(data, 0)</code> should return:</em></p>
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;Apricot&#39;</span><span class="p">,</span> <span class="s1">&#39;Blueberry&#39;</span><span class="p">,</span> <span class="s1">&#39;Carrot&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>#6) <em>Write a function called <code>select_single_row</code> that takes a list of lists and a row index, and returns a list containing the values in that row from every column.</em></p>
+<p><em>For example, assume:</em></p>
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Apricot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Blueberry&#39;</span><span class="p">,</span><span class="s1">&#39;Blue&#39;</span><span class="p">,</span><span class="s1">&#39;Fruit&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Carrot&#39;</span><span class="p">,</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;Vegetable&#39;</span><span class="p">]]</span>
+</pre></div>
+<p><em><code>select_single_row(data, 1)</code> should return:</em></p>
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;Blueberry&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue&#39;</span><span class="p">,</span> <span class="s1">&#39;Fruit&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
 </div></section></section>
 </div>
 </div>
