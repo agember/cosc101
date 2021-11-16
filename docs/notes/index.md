@@ -31,3 +31,4 @@
 * reading files (2021-11-08) [[Notes]](2021-11-08.notes.html) [[Worksheet]](2021-11-08.worksheet.html) [[Slides]](2021-11-08.slides.html)
 * writing; exceptions (2021-11-10) [[Notes]](2021-11-10.notes.html) [[Worksheet]](2021-11-10.worksheet.html) [[Slides]](2021-11-10.slides.html)
 * data analysis (2021-11-12) [[Notes]](2021-11-12.notes.html) [[Worksheet]](2021-11-12.worksheet.html) [[Slides]](2021-11-12.slides.html)
+* Exam 3 review (2021-11-15) [[Notes]](2021-11-15.notes.html) [[Worksheet]](2021-11-15.worksheet.html) [[Slides]](2021-11-15.slides.html)
