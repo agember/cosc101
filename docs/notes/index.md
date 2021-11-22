@@ -32,3 +32,4 @@
 * writing; exceptions (2021-11-10) [[Notes]](2021-11-10.notes.html) [[Worksheet]](2021-11-10.worksheet.html) [[Slides]](2021-11-10.slides.html)
 * data analysis (2021-11-12) [[Notes]](2021-11-12.notes.html) [[Worksheet]](2021-11-12.worksheet.html) [[Slides]](2021-11-12.slides.html)
 * Exam 3 review (2021-11-15) [[Notes]](2021-11-15.notes.html) [[Worksheet]](2021-11-15.worksheet.html) [[Slides]](2021-11-15.slides.html)
+* dictionaries (2021-11-19) [[Notes]](2021-11-19.notes.html) [[Worksheet]](2021-11-19.worksheet.html) [[Slides]](2021-11-19.slides.html)
