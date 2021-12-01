@@ -34,3 +34,4 @@
 * Exam 3 review (2021-11-15) [[Notes]](2021-11-15.notes.html) [[Worksheet]](2021-11-15.worksheet.html) [[Slides]](2021-11-15.slides.html)
 * dictionaries (2021-11-19) [[Notes]](2021-11-19.notes.html) [[Worksheet]](2021-11-19.worksheet.html) [[Slides]](2021-11-19.slides.html)
 * references (2021-11-29) [[Notes]](2021-11-29.notes.html) [[Worksheet]](2021-11-29.worksheet.html) [[Slides]](2021-11-29.slides.html)
+* recursion (2021-12-01) [[Notes]](2021-12-01.notes.html) [[Worksheet]](2021-12-01.worksheet.html) [[Slides]](2021-12-01.slides.html)
