@@ -38,3 +38,4 @@
 * introduction to machine learning (2021-12-03) [[Notes]](2021-12-03.notes.html) [[Worksheet]](2021-12-03.worksheet.html) [[Slides]](2021-12-03.slides.html)
 * decision trees (2021-12-06) [[Notes]](2021-12-06.notes.html) [[Worksheet]](2021-12-06.worksheet.html) [[Slides]](2021-12-06.slides.html)
 * random forests; implications of machine learning (2021-12-08) [[Notes]](2021-12-08.notes.html) [[Worksheet]](2021-12-08.worksheet.html) [[Slides]](2021-12-08.slides.html)
+* review (2021-12-08) [[Notes]](2021-12-10.notes.html) [[Worksheet]](2021-12-10.worksheet.html) [[Slides]](2021-12-10.slides.html)
