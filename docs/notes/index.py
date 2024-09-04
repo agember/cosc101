@@ -21,7 +21,7 @@ with open('index.md', 'w') as index:
             else:
                 category = None
             date = contents["cells"][0]["source"][1].split(",")[2].strip(" _")
-            notes_filename = filename.replace('.ipynb', '.notes.html')
+            solution_filename = filename.replace('.ipynb', '.solution.html')
             worksheet_filename = filename.replace('.ipynb', '.worksheet.html')
         else:
             continue
@@ -34,7 +34,7 @@ with open('index.md', 'w') as index:
             index.write(f" [[Worksheet]]({worksheet_filename})")
             if (datetime.date.today() > dateutil.parser.parse(date).date()
                 or (datetime.date.today() == dateutil.parser.parse(date).date() and datetime.datetime.now().hour >= 9)):
-                index.write(f"[[Notes & Solutions]]({notes_filename})")
+                index.write(f"[[Solution]]({solution_filename})")
             index.write("\n")
             last_category = category
 
