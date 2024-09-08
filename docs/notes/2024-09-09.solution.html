@@ -4,6 +4,7 @@
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>2024-09-09</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<link href="custom.css" rel="stylesheet"/>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -8102,17 +8103,19 @@ Cell <span class="ansi-green-fg">In[5], line 2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Directions:"</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"1. Preheat oven to 375°F. Put liners in"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">dozen</span><span class="p">)</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"muffin cups."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"1. Preheat oven to 375°F."</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"2. Cream butter and sugar until light and fluffy. Beat in eggs one at a time."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"2. Put liners in"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">dozen</span><span class="p">)</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"muffin cups."</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"3. Combine flour"</span><span class="p">,</span> <span class="s2">"salt"</span><span class="p">,</span> <span class="s2">"and baking soda."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"3. Cream butter and sugar until light and fluffy. Beat in eggs one at a time."</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"4. Add flour mixture and milk to butter and sugar; beat well."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"4. Combine flour"</span><span class="p">,</span> <span class="s2">"salt"</span><span class="p">,</span> <span class="s2">"and baking soda."</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"5. Divide batter evenly among"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">dozen</span><span class="p">)</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"muffin cups."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"5. Add flour mixture and milk to butter and sugar; beat well."</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"6. Bake for 18 minutes or until a toothpick comes out clean. Cool in pans."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"6. Divide batter evenly among"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">dozen</span><span class="p">)</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"muffin cups."</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"7. Bake for 18 minutes or until a toothpick comes out clean. Cool in pans."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8153,13 +8156,11 @@ Cell <span class="ansi-green-fg">In[5], line 2</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Directions:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"1. Preheat oven to 375°F."</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"2. Put liners in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"3. Cream butter and sugar until light and fluffy."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"4. Beat in eggs one at a time."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"5. Combine flour, salt, and baking soda."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"6. Add flour mixture and milk to butter and sugar; beat well."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"7. Divide batter evenly among muffin cups."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"8. Bake for 18 minutes or until a toothpick comes out clean."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"9. Cool in pans and enjoy!"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"3. Cream butter and sugar until light and fluffy. Beat in eggs one at a time."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"4. Combine flour, salt, and baking soda."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"5. Add flour mixture and milk to butter and sugar; beat well."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"6. Divide batter evenly among"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"muffin cups."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"7. Bake for 18 minutes or until a toothpick comes out clean. Cool in pans."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8173,7 +8174,7 @@ Cell <span class="ansi-green-fg">In[5], line 2</span>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>You will need:
+<pre>Ingredients:
 * 2 cups flour
 * 0.5 tsp salt
 * 2 tsp baking powder
@@ -8184,13 +8185,11 @@ Cell <span class="ansi-green-fg">In[5], line 2</span>
 Directions:
 1. Preheat oven to 375°F.
 2. Put liners in 24 muffin cups.
-3. Cream butter and sugar until light and fluffy.
-4. Beat in eggs one at a time.
-5. Combine flour, salt, and baking soda.
-6. Add flour mixture and milk to butter and sugar; beat well.
-7. Divide batter evenly among muffin cups.
-8. Bake for 18 minutes or until a toothpick comes out clean.
-9. Cool in pans and enjoy!
+3. Cream butter and sugar until light and fluffy. Beat in eggs one at a time.
+4. Combine flour, salt, and baking soda.
+5. Add flour mixture and milk to butter and sugar; beat well.
+6. Divide batter evenly among24muffin cups.
+7. Bake for 18 minutes or until a toothpick comes out clean. Cool in pans.
 </pre>
 </div>
 </div>
@@ -8211,7 +8210,7 @@ Directions:
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_answer" id="cell-id=25a4ae05-5b99-4c12-9b32-2ea07ad85d1f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_question" id="cell-id=25a4ae05-5b99-4c12-9b32-2ea07ad85d1f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8234,7 +8233,9 @@ Directions:
 
 <span class="n">heat_index_C</span> <span class="o">=</span> <span class="p">(</span><span class="n">temperature</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Heat index: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">heat_index_F</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s2">"°F / "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">heat_index_C</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s2">"°C"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Heat index: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">heat_index_F</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s2">"°F"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">" / "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">heat_index_C</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s2">"°C"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8277,46 +8278,6 @@ Heat index: 99.7°F / 37.6°C
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d73d7f29-6ceb-4243-a398-9f31bbdccd83">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Recall:-computational-thinking">Recall: computational thinking<a class="anchor-link" href="#Recall:-computational-thinking">¶</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3b6cb65e-8075-4784-9c1b-19e3167d8b5e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>Recall that patterns and abstraction are two important parts of computational thinking<ul>
-<li><em>How do these apply to our cupcake recipe program?</em></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2d1f6e69-f624-49c2-86fc-93079a85aea2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>We should divide our code into pieces, just like we divide the problem into pieces<ul>
-<li>Start by adding some blank lines to separate sections of the code</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ecf8b2eb-924f-4c2b-8935-95577213d226">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8336,7 +8297,7 @@ Heat index: 99.7°F / 37.6°C
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d600225e-7018-40ef-813e-bc3e52872dee">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_answer" id="cell-id=d600225e-7018-40ef-813e-bc3e52872dee">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
