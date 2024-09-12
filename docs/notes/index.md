@@ -9,4 +9,5 @@
 * errors & debugging [[Worksheet]](2024-09-09.worksheet.html)[[Solution]](2024-09-09.solution.html)
 
 ## Functions
-* definition; parameters [[Worksheet]](2024-09-11.worksheet.html)
+* definition; control flow; parameters [[Worksheet]](2024-09-11.worksheet.html)
+* scope; return [[Worksheet]](2024-09-13.worksheet.html)

@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>2024-09-11</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>2024-09-13</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <link href="custom.css" rel="stylesheet"/>
 <style type="text/css">
     pre { line-height: 125%; }
@@ -7516,7 +7516,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Functions:-definition;-control-flow;-parameters">Functions: definition; control flow; parameters<a class="anchor-link" href="#Functions:-definition;-control-flow;-parameters">¶</a></h1><p><em>COSC 101, Introduction to Computing I, 2024-09-11</em></p>
+<h1 id="Functions:-scope;-return">Functions: scope; return<a class="anchor-link" href="#Functions:-scope;-return">¶</a></h1><p><em>COSC 101, Introduction to Computing I, 2024-09-13</em></p>
 </div>
 </div>
 </div>
@@ -7527,23 +7527,48 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h2><ul>
-<li>Homework 1 due Thursday at 11:59pm</li>
+<li>Homework 2 posted on Moodle</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ad610e2b-9fd1-4696-b29c-270f1741787a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a561529f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
+<h2 id="Outline">Outline<a class="anchor-link" href="#Outline">¶</a></h2><ul>
+<li>Warm-up</li>
+<li>Review warm-up</li>
+<li>Scope</li>
+<li>Return</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d0bba273-649f-4f59-940c-ab50027021ac">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Warm-up">Warm-up<a class="anchor-link" href="#Warm-up">¶</a></h2>
+<h2 id="Happy-Colgate-day!">Happy Colgate day!<a class="anchor-link" href="#Happy-Colgate-day!">¶</a></h2><h2 id="Warm-up:-warm-up-from-last-class-session">Warm-up: warm-up from last class session<a class="anchor-link" href="#Warm-up:-warm-up-from-last-class-session">¶</a></h2>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=92e5ddb2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a08f3575-89ea-48a0-b886-346d5f2c6754">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><em>Look at the feedback you received. Compare your answers to the answers below. We'll review the problems as a class.</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=841e15b1-78f2-459d-a44a-29a09d51deb3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7552,7 +7577,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=2b98eacf">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=61d4c389-41c0-4575-8f0f-2ca851f0567c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7575,32 +7600,24 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b3af18a5-40d9-4e88-822b-d457419815d3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>That is a &lt;class 'str'&gt;
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<pre><code>What did you see? frog
+That is a &lt;class 'str'&gt;
 I saw 4-30 of them, not -26
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>I also saw 420 &lt;class 'str'&gt;
+How manyfrogs did you see?20
+I also saw 420 &lt;class 'str'&gt;
 I wish I saw 50 frog s
-</pre>
+</code></pre>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=73501247-9f89-4bcc-ab05-78790b9f2a3e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6b17be13-0782-4d6a-b3ee-a1c225dc671f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7609,7 +7626,7 @@ I wish I saw 50 frog s
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_answer" id="cell-id=961ae225">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8ce87159-21d8-47c8-8c64-767f95b74d80">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7628,125 +7645,27 @@ I wish I saw 50 frog s
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2dec4168-a8af-409f-a4a9-0c19e65d0df2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>You were born in 1987
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<pre><code>How old are you?  37
+You were born in 1987
 You will be 63 in 2050
 You will be twice as old in 2098
-</pre>
+</code></pre>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d73d7f29-6ceb-4243-a398-9f31bbdccd83">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8f6b0d92-2870-4bd9-95eb-ad7fe9c1431e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Recall:-computational-thinking">Recall: computational thinking<a class="anchor-link" href="#Recall:-computational-thinking">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fc877737-e25e-43cf-849d-5b77c5edd3a2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dozen</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many dozen cupcakes do you want?"</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Ingredients:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"cups flour"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"tsp salt"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"tsp baking powder"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"cups butter"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="s2">"cups sugar"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"eggs"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"cups milk"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Directions:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"1. Preheat oven to 375°F."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"2. Put liners in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"3. Cream butter and sugar until light and fluffy. Beat in eggs one at a time."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"4. Combine flour, salt, and baking soda."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"5. Add flour mixture and milk to butter and sugar; beat well."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"6. Divide batter evenly among "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"7. Bake for 18 minutes or until a toothpick comes out clean. Cool in pans."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c1ecfbcd-942c-41ee-bdc9-337c0023f7b1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Control-flow">Control flow<a class="anchor-link" href="#Control-flow">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=a6c20974-5419-4304-8502-1d3026a2820c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">demoFn</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"demoFn 1"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"demoFn 2"</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"before demoFn"</span><span class="p">)</span>
-    <span class="n">demoFn</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"after demoFn"</span><span class="p">)</span>
-
-<span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>before demoFn
-demoFn 1
-demoFn 2
-after demoFn
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=620fd919-bad3-4134-9593-99f9a7616b06">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_answer" data-mime-type="text/markdown">
-<p><img alt="Flowchart for example" src="figures/functions/example_executing.png"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5fc1995b-dc00-4c80-9f98-16ca756f417c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Functions">Functions<a class="anchor-link" href="#Functions">¶</a></h2>
+<h2 id="Functions-(from-last-class-session)">Functions (from last class session)<a class="anchor-link" href="#Functions-(from-last-class-session)">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7756,83 +7675,61 @@ after demoFn
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>What does the following program output?</em></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=71f42c69-50f9-4dc5-a038-d271406e3a38">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, "</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">welcome</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Welcome to Hamilton!"</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">sports</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"You can play "</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s2">" or "</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">greet</span><span class="p">(</span><span class="s2">"Aaron"</span><span class="p">)</span>
-    <span class="n">welcome</span><span class="p">()</span>
-    <span class="n">sports</span><span class="p">(</span><span class="s2">"tennis"</span><span class="p">,</span> <span class="s2">"basketball"</span><span class="p">)</span>
-    
-<span class="n">main</span><span class="p">()</span>
-</pre></div>
+<p><em>Complete the Functions problems on the worksheet from the previous class session</em></p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Hello, Aaron
-Welcome to Hamilton!
-You can play tennis or basketball
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c2aed500-dda5-467c-b4c0-c76127a0c2ec">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=829ec18c-a05f-48cb-a0b6-daf17bf894eb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><em>What does the following program output?</em></p>
+<h2 id="Scope">Scope<a class="anchor-link" href="#Scope">¶</a></h2>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=3d33a969-57a7-4776-938a-48f980b8cc1a">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c9cfa69a-37b4-4179-b440-59be20bb2e12">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
+<ul>
+<li>Recall: a variable is a vessel for a value</li>
+<li>Recall: variables only exist within a paticular function</li>
+<li>Proper terminology<ul>
+<li>Argument – included in the function call; can be values, variables, or expressions (e.g., mathematical operation or another function call)</li>
+<li>Parameter – listed in function definition; treat like a variable</li>
+<li>Arguments are <strong>passed</strong> to the function --&gt; the values codified by the arguments are stored in the parameters</li>
+</ul>
+</li>
+<li>Modifying one variable does not change other variables --&gt; modifying a parameter does not change the argument</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=cf869dee-2a00-4798-828f-59b472834ac0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, "</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">welcome</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Welcome to Hamilton!"</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">sports</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"You can play "</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s2">" or "</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">demo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a is"</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"b is"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="c1">#cannot use (e.g., print) n</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"now b is"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">welcome</span><span class="p">()</span>
-    <span class="n">sports</span><span class="p">(</span><span class="s2">"tennis"</span><span class="p">,</span> <span class="s2">"basketball"</span><span class="p">)</span>
-    <span class="n">sports</span><span class="p">(</span><span class="s2">"football"</span><span class="p">,</span> <span class="s2">"volleyball"</span><span class="p">)</span>
-    <span class="n">greet</span><span class="p">(</span><span class="s2">"Aaron"</span><span class="p">)</span>
-    
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"n is"</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">demo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="c1">#cannot use (e.g., print) a or b</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"n is still"</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
 <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -7845,48 +7742,308 @@ You can play tennis or basketball
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Welcome to Hamilton!
-You can play tennis or basketball
-You can play football or volleyball
-Hello, Aaron
+<pre>n is 5
+a is 1
+b is 5
+now b is 10
+n is still 5
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5ef6eff1-4d21-4cd2-91a5-dc6598084bcd">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d6e00674-db34-4773-b29c-20fc93dd5d8c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
+<ul>
+<li>Even if you use the same parameter or variable name in two different functions, they are not the same parameter or variable!</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=f7225e72-c2e8-4245-b3cf-2964e030fd47">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">demo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a is"</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"n is"</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"now n is"</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"n is"</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">demo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"n is still"</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>n is 5
+a is 1
+n is 5
+now n is 10
+n is still 5
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5f717ea2-b46c-4c4f-9b56-763fe120ffdf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
+<ul>
+<li>How do we modify a value inside a function and have that reflected outside of the function?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a020b06c-129b-4f7d-ac28-0745993010b7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Return-values">Return values<a class="anchor-link" href="#Return-values">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=0006aef1-7063-43bd-95db-6058d598608e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="n">balance</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">balance</span> <span class="o">=</span> <span class="n">balance</span> <span class="o">+</span> <span class="n">amount</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Balance: $"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">balance</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mf">50.0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Starting balance: $"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
+    <span class="n">add1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"First deposit: $"</span><span class="p">))</span>
+    <span class="n">deposit</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">add1</span><span class="p">)</span>
+    <span class="n">add2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Second deposit: $"</span><span class="p">))</span>
+    <span class="n">deposit</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">add2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ending balance: $"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Starting balance: $50.0
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Balance: $75.0
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Balance: $60.0
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Balance: $30.0
+Final balance: $50.0
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6eedc1ee-8b9b-4e60-9f04-3c8f002c8d4f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
+<ul>
+<li>Use <code>return</code> to provide a value <strong>from</strong> a function<ul>
+<li>Recall: arguments and parameters provide a value <strong>to</strong> a function</li>
+</ul>
+</li>
+<li>Proper terminology<ul>
+<li>Callee – function that was called</li>
+<li>Caller – function that made the call</li>
+<li>Caller passes arguments to the callee</li>
+<li>Callee returns to the caller</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_notes-only" id="cell-id=2c2b4ea4-c037-4d03-ad1d-e63458fd45bd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="n">balance</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">balance</span> <span class="o">=</span> <span class="n">balance</span> <span class="o">+</span> <span class="n">amount</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Balance: $"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">balance</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">balance</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mf">50.0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Starting balance: $"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
+    <span class="n">add1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"First deposit: $"</span><span class="p">))</span>
+    <span class="n">deposit</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">add1</span><span class="p">)</span>
+    <span class="n">add2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Second deposit: $"</span><span class="p">))</span>
+    <span class="n">deposit</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">add2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ending balance: $"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4d04eac6-fe89-48aa-a0d5-f74dfb18be61">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
+<ul>
+<li>Caller should store (in a variable) or print the return value</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_notes-only" id="cell-id=8dccca32-1ab6-4a8d-bcae-84e677b1dc8c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="n">balance</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">balance</span> <span class="o">=</span> <span class="n">balance</span> <span class="o">+</span> <span class="n">amount</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Balance: $"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">balance</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">balance</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mf">50.0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Starting balance: $"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
+    <span class="n">add1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"First deposit: $"</span><span class="p">))</span>
+    <span class="n">new_total1</span> <span class="o">=</span> <span class="n">deposit</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">add1</span><span class="p">)</span>
+    <span class="n">add2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Second deposit: $"</span><span class="p">))</span>
+    <span class="n">new_total2</span> <span class="o">=</span> <span class="n">deposit</span><span class="p">(</span><span class="n">new_tota1</span><span class="p">,</span> <span class="n">add2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ending balance: $"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">new_total2</span><span class="p">))</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6877555b-113f-48e4-bbb3-e7650f5aa027">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
+<ul>
+<li>Reuse variables when appropriate</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_notes-only" id="cell-id=a5f01396-415f-4fa9-acd5-25f5df6b651e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="n">balance</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">balance</span> <span class="o">=</span> <span class="n">balance</span> <span class="o">+</span> <span class="n">amount</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Balance: $"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">balance</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">balance</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mf">50.0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Starting balance: $"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
+    <span class="n">add1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"First deposit: $"</span><span class="p">))</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">deposit</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">add1</span><span class="p">)</span>
+    <span class="n">add2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Second deposit: $"</span><span class="p">))</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">deposit</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">add2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ending balance: $"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a3886306-af0f-4981-b892-cef61f8ee0fe">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>For each of the following programs, indicate: (1) what the program outputs; (2) the order in which the statements will execute, starting with the <code>print("BEGIN")</code> statement</em></p>
+<p><em>What is the output of each of the following programs?</em></p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=a836ef49-42ac-4e0c-9995-cd228658df79">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=99f24ccd-34fb-4572-97bd-9df838e2f40b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">halve</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>   <span class="c1"># Line 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1"># Line 2</span>
-    
-<span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>  <span class="c1"># Line 3</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1"># Line 4</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">magic</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">2</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>          <span class="c1"># Line 5</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"BEGIN"</span><span class="p">)</span>   <span class="c1"># Line 6</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">8</span>            <span class="c1"># Line 7</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Double"</span><span class="p">)</span>  <span class="c1"># Line 8</span>
-    <span class="n">double</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>        <span class="c1"># Line 9</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Half"</span><span class="p">)</span>    <span class="c1"># Line 10</span>
-    <span class="n">halve</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>         <span class="c1"># Line 11</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"END"</span><span class="p">)</span>     <span class="c1"># Line 12</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"x was "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">magic</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"now it is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
-<span class="n">main</span><span class="p">()</span>               <span class="c1"># Line 13</span>
+<span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7898,46 +8055,31 @@ Hello, Aaron
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>BEGIN
-Double
-16
-Half
-4.0
-END
+<pre>x was 5
+now it is 10
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9ef840e7-c12c-4fef-982a-bc0afafdb846">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_answer" data-mime-type="text/markdown">
-<p>1, 3, 5, 13, 6, 7, 8, 9, 4, 10, 11, 2, 12</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=f2fdeba8-d907-4445-9f26-6ed10159ebb3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=080cde72-f03a-4905-ad91-632563d8cc1c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span> <span class="c1"># Line 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>     <span class="c1"># Line 2</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="n">num1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num2</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num3</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span> <span class="o">+</span> <span class="n">num3</span>
+    <span class="k">return</span> <span class="n">total</span> <span class="o">/</span> <span class="mi">3</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>          <span class="c1"># Line 3</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"BEGIN"</span><span class="p">)</span>   <span class="c1"># Line 4</span>
-    <span class="nb">sum</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>        <span class="c1"># Line 5</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>            <span class="c1"># Line 6</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="mi">6</span>            <span class="c1"># Line 7</span>
-    <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>        <span class="c1"># Line 8</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"END"</span><span class="p">)</span>     <span class="c1"># Line 9</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">average</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"average ="</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+    <span class="n">average</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"average ="</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 
-<span class="n">main</span><span class="p">()</span>               <span class="c1"># Line 10</span>
+<span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7949,172 +8091,61 @@ END
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>BEGIN
-7
-11
-END
+<pre>average = 15.0
+average = 15.0
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7930ff34-216d-4618-9b81-ca1844df9ff9">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_answer" data-mime-type="text/markdown">
-<p>1, 3, 10, 4, 5, 2, 6, 7, 8, 2, 9</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=70778841-a8e5-46f9-a202-4990b3608170">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>               <span class="c1"># Line 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"BEGIN"</span><span class="p">)</span>        <span class="c1"># Line 2</span>
-    <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>             <span class="c1"># Line 3</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">8</span>                 <span class="c1"># Line 4</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>                 <span class="c1"># Line 5</span>
-    <span class="n">sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>             <span class="c1"># Line 6</span>
-    <span class="n">add</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1"># Line 7</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"END"</span><span class="p">)</span>          <span class="c1"># Line 8</span>
-
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>  <span class="c1"># Line 9     </span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>          <span class="c1"># Line 10</span>
-    
-<span class="k">def</span> <span class="nf">sub</span><span class="p">(</span><span class="n">c</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>  <span class="c1"># Line 11</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">c</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span>          <span class="c1"># Line 12</span>
-
-<span class="n">main</span><span class="p">()</span>                    <span class="c1"># Line 13</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>BEGIN
-5
-6
-13
-END
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=00250d3d-1670-4575-abc4-bb46f5bfe46b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_answer" data-mime-type="text/markdown">
-<p>1, 9, 11, 13, 2, 3, 10, 4, 5, 6, 12, 7, 10, 8</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=00acefdc-7939-4319-a84d-d1fb766c132d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">increment</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>   <span class="c1"># Line 1 </span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>            <span class="c1"># Line 2 </span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>              <span class="c1"># Line 3</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>                <span class="c1"># Line 4 </span>
-    <span class="n">increment</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>         <span class="c1"># Line 5</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>             <span class="c1"># Line 6</span>
-
-<span class="n">main</span><span class="p">()</span>                   <span class="c1"># Line 7</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>2
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b6ecbdc9-4501-44b9-b529-4b7d20949bc7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_answer" data-mime-type="text/markdown">
-<p>1, 3, 7, 4, 5, 2, 6</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ecf8b2eb-924f-4c2b-8935-95577213d226">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8a4eae58-29e5-40ea-9e93-27e91a0039ff">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Extra-practice">Extra practice<a class="anchor-link" href="#Extra-practice">¶</a></h2>
+<p><em>Write a function <code>convert_to_meters</code> that takes a distance in feet and inches and computes the distance in meters. Note: 1 foot is 12 inches and 1 foot is 0.3058 meters.</em></p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=74016f75-4b21-46c6-8328-35b6ccc7c61a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><em>Write a program that asks for an amount of change (in cents) and outputs how many quarters (25¢), dimes (10¢), nickels (5¢), and pennies (1¢) are needed to obtain the target amount.</em></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_answer" id="cell-id=257228bb-3c12-4c18-a7c1-bf28b93b0f95">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_answer" id="cell-id=d1f8ec46-404c-4e87-b7e1-020a385cbd29">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">change</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Change (in cents):"</span><span class="p">))</span>
-<span class="n">quarters</span> <span class="o">=</span> <span class="n">change</span> <span class="o">//</span> <span class="mi">25</span>
-<span class="n">change</span> <span class="o">=</span> <span class="n">change</span> <span class="o">%</span> <span class="mi">25</span>
-<span class="n">dimes</span> <span class="o">=</span> <span class="n">change</span> <span class="o">//</span> <span class="mi">10</span>
-<span class="n">change</span> <span class="o">=</span> <span class="n">change</span> <span class="o">%</span> <span class="mi">10</span>
-<span class="n">nickels</span> <span class="o">=</span> <span class="n">change</span> <span class="o">//</span> <span class="mi">5</span>
-<span class="n">change</span> <span class="o">=</span> <span class="n">change</span> <span class="o">%</span> <span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">quarters</span><span class="p">,</span> <span class="s2">"quarters,"</span><span class="p">,</span> <span class="n">dimes</span><span class="p">,</span> <span class="s2">"dimes,"</span><span class="p">,</span> <span class="n">nickels</span><span class="p">,</span> <span class="s2">"nickels, and"</span><span class="p">,</span> <span class="n">change</span><span class="p">,</span> <span class="s2">"pennies"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">convert_to_meters</span><span class="p">(</span><span class="n">feet</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">inches</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="n">feet</span> <span class="o">=</span> <span class="n">feet</span> <span class="o">+</span> <span class="n">inches</span> <span class="o">/</span> <span class="mi">12</span>
+    <span class="k">return</span> <span class="n">feet</span> <span class="o">*</span> <span class="mf">0.3058</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=37c3165b-2478-4844-b8cb-31855031d62a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>2 quarters, 1 dimes, 1 nickels, and 3 pennies
-</pre>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><em>Write a function <code>convert_to_dozen</code> that takes a quantity and converts the quantity to dozens, rounding up. For example, <code>convert_to_dozen(20)</code> should return <code>2</code>, because two dozen is 24 (whereas one dozen is only 12).</em></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_answer" id="cell-id=d4b23bba-5455-4f1a-a9af-66268cf957cd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">convert_to_dozen</span><span class="p">(</span><span class="n">quantity</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">dozen</span> <span class="o">=</span> <span class="n">quantity</span> <span class="o">//</span> <span class="mi">12</span>
+    <span class="n">remain</span> <span class="o">=</span> <span class="n">quantity</span> <span class="o">%</span> <span class="mi">12</span>
+    <span class="n">extra</span> <span class="o">=</span> <span class="p">(</span><span class="n">remain</span> <span class="o">+</span> <span class="mi">11</span><span class="p">)</span> <span class="o">//</span> <span class="mi">12</span>
+    <span class="k">return</span> <span class="n">dozen</span> <span class="o">+</span> <span class="n">extra</span>
+</pre></div>
 </div>
 </div>
 </div>
