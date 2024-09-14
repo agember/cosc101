@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>2024-09-11</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>2024-09-16</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <link href="custom.css" rel="stylesheet"/>
 <style type="text/css">
     pre { line-height: 125%; }
@@ -7516,7 +7516,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Functions:-definition;-control-flow;-parameters">Functions: definition; control flow; parameters<a class="anchor-link" href="#Functions:-definition;-control-flow;-parameters">¶</a></h1><p><em>COSC 101, Introduction to Computing I, 2024-09-11</em></p>
+<h1 id="Functions:-docstrings;-(de)composition">Functions: docstrings; (de)composition<a class="anchor-link" href="#Functions:-docstrings;-(de)composition">¶</a></h1><p><em>COSC 101, Introduction to Computing I, 2024-09-15</em></p>
 </div>
 </div>
 </div>
@@ -7527,1030 +7527,247 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h2><ul>
-<li>Homework 1 due Thursday at 11:59pm</li>
+<li>Homework 2 due Thursday at 11:59pm</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a561529f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<h2 id="Outline">Outline<a class="anchor-link" href="#Outline">¶</a></h2><ul>
-<li>Warm-up</li>
-<li>Defining functions</li>
-<li>Control flow</li>
-<li>Parameters</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ad610e2b-9fd1-4696-b29c-270f1741787a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4e0b409d-95ff-4232-91e8-a7c91cfccb60">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Warm-up">Warm-up<a class="anchor-link" href="#Warm-up">¶</a></h2>
+<h2 id="Docstrings">Docstrings<a class="anchor-link" href="#Docstrings">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5cba594d-76a4-4785-b69c-004f1fb748d1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">convert_to_meters</span><span class="p">(</span><span class="n">feet</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">inches</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Converts a length in feet and inches to meters</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        feet: feet component of length</span>
+<span class="sd">        inches: inches component of length</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        length in meters</span>
+<span class="sd">    """</span>
+    <span class="n">feet</span> <span class="o">=</span> <span class="n">feet</span> <span class="o">+</span> <span class="n">inches</span> <span class="o">/</span> <span class="mi">12</span>
+    <span class="k">return</span> <span class="n">feet</span> <span class="o">*</span> <span class="mf">0.3058</span>
+</pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=92e5ddb2">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b6ab0dcc-e58e-4a8a-8a74-3dab0407cb75">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>What is the output of the following program? Assume the user enters <code>frog</code> and <code>20</code> for the inputs.</em></p>
+<p><em>Write a good docstring for each of the following functions</em></p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=2b98eacf">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b3f327f7-1658-40e4-b728-d70d820bba21">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What did you see? "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"That is a"</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
-<span class="n">lower</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">upper</span> <span class="o">=</span> <span class="n">lower</span> <span class="o">+</span> <span class="mi">20</span>
-<span class="n">lower</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"I saw"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">lower</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">upper</span><span class="p">),</span> <span class="s2">"of them, not"</span><span class="p">,</span> <span class="n">lower</span> <span class="o">-</span> <span class="n">upper</span><span class="p">)</span>
-<span class="n">count</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"How many"</span> <span class="o">+</span> <span class="n">word</span> <span class="o">+</span> <span class="s2">"s did you see?"</span><span class="p">)</span>
-<span class="n">updated</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lower</span><span class="p">)</span> <span class="o">+</span> <span class="n">count</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"I also saw"</span><span class="p">,</span> <span class="n">updated</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
-<span class="n">updated</span> <span class="o">=</span> <span class="n">upper</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"I wish I saw"</span><span class="p">,</span> <span class="n">updated</span><span class="p">,</span> <span class="n">word</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">def</span> <span class="nf">funcA</span><span class="p">(</span><span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8109977b-82c6-45d1-ad4d-657326df9921">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>That is a &lt;class 'str'&gt;
-I saw 4-30 of them, not -26
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>I also saw 420 &lt;class 'str'&gt;
-I wish I saw 50 frog s
-</pre>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
+<pre><code>
+
+
+
+
+
+
+</code></pre>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ed8030f3-598b-4f44-aec8-a3f645710f6f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">funcB</span><span class="p">(</span><span class="n">hours</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">minutes</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">seconds</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">minutes</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">+</span> <span class="p">(</span><span class="n">hours</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">seconds</span> <span class="o">=</span> <span class="n">seconds</span> <span class="o">+</span> <span class="p">(</span><span class="n">minutes</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seconds</span>
+</pre></div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=73501247-9f89-4bcc-ab05-78790b9f2a3e">
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c53200f2-fb88-4dd9-b57d-ba97410ff18a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
+<pre><code>
+
+
+
+
+
+
+</code></pre>
+<p>🛑 <strong>STOP here</strong> after completing the docstrings; if you have extra time <strong>skip</strong> to the extra practice.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cc66a6bf-e803-4040-8686-cdb8ff90efdf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Decomposition-and-composition">Decomposition and composition<a class="anchor-link" href="#Decomposition-and-composition">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ea65c207-3e25-4a07-af16-737b4bd55072">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>Write a program that asks a user for their age and outputs the year they were born, how old they will be in 2050, and in what year they will twice their current age.</em></p>
+<p><em>A person's taxable income is their annual income minus eligible deductions (e.g., contributions to charity and a traditional individual retirement account (IRA)). Write a <code>main</code> function that uses built-in funtions and the functions below to compute a person's taxable income.</em></p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_answer" id="cell-id=961ae225">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f3ec9714-d8f9-4bd3-9e2b-14994efed405">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How old are you? "</span><span class="p">))</span>
-<span class="n">born</span> <span class="o">=</span> <span class="mi">2024</span> <span class="o">-</span> <span class="n">age</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"You were born in"</span><span class="p">,</span> <span class="n">born</span><span class="p">)</span>
-<span class="n">expected</span> <span class="o">=</span> <span class="mi">2050</span> <span class="o">-</span> <span class="mi">2024</span> <span class="o">+</span> <span class="n">age</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"You will be"</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="s2">"in 2050"</span><span class="p">)</span>
-<span class="n">twice</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">2024</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"You will be twice as old in"</span><span class="p">,</span> <span class="n">twice</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>You were born in 1987
-You will be 63 in 2050
-You will be twice as old in 2061
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d73d7f29-6ceb-4243-a398-9f31bbdccd83">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Recall:-computational-thinking">Recall: computational thinking<a class="anchor-link" href="#Recall:-computational-thinking">¶</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3b6cb65e-8075-4784-9c1b-19e3167d8b5e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<ul>
-<li>Recall that patterns and abstraction are two important parts of computational thinking<ul>
-<li><em>How do these apply to our cupcake recipe program?</em></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fc877737-e25e-43cf-849d-5b77c5edd3a2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dozen</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many dozen cupcakes do you want?"</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Ingredients:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"cups flour"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"tsp salt"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"tsp baking powder"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"cups butter"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="s2">"cups sugar"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"eggs"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"cups milk"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Directions:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"1. Preheat oven to 375°F."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"2. Put liners in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"3. Cream butter and sugar until light and fluffy. Beat in eggs one at a time."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"4. Combine flour, salt, and baking soda."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"5. Add flour mixture and milk to butter and sugar; beat well."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"6. Divide batter evenly among "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"7. Bake for 18 minutes or until a toothpick comes out clean. Cool in pans."</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">compute_deductions</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Calculate total deduction</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">        user's total deducation</span>
+<span class="sd">    """</span>
+    <span class="n">monthly</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How much did you contribute to charity each month? $"</span><span class="p">))</span>
+    <span class="n">charity</span> <span class="o">=</span> <span class="n">monthly</span> <span class="o">*</span> <span class="mi">12</span>
+    <span class="n">monthly</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How much did you contribute to a tradtional IRA each month? $"</span><span class="p">))</span>
+    <span class="n">ira</span> <span class="o">=</span> <span class="n">monthly</span> <span class="o">*</span> <span class="mi">12</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">charity</span> <span class="o">+</span> <span class="n">ira</span>
+    <span class="k">return</span> <span class="n">total</span>
+
+<span class="k">def</span> <span class="nf">taxable</span><span class="p">(</span><span class="n">income</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">deductions</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Calculate taxable income</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        income: annual income</span>
+<span class="sd">        deductions: total deductions</span>
+<span class="sd">    Return:</span>
+<span class="sd">        taxable income</span>
+<span class="sd">    """</span>
+    <span class="n">taxable</span> <span class="o">=</span> <span class="n">income</span> <span class="o">-</span> <span class="n">deductions</span>
+    <span class="k">return</span> <span class="n">taxable</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2d1f6e69-f624-49c2-86fc-93079a85aea2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c8c0c55a-62ca-45c3-9cc1-f674c4c7bcb1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<ul>
-<li>We should divide our code into pieces, just like we divide the problem into pieces<ul>
-<li>Start by adding some blank lines to separate sections of the code</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_notes-only" id="cell-id=c014ce6c-2bd2-49ad-b08e-93eb25831e97">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dozen</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many dozen cupcakes do you want?"</span><span class="p">))</span>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
+<pre><code>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Ingredients:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"cups flour"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"tsp salt"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"tsp baking powder"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"cups butter"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="s2">"cups sugar"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"eggs"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"cups milk"</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Directions:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"1. Preheat oven to 375°F."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"2. Put liners in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"3. Cream butter and sugar until light and fluffy. Beat in eggs one at a time."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"4. Combine flour, salt, and baking soda."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"5. Add flour mixture and milk to butter and sugar; beat well."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"6. Divide batter evenly among "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"7. Bake for 18 minutes or until a toothpick comes out clean. Cool in pans."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d0a3bccd-a80c-47cd-be52-ef91beb68803">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<h2 id="Defining-functions">Defining functions<a class="anchor-link" href="#Defining-functions">¶</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=815c7042-2016-4dc7-b557-d2895d59741c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<ul>
-<li>Group related lines into functions</li>
-<li>Recall from the reading: <em>how do we create our own function?</em><ul>
-<li>Indent statements within function</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_notes-only" id="cell-id=27886c65-def9-47a1-9544-1afab9deffeb">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">():</span>
-    <span class="n">First</span> <span class="n">statement</span> <span class="ow">in</span> <span class="n">function</span>
-    <span class="n">Second</span> <span class="n">statement</span> <span class="ow">in</span> <span class="n">function</span>
-    <span class="o">...</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2dbbf2fa-5c00-49ab-a96b-9c3fe07bb61e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<ul>
-<li>Let's modify our cupcake program to include functions</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_notes-only" id="cell-id=bd5cf08f-947c-4c68-b363-3f9e2dbc2c1e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dozen</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many dozen cupcakes do you want?"</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">ingredients</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ingredients:"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"cups flour"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"tsp salt"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"tsp baking powder"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"cups butter"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="s2">"cups sugar"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"eggs"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"cups milk"</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">directions</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Directions:"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"1. Preheat oven to 375°F."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"2. Put liners in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"3. Cream butter and sugar until light and fluffy. Beat in eggs one at a time."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"4. Combine flour, salt, and baking soda."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"5. Add flour mixture and milk to butter and sugar; beat well."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"6. Divide batter evenly among "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"7. Bake for 18 minutes or until a toothpick comes out clean. Cool in pans."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f2fd25eb-2a3c-41dd-a350-d5fa24d5ec99">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<ul>
-<li><em>Why does our program no longer print the ingredients and directions?</em> – need to call the functions!</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_notes-only" id="cell-id=0f96cc12-3745-40ca-8efc-1c109c16f070">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dozen</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many dozen cupcakes do you want?"</span><span class="p">))</span>
-<span class="n">ingredients</span><span class="p">()</span>
-<span class="n">directions</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">ingredients</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ingredients:"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"cups flour"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"tsp salt"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"tsp baking powder"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"cups butter"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="s2">"cups sugar"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"eggs"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"cups milk"</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">directions</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Directions:"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"1. Preheat oven to 375°F."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"2. Put liners in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"3. Cream butter and sugar until light and fluffy. Beat in eggs one at a time."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"4. Combine flour, salt, and baking soda."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"5. Add flour mixture and milk to butter and sugar; beat well."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"6. Divide batter evenly among "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"7. Bake for 18 minutes or until a toothpick comes out clean. Cool in pans."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3cd636c1-0c31-4688-9d2c-ffabaf3d2e30">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<ul>
-<li><em>Why we receive an error that <code>ingredients</code> is not defined?</em> – function must be defined before it is called</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_notes-only" id="cell-id=39c28ea2-7a04-4561-b996-16b95ff54a28">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dozen</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many dozen cupcakes do you want?"</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">ingredients</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ingredients:"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"cups flour"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"tsp salt"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"tsp baking powder"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"cups butter"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="s2">"cups sugar"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"eggs"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"cups milk"</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">directions</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Directions:"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"1. Preheat oven to 375°F."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"2. Put liners in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"3. Cream butter and sugar until light and fluffy. Beat in eggs one at a time."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"4. Combine flour, salt, and baking soda."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"5. Add flour mixture and milk to butter and sugar; beat well."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"6. Divide batter evenly among "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"7. Bake for 18 minutes or until a toothpick comes out clean. Cool in pans."</span><span class="p">)</span>
 
-<span class="n">ingredients</span><span class="p">()</span>
-<span class="n">directions</span><span class="p">()</span>
-</pre></div>
+</code></pre>
+<div style="page-break-after:always;"></div>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c1ecfbcd-942c-41ee-bdc9-337c0023f7b1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Control-flow">Control flow<a class="anchor-link" href="#Control-flow">¶</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2174a220-1f33-4bea-8737-fc1d7c6baa7c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<ul>
-<li><em>In what order do the lines of code execute?</em><ul>
-<li>Call to input</li>
-<li>Definition of ingredients</li>
-<li>Defintion of directions</li>
-<li>Call to ingredients – execute every print statement in ingredients function</li>
-<li>Call to directions – execute every print statement in directions function</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=68801654-49e8-4b19-859c-b8d6a93b0ff1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<ul>
-<li>Confusing to have some code at the top, some code at the bottom, and some code in functions<ul>
-<li>Add a function called <code>main</code>, which is where the program starts</li>
-<li>Still need a call to <code>main</code> at the very end of the file</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_notes-only" id="cell-id=7ead8d19-3de8-4267-abb1-e4ebe27c46d3">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ingredients</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ingredients:"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"cups flour"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"tsp salt"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"tsp baking powder"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"cups butter"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="s2">"cups sugar"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"eggs"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"cups milk"</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">directions</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Directions:"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"1. Preheat oven to 375°F."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"2. Put liners in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"3. Cream butter and sugar until light and fluffy. Beat in eggs one at a time."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"4. Combine flour, salt, and baking soda."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"5. Add flour mixture and milk to butter and sugar; beat well."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"6. Divide batter evenly among "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"7. Bake for 18 minutes or until a toothpick comes out clean. Cool in pans."</span><span class="p">)</span><span class="s1">'</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">dozen</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many dozen cupcakes do you want?"</span><span class="p">))</span>
-    <span class="n">ingredients</span><span class="p">()</span>
-    <span class="n">directions</span><span class="p">()</span>
-
-<span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=a6c20974-5419-4304-8502-1d3026a2820c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">demoFn</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"demoFn 1"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"demoFn 2"</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"before demoFn"</span><span class="p">)</span>
-    <span class="n">demoFn</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"after demoFn"</span><span class="p">)</span>
-
-<span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>before demoFn
-demoFn 1
-demoFn 2
-after demoFn
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=620fd919-bad3-4134-9593-99f9a7616b06">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_answer" data-mime-type="text/markdown">
-<p><img alt="Flowchart for example" src="figures/functions/example_executing.png"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2c97fd71-f2eb-4289-86a7-179daa099cc4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<ul>
-<li><em>Why we receive an error that <code>dozen</code> is not defined?</em> – variables are not shared between functions</li>
-<li><em>How do we provide values to functions?</em> – using parameters</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d32b8c91-e5d9-4c83-8540-68965861a9d1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3257d38f-86b9-45a7-b2e3-4311c9efe4a5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<ul>
-<li><em>How do we define a function that takes a parameter?</em></li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_notes-only" id="cell-id=0f79d3a8-d587-4803-8a20-f952e5e52f68">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">parameter_name</span><span class="p">:</span> <span class="n">parameter_type</span><span class="p">):</span>
-    <span class="n">First</span> <span class="n">statement</span> <span class="ow">in</span> <span class="n">function</span>
-    <span class="n">Second</span> <span class="n">statement</span> <span class="ow">in</span> <span class="n">function</span>
-    <span class="o">...</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_notes-only" id="cell-id=aa607e8c-d489-4ae5-8c8f-a73953767134">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ingredients</span><span class="p">(</span><span class="n">dozen</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ingredients:"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"cups flour"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"tsp salt"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"tsp baking powder"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"cups butter"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="s2">"cups sugar"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"eggs"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"cups milk"</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">directions</span><span class="p">(</span><span class="n">dozen</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Directions:"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"1. Preheat oven to 375°F."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"2. Put liners in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"3. Cream butter and sugar until light and fluffy. Beat in eggs one at a time."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"4. Combine flour, salt, and baking soda."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"5. Add flour mixture and milk to butter and sugar; beat well."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"6. Divide batter evenly among "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"7. Bake for 18 minutes or until a toothpick comes out clean. Cool in pans."</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">dozen</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many dozen cupcakes do you want?"</span><span class="p">))</span>
-    <span class="n">ingredients</span><span class="p">(</span><span class="n">dozen</span><span class="p">)</span>
-    <span class="n">directions</span><span class="p">(</span><span class="n">dozen</span><span class="p">)</span>
-
-<span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e4d1739f-7f86-4b11-9791-dd4f3137b707">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<ul>
-<li>Not necessary to use the same name for the parameter in the function definition and the function call<ul>
-<li>They are two separate variables regardless of whether or not they have the same name</li>
-<li>A change to a parameter within a function does not impact the parameter included in the function call</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_notes-only" id="cell-id=85e298b6-640b-4122-add7-554516a33667">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ingredients</span><span class="p">(</span><span class="n">dozen</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ingredients:"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"cups flour"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"tsp salt"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"tsp baking powder"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"cups butter"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="s2">"cups sugar"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span><span class="p">,</span> <span class="s2">"eggs"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"cups milk"</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">directions</span><span class="p">(</span><span class="n">dozen</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-    <span class="n">dozen</span> <span class="o">=</span> <span class="n">dozen</span> <span class="o">*</span> <span class="mi">2</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Directions:"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"1. Preheat oven to 375°F."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"2. Put liners in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"3. Cream butter and sugar until light and fluffy. Beat in eggs one at a time."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"4. Combine flour, salt, and baking soda."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"5. Add flour mixture and milk to butter and sugar; beat well."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"6. Divide batter evenly among "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dozen</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" muffin cups."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"7. Bake for 18 minutes or until a toothpick comes out clean. Cool in pans."</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">desired</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many dozen cupcakes do you want?"</span><span class="p">))</span>
-    <span class="n">ingredients</span><span class="p">(</span><span class="n">desired</span><span class="p">)</span>
-    <span class="n">directions</span><span class="p">(</span><span class="n">desired</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Now you have"</span><span class="p">,</span> <span class="n">desired</span><span class="p">,</span> <span class="s2">"dozen cupcakes!"</span><span class="p">)</span>
-
-<span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5fc1995b-dc00-4c80-9f98-16ca756f417c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Functions">Functions<a class="anchor-link" href="#Functions">¶</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6523fd18-fbac-4de8-96fd-2b87406688f7">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=daf17f9a-23d1-48b0-b395-ce639b04d812">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>What does the following program output?</em></p>
+<p><em>Decompose the task of computing total deductions into subproblems and look for patterns. Write a new function based on the identified subproblems and patterns, and re-write the <code>compute_deductions</code> function to use your new function. Your re-written <code>compute_deductions</code> function should not require any changes to the <code>main</code> function your wrote above.</em></p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=71f42c69-50f9-4dc5-a038-d271406e3a38">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8c945a5c-29c1-42cd-9038-739f40bb0f8b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, "</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
+<pre><code>
 
-<span class="k">def</span> <span class="nf">welcome</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Welcome to Hamilton!"</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">sports</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"You can play "</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s2">" or "</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">greet</span><span class="p">(</span><span class="s2">"Aaron"</span><span class="p">)</span>
-    <span class="n">welcome</span><span class="p">()</span>
-    <span class="n">sports</span><span class="p">(</span><span class="s2">"tennis"</span><span class="p">,</span> <span class="s2">"basketball"</span><span class="p">)</span>
-    
-<span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Hello, Aaron
-Welcome to Hamilton!
-You can play tennis or basketball
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c2aed500-dda5-467c-b4c0-c76127a0c2ec">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><em>What does the following program output?</em></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=3d33a969-57a7-4776-938a-48f980b8cc1a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, "</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">welcome</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Welcome to Hamilton!"</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">sports</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"You can play "</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s2">" or "</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">welcome</span><span class="p">()</span>
-    <span class="n">sports</span><span class="p">(</span><span class="s2">"tennis"</span><span class="p">,</span> <span class="s2">"basketball"</span><span class="p">)</span>
-    <span class="n">sports</span><span class="p">(</span><span class="s2">"football"</span><span class="p">,</span> <span class="s2">"volleyball"</span><span class="p">)</span>
-    <span class="n">greet</span><span class="p">(</span><span class="s2">"Aaron"</span><span class="p">)</span>
-    
-<span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Welcome to Hamilton!
-You can play tennis or basketball
-You can play football or volleyball
-Hello, Aaron
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5ef6eff1-4d21-4cd2-91a5-dc6598084bcd">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>For each of the following programs, indicate: (1) what the program outputs; (2) the order in which the statements will execute, starting with the <code>print("BEGIN")</code> statement</em></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=a836ef49-42ac-4e0c-9995-cd228658df79">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">halve</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>   <span class="c1"># Line 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1"># Line 2</span>
-    
-<span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>  <span class="c1"># Line 3</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1"># Line 4</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>          <span class="c1"># Line 5</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"BEGIN"</span><span class="p">)</span>   <span class="c1"># Line 6</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">8</span>            <span class="c1"># Line 7</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Double"</span><span class="p">)</span>  <span class="c1"># Line 8</span>
-    <span class="n">double</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>        <span class="c1"># Line 9</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Half"</span><span class="p">)</span>    <span class="c1"># Line 10</span>
-    <span class="n">halve</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>         <span class="c1"># Line 11</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"END"</span><span class="p">)</span>     <span class="c1"># Line 12</span>
 
-<span class="n">main</span><span class="p">()</span>               <span class="c1"># Line 13</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>BEGIN
-Double
-16
-Half
-4.0
-END
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9ef840e7-c12c-4fef-982a-bc0afafdb846">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_answer" data-mime-type="text/markdown">
-<p>1, 3, 5, 13, 6, 7, 8, 9, 4, 10, 11, 2, 12</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=f2fdeba8-d907-4445-9f26-6ed10159ebb3">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span> <span class="c1"># Line 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>     <span class="c1"># Line 2</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>          <span class="c1"># Line 3</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"BEGIN"</span><span class="p">)</span>   <span class="c1"># Line 4</span>
-    <span class="nb">sum</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>        <span class="c1"># Line 5</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>            <span class="c1"># Line 6</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="mi">6</span>            <span class="c1"># Line 7</span>
-    <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>        <span class="c1"># Line 8</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"END"</span><span class="p">)</span>     <span class="c1"># Line 9</span>
 
-<span class="n">main</span><span class="p">()</span>               <span class="c1"># Line 10</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>BEGIN
-7
-11
-END
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7930ff34-216d-4618-9b81-ca1844df9ff9">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_answer" data-mime-type="text/markdown">
-<p>1, 3, 10, 4, 5, 2, 6, 7, 8, 2, 9</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=70778841-a8e5-46f9-a202-4990b3608170">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>               <span class="c1"># Line 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"BEGIN"</span><span class="p">)</span>        <span class="c1"># Line 2</span>
-    <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>             <span class="c1"># Line 3</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">8</span>                 <span class="c1"># Line 4</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>                 <span class="c1"># Line 5</span>
-    <span class="n">sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>             <span class="c1"># Line 6</span>
-    <span class="n">add</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1"># Line 7</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"END"</span><span class="p">)</span>          <span class="c1"># Line 8</span>
 
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>  <span class="c1"># Line 9     </span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>          <span class="c1"># Line 10</span>
-    
-<span class="k">def</span> <span class="nf">sub</span><span class="p">(</span><span class="n">c</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>  <span class="c1"># Line 11</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">c</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span>          <span class="c1"># Line 12</span>
 
-<span class="n">main</span><span class="p">()</span>                    <span class="c1"># Line 13</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>BEGIN
-5
-6
-13
-END
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=00250d3d-1670-4575-abc4-bb46f5bfe46b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_answer" data-mime-type="text/markdown">
-<p>1, 9, 11, 13, 2, 3, 10, 4, 5, 6, 12, 7, 10, 8</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=00acefdc-7939-4319-a84d-d1fb766c132d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">increment</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>   <span class="c1"># Line 1 </span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>            <span class="c1"># Line 2 </span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>              <span class="c1"># Line 3</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>                <span class="c1"># Line 4 </span>
-    <span class="n">increment</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>         <span class="c1"># Line 5</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>             <span class="c1"># Line 6</span>
 
-<span class="n">main</span><span class="p">()</span>                   <span class="c1"># Line 7</span>
-</pre></div>
+
+
+
+
+
+
+
+
+
+
+</code></pre>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>2
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b6ecbdc9-4501-44b9-b529-4b7d20949bc7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_answer" data-mime-type="text/markdown">
-<p>1, 3, 7, 4, 5, 2, 6</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ecf8b2eb-924f-4c2b-8935-95577213d226">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=852f0b9c-b31b-4831-a86d-2a286e316ef5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8560,45 +7777,158 @@ END
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=74016f75-4b21-46c6-8328-35b6ccc7c61a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4e365e63-1427-496d-a07d-bed198105cd6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><em>Write a program that asks for an amount of change (in cents) and outputs how many quarters (25¢), dimes (10¢), nickels (5¢), and pennies (1¢) are needed to obtain the target amount.</em></p>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
+<p><em>What is the output of this program? (Remember to draw a reference diagram!)</em></p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_answer" id="cell-id=257228bb-3c12-4c18-a7c1-bf28b93b0f95">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_worksheet-code-only" id="cell-id=a9b12674-7d52-40f5-8f21-b583cbc0423a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">change</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Change (in cents):"</span><span class="p">))</span>
-<span class="n">quarters</span> <span class="o">=</span> <span class="n">change</span> <span class="o">//</span> <span class="mi">25</span>
-<span class="n">change</span> <span class="o">=</span> <span class="n">change</span> <span class="o">%</span> <span class="mi">25</span>
-<span class="n">dimes</span> <span class="o">=</span> <span class="n">change</span> <span class="o">//</span> <span class="mi">10</span>
-<span class="n">change</span> <span class="o">=</span> <span class="n">change</span> <span class="o">%</span> <span class="mi">10</span>
-<span class="n">nickels</span> <span class="o">=</span> <span class="n">change</span> <span class="o">//</span> <span class="mi">5</span>
-<span class="n">change</span> <span class="o">=</span> <span class="n">change</span> <span class="o">%</span> <span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">quarters</span><span class="p">,</span> <span class="s2">"quarters,"</span><span class="p">,</span> <span class="n">dimes</span><span class="p">,</span> <span class="s2">"dimes,"</span><span class="p">,</span> <span class="n">nickels</span><span class="p">,</span> <span class="s2">"nickels, and"</span><span class="p">,</span> <span class="n">change</span><span class="p">,</span> <span class="s2">"pennies"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">alpha</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">beta</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">beta</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bbc28696-c651-47b1-840a-ebf59e39a6bd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>2 quarters, 1 dimes, 1 nickels, and 3 pennies
-</pre>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
+<pre><code>
+
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ea241ebd-d068-40df-972f-d860f1c4e09a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
+<p><em>What is the output of this program? (Remember to draw a reference diagram!)</em></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_worksheet-code-only" id="cell-id=3a93663c-6d7f-45ee-999e-6ffe23bfb83d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">func2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">z</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">"A"</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s2">"B"</span>
+    <span class="n">result1</span> <span class="o">=</span> <span class="n">func1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result1</span><span class="p">)</span>
+    <span class="n">result2</span> <span class="o">=</span> <span class="n">func2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">result2</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1174ce38-5add-412a-9b94-0c1f752201c1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
+<pre><code>
+
+
+
+
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c1ead8cd-88d3-4dbb-a17a-0ed99e1f1568">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
+<p><em>Add type annotations to the functions in the program above.</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=908f3fe1-d335-42eb-80ac-fb2e4a052a3e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
+<p><em>Label each of the following in the program below:</em></p>
+<ol>
+<li>Function bodies</li>
+<li>Function calls</li>
+<li>Function definitions</li>
+<li>Arguments</li>
+<li>Parameters</li>
+<li>Return types</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_worksheet-code-only" id="cell-id=1f2fb92d-9631-4b70-8d35-793cc99156ed">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+    
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+    
+    <span class="n">b</span> <span class="o">=</span> <span class="n">update</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
 </div>
 </div>
 </div>
