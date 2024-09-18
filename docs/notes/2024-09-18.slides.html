@@ -2,9 +2,24 @@
 
 <html lang="en">
 <head><meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>2024-09-16</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-<link href="custom.css" rel="stylesheet"/>
+<meta content="chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<title>2024-09-18 slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+  import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+<!-- General and theme style sheets -->
+<link href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css" rel="stylesheet"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+}
+</script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7235,61 +7250,148 @@ all of MD as it is not optimized for dense, information rich UIs.
 }
 </style>
 <style type="text/css">
-/* Force rendering true colors when outputing to pdf */
-* {
-  -webkit-print-color-adjust: exact;
-}
-
-/* Misc */
 a.anchor-link {
-  display: none;
+   display: none;
+}
+.highlight  {
+    margin: 0.4em;
+}
+.jp-Notebook {
+    padding: 0;
+}
+:root {
+    --jp-ui-font-size1: 20px;       /* instead of 14px */
+    --jp-content-font-size1: 20px;  /* instead of 14px */
+    --jp-code-font-size: 19px;      /* instead of 13px */
+    --jp-cell-prompt-width: 110px;  /* instead of 64px */
+}
+@media print {
+  body {
+    margin: 0;
+  }
+}
+</style>
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+.reveal {
+  font-size: 160%;
+}
+.reveal table {
+  font-size: var(--jp-ui-font-size1);
+}
+.reveal pre {
+  width: inherit;
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace, sans-serif;
+  font-size: 80%;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+.reveal pre code {
+  padding: 0px;
+}
+.reveal section img {
+  border: 0px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+}
+.reveal .slides {
+  text-align: left;
+}
+.reveal.fade {
+  opacity: 1;
+}
+.reveal .progress {
+  position: static;
 }
 
-/* Input area styling */
-.jp-InputArea {
-  overflow: hidden;
+div.jp-InputArea-editor {
+  padding: 0.06em;
 }
 
-.jp-InputArea-editor {
-  overflow: hidden;
+div.code_cell {
+  background-color: transparent;
 }
 
-.cm-editor.cm-s-jupyter .highlight pre {
-/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.cm-line */
-  padding: var(--jp-code-padding) 4px;
+div.output_area pre {
+  font-family: monospace, sans-serif;
+  font-size: 80%;
+}
+
+div.jp-OutputPrompt {
+  /* 5px right shift to account for margin in parent container */
+  margin: 5px 5px 0 0;
+}
+
+.reveal div.highlight {
   margin: 0;
-
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-
 }
 
-.jp-OutputArea-output pre {
-  line-height: inherit;
-  font-family: inherit;
-}
-
-.jp-RenderedText pre {
-  color: var(--jp-content-font-color1);
+.reveal div.highlight > pre {
+  margin: 0;
+  width: 100%;
   font-size: var(--jp-code-font-size);
 }
 
-/* Hiding the collapser by default */
-.jp-Collapser {
-  display: none;
+.reveal div.jp-OutputArea-output > pre {
+  margin: 0;
+  width: 90%;
+  font-size: var(--jp-code-font-size);
+  box-shadow: none;
 }
 
-@page {
-    margin: 0.5in; /* Margin for each printed piece of paper */
+main {
+  height: 100%;
 }
 
-@media print {
-  .jp-Cell-inputWrapper,
-  .jp-Cell-outputWrapper {
-    display: block;
-  }
+/* Reveal navigation controls */
+
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-left.enabled {
+  border-right-color: #727272;
+}
+.reveal .controls .navigate-left.enabled:hover,
+.reveal .controls .navigate-left.enabled.enabled:hover {
+  border-right-color: #dfdfdf;
+}
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-right.enabled {
+  border-left-color: #727272;
+}
+.reveal .controls .navigate-right.enabled:hover,
+.reveal .controls .navigate-right.enabled.enabled:hover {
+  border-left-color: #dfdfdf;
+}
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-up.enabled {
+  border-bottom-color: #727272;
+}
+.reveal .controls .navigate-up.enabled:hover,
+.reveal .controls .navigate-up.enabled.enabled:hover {
+  border-bottom-color: #dfdfdf;
+}
+.reveal .controls .navigate-down,
+.reveal .controls .navigate-down.enabled {
+  border-top-color: #727272;
+}
+.reveal .controls .navigate-down.enabled:hover,
+.reveal .controls .navigate-down.enabled.enabled:hover {
+  border-top-color: #dfdfdf;
+}
+.reveal .progress span {
+  background: #727272;
+}
+
+/* Scrollbars */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar * {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #727272 !important;
 }
 </style>
 <!-- Load mathjax -->
@@ -7325,553 +7427,205 @@ a.anchor-link {
     }
     init_mathjax();
     </script>
-<!-- End of mathjax configuration --><script type="module">
-  document.addEventListener("DOMContentLoaded", async () => {
-    const diagrams = document.querySelectorAll(".jp-Mermaid > pre.mermaid");
-    // do not load mermaidjs if not needed
-    if (!diagrams.length) {
-      return;
-    }
-    const mermaid = (await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs")).default;
-    const parser = new DOMParser();
-
-    mermaid.initialize({
-      maxTextSize: 100000,
-      maxEdges: 100000,
-      startOnLoad: false,
-      fontFamily: window
-        .getComputedStyle(document.body)
-        .getPropertyValue("--jp-ui-font-family"),
-      theme: document.querySelector("body[data-jp-theme-light='true']")
-        ? "default"
-        : "dark",
-    });
-
-    let _nextMermaidId = 0;
-
-    function makeMermaidImage(svg) {
-      const img = document.createElement("img");
-      const doc = parser.parseFromString(svg, "image/svg+xml");
-      const svgEl = doc.querySelector("svg");
-      const { maxWidth } = svgEl?.style || {};
-      const firstTitle = doc.querySelector("title");
-      const firstDesc = doc.querySelector("desc");
-
-      img.setAttribute("src", `data:image/svg+xml,${encodeURIComponent(svg)}`);
-      if (maxWidth) {
-        img.width = parseInt(maxWidth);
-      }
-      if (firstTitle) {
-        img.setAttribute("alt", firstTitle.textContent);
-      }
-      if (firstDesc) {
-        const caption = document.createElement("figcaption");
-        caption.className = "sr-only";
-        caption.textContent = firstDesc.textContent;
-        return [img, caption];
-      }
-      return [img];
-    }
-
-    async function makeMermaidError(text) {
-      let errorMessage = "";
-      try {
-        await mermaid.parse(text);
-      } catch (err) {
-        errorMessage = `${err}`;
-      }
-
-      const result = document.createElement("details");
-      result.className = 'jp-RenderedMermaid-Details';
-      const summary = document.createElement("summary");
-      summary.className = 'jp-RenderedMermaid-Summary';
-      const pre = document.createElement("pre");
-      const code = document.createElement("code");
-      code.innerText = text;
-      pre.appendChild(code);
-      summary.appendChild(pre);
-      result.appendChild(summary);
-
-      const warning = document.createElement("pre");
-      warning.innerText = errorMessage;
-      result.appendChild(warning);
-      return [result];
-    }
-
-    async function renderOneMarmaid(src) {
-      const id = `jp-mermaid-${_nextMermaidId++}`;
-      const parent = src.parentNode;
-      let raw = src.textContent.trim();
-      const el = document.createElement("div");
-      el.style.visibility = "hidden";
-      document.body.appendChild(el);
-      let results = null;
-      let output = null;
-      try {
-        let { svg } = await mermaid.render(id, raw, el);
-        svg = cleanMermaidSvg(svg);
-        results = makeMermaidImage(svg);
-        output = document.createElement("figure");
-        results.map(output.appendChild, output);
-      } catch (err) {
-        parent.classList.add("jp-mod-warning");
-        results = await makeMermaidError(raw);
-        output = results[0];
-      } finally {
-        el.remove();
-      }
-      parent.classList.add("jp-RenderedMermaid");
-      parent.appendChild(output);
-    }
-
-
-    /**
-     * Post-process to ensure mermaid diagrams contain only valid SVG and XHTML.
-     */
-    function cleanMermaidSvg(svg) {
-      return svg.replace(RE_VOID_ELEMENT, replaceVoidElement);
-    }
-
-
-    /**
-     * A regular expression for all void elements, which may include attributes and
-     * a slash.
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Glossary/Void_element
-     *
-     * Of these, only `<br>` is generated by Mermaid in place of `\n`,
-     * but _any_ "malformed" tag will break the SVG rendering entirely.
-     */
-    const RE_VOID_ELEMENT =
-      /<\s*(area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)\s*([^>]*?)\s*>/gi;
-
-    /**
-     * Ensure a void element is closed with a slash, preserving any attributes.
-     */
-    function replaceVoidElement(match, tag, rest) {
-      rest = rest.trim();
-      if (!rest.endsWith('/')) {
-        rest = `${rest} /`;
-      }
-      return `<${tag} ${rest}>`;
-    }
-
-    void Promise.all([...diagrams].map(renderOneMarmaid));
-  });
-</script>
-<style>
-  .jp-Mermaid:not(.jp-RenderedMermaid) {
-    display: none;
-  }
-
-  .jp-RenderedMermaid {
-    overflow: auto;
-    display: flex;
-  }
-
-  .jp-RenderedMermaid.jp-mod-warning {
-    width: auto;
-    padding: 0.5em;
-    margin-top: 0.5em;
-    border: var(--jp-border-width) solid var(--jp-warn-color2);
-    border-radius: var(--jp-border-radius);
-    color: var(--jp-ui-font-color1);
-    font-size: var(--jp-ui-font-size1);
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-
-  .jp-RenderedMermaid figure {
-    margin: 0;
-    overflow: auto;
-    max-width: 100%;
-  }
-
-  .jp-RenderedMermaid img {
-    max-width: 100%;
-  }
-
-  .jp-RenderedMermaid-Details > pre {
-    margin-top: 1em;
-  }
-
-  .jp-RenderedMermaid-Summary {
-    color: var(--jp-warn-color2);
-  }
-
-  .jp-RenderedMermaid:not(.jp-mod-warning) pre {
-    display: none;
-  }
-
-  .jp-RenderedMermaid-Summary > pre {
-    display: inline-block;
-    white-space: normal;
-  }
-</style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mathjax configuration --><!-- Reveal Theme -->
+<link href="https://unpkg.com/reveal.js@4.0.2/dist/theme/simple.css" id="theme" rel="stylesheet"/>
+</head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=418f2156">
+<div class="reveal">
+<div class="slides"><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e5a5ac1d-92f9-4416-9e26-9ce9417cea0b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Functions:-docstrings;-(de)composition">Functions: docstrings; (de)composition<a class="anchor-link" href="#Functions:-docstrings;-(de)composition">¶</a></h1><p><em>COSC 101, Introduction to Computing I, 2024-09-16</em></p>
+<h2 id="Collections">Collections<a class="anchor-link" href="#Collections">¶</a></h2>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ba521109">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h2><ul>
-<li>Homework 2 due Thursday at 11:59pm</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4e0b409d-95ff-4232-91e8-a7c91cfccb60">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Docstrings">Docstrings<a class="anchor-link" href="#Docstrings">¶</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=62636ee2-3579-430b-a7d7-4d7fdc8665b7">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0f45463d-4c9e-4801-98f1-db5f30634752">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
 <ul>
-<li>Special category of comment that summarizes what a function does</li>
-<li>A triple-double-quoted (<code>"""</code>) string placed directly after the function header</li>
-<li>Example:</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5cba594d-76a4-4785-b69c-004f1fb748d1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">convert_to_meters</span><span class="p">(</span><span class="n">feet</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">inches</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Converts a length in feet and inches to meters</span>
-
-<span class="sd">    Parameters:</span>
-<span class="sd">        feet: feet component of length</span>
-<span class="sd">        inches: inches component of length</span>
-<span class="sd">    Returns:</span>
-<span class="sd">        length in meters</span>
-<span class="sd">    """</span>
-    <span class="n">feet</span> <span class="o">=</span> <span class="n">feet</span> <span class="o">+</span> <span class="n">inches</span> <span class="o">/</span> <span class="mi">12</span>
-    <span class="k">return</span> <span class="n">feet</span> <span class="o">*</span> <span class="mf">0.3058</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ba5a6234-17c7-4c90-8960-a46aaecdf304">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<ul>
-<li>A good docstring should:<ul>
-<li>Include a useful summary<ul>
-<li>Bad example: <code>Performs conversion</code></li>
+<li><em>What are the three types of values we have seen/used in programs thus far?</em> – int, float, string</li>
+<li>Regardless of the number of digits in an integer, we treat it as a single value – e.g., <code>7</code>, <code>99</code>, <code>1819</code><ul>
+<li>Similarly for floats</li>
+<li>Similarly for strings – e.g., <code>"awesome"</code>, <code>"How are you?"</code>, <code>"13"</code></li>
 </ul>
 </li>
-<li>Include a concise summary — a short sentence summarizing the behavior<ul>
-<li>Bad example: <code>This function converts the length measurement to feet and multiplies the feet by 0.3058 to get the length in meters.</code></li>
-</ul>
-</li>
-<li>Not describe the lines of code in the function body<ul>
-<li>Bad example: <code>Adds feet to inches divided by 12 and multiplies by 0.3058</code></li>
-</ul>
-</li>
-<li>Include all parameters with a short description of each<ul>
-<li>Bad example: <code>Parameters: feet, inches</code></li>
-<li>Bad example: <code>feet: a length measured in the United States customary measurement feet, in which 12 inches are in one foot</code></li>
-<li>Good parameter names are also important<ul>
-<li>Bad example: <code>f</code> and <code>i</code></li>
-<li>Bad example: <code>length_in_feet</code> and <code>length_in_inches</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Include a short description of what the function returns<ul>
-<li>Bad example: <code>The result of converting inches to feet and feet to meters</code></li>
-</ul>
-</li>
+<li>However, a string is actually a collection of "smaller" values – individual characters<ul>
+<li>e.g., <code>"awesome"</code> is the sequence of characters a, w, e, s, o, m, e</li>
+<li><code>"a" + "w" + "e" + "s" + "o" + "m" + "e"</code> evaluates to "awesome"</li>
+<li>We cannot think of integers, or floats, as a collection of values, because they don't combine in the same way – e.g., <code>9 + 9</code> evalutes to <code>18</code> not <code>99</code></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b6ab0dcc-e58e-4a8a-8a74-3dab0407cb75">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>Write a good docstring for each of the following functions</em></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b3f327f7-1658-40e4-b728-d70d820bba21">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="k">def</span> <span class="nf">funcA</span><span class="p">(</span><span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_answer" id="cell-id=209a2358-3e47-4b22-98ef-80161617cdc8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
-<span class="sd">Computes the area of a circle</span>
-
-<span class="sd">Parameters:</span>
-<span class="sd">    radius: circle's radius</span>
-<span class="sd">Returns:</span>
-<span class="sd">    area of the circle</span>
-<span class="sd">"""</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ed8030f3-598b-4f44-aec8-a3f645710f6f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">funcB</span><span class="p">(</span><span class="n">hours</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">minutes</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">seconds</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="n">minutes</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">+</span> <span class="p">(</span><span class="n">hours</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
-    <span class="n">seconds</span> <span class="o">=</span> <span class="n">seconds</span> <span class="o">+</span> <span class="p">(</span><span class="n">minutes</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">seconds</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_notes-only celltag_answer" id="cell-id=ccc71d42-ed53-4d1b-b6ba-e52624e77900">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
-<span class="sd">Converts a time in hours, minutes, and seconds to seconds</span>
-
-<span class="sd">Parameters:</span>
-<span class="sd">    hours: hours component of time</span>
-<span class="sd">    minutes: minutes component of time</span>
-<span class="sd">    seconds: seconds component of time</span>
-<span class="sd">Returns:</span>
-<span class="sd">    the time in seconds</span>
-<span class="sd">"""</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cc66a6bf-e803-4040-8686-cdb8ff90efdf">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ebc31416-9a39-47eb-9b3b-59a3338e0fa8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Decomposition-and-composition">Decomposition and composition<a class="anchor-link" href="#Decomposition-and-composition">¶</a></h2>
+<h2 id="String-indexing">String indexing<a class="anchor-link" href="#String-indexing">¶</a></h2>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d6631e84-bd69-4bf6-a092-c258f662b9d2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_notes-only" data-mime-type="text/markdown">
-<ul>
-<li>Already discussed decomposition as a motivation for functions – remember the cupcake recipe with ingredients and directions?</li>
-<li>Already been using composition by...<ul>
-<li>Calling built-in functions (e.g., <code>print</code>) from functions we wrote</li>
-<li>Writing a <code>main</code> function that calls functions we wrote</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ea65c207-3e25-4a07-af16-737b4bd55072">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=02d7d2a1-ae04-455b-a3c7-85fb839e1614">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>A person's taxable income is their annual income minus eligible deductions (e.g., contributions to charity and a traditional individual retirement account (IRA)). Write a <code>main</code> function that uses built-in funtions and the functions below to compute a person's taxable income.</em></p>
+<p><em>For each of the following programs, fill-in the blanks such that the program produces the expected output.</em></p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f3ec9714-d8f9-4bd3-9e2b-14994efed405">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_question" id="cell-id=daad9077-1b3c-4d4a-b3a7-3fff54ac4dcf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">compute_deductions</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Calculate total deduction</span>
-
-<span class="sd">    Return:</span>
-<span class="sd">        user's total deducation</span>
-<span class="sd">    """</span>
-    <span class="n">monthly</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How much did you contribute to charity each month? $"</span><span class="p">))</span>
-    <span class="n">charity</span> <span class="o">=</span> <span class="n">monthly</span> <span class="o">*</span> <span class="mi">12</span>
-    <span class="n">monthly</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How much did you contribute to a tradtional IRA each month? $"</span><span class="p">))</span>
-    <span class="n">ira</span> <span class="o">=</span> <span class="n">monthly</span> <span class="o">*</span> <span class="mi">12</span>
-    <span class="n">total</span> <span class="o">=</span> <span class="n">charity</span> <span class="o">+</span> <span class="n">ira</span>
-    <span class="k">return</span> <span class="n">total</span>
-
-<span class="k">def</span> <span class="nf">taxable</span><span class="p">(</span><span class="n">income</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">deductions</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Calculate taxable income</span>
-
-<span class="sd">    Parameters:</span>
-<span class="sd">        income: annual income</span>
-<span class="sd">        deductions: total deductions</span>
-<span class="sd">    Return:</span>
-<span class="sd">        taxable income</span>
-<span class="sd">    """</span>
-    <span class="n">taxable</span> <span class="o">=</span> <span class="n">income</span> <span class="o">-</span> <span class="n">deductions</span>
-    <span class="k">return</span> <span class="n">taxable</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">full</span> <span class="o">=</span> <span class="s2">"New York"</span>
+<span class="n">abbreviation</span> <span class="o">=</span> <span class="n">full</span><span class="p">[</span><span class="o">-</span><span class="n">___</span><span class="p">]</span> <span class="o">+</span> <span class="n">full</span><span class="p">[</span><span class="o">-</span><span class="n">___</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">abbreviation</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_answer" id="cell-id=7f11d761-4d3e-4306-8e9c-75447f59b84e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">income</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How much did you earn last year? $"</span><span class="p">))</span>
-    <span class="n">deductions</span> <span class="o">=</span> <span class="n">compute_deductions</span><span class="p">()</span>
-    <span class="n">net</span> <span class="o">=</span> <span class="n">taxable</span><span class="p">(</span><span class="n">income</span><span class="p">,</span> <span class="n">deductions</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your taxable income is $"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">net</span><span class="p">))</span>
-
-<span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Your taxable income is $48200.0
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=daf17f9a-23d1-48b0-b395-ce639b04d812">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d9682ab4-6826-429e-b2ae-9cc25a9f2e70">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>Decompose the task of computing total deductions into subproblems and look for patterns. Write a new function based on the identified subproblems and patterns, and re-write the <code>compute_deductions</code> function to use your new function. Your re-written <code>compute_deductions</code> function should not require any changes to the <code>main</code> function your wrote above.</em></p>
+<p>Expected output:</p>
+<pre><code>NY
+</code></pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_answer" id="cell-id=6753fe0f-9cda-424e-9d9f-6fc99e40b7bf">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_question" id="cell-id=6e4c7082-2555-4840-a99b-e6f2a4125143">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">contribute</span><span class="p">(</span><span class="n">thing</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Determine user's annual contributions to something</span>
-
-<span class="sd">    Parameters:</span>
-<span class="sd">        item: item to which the user contributed</span>
-<span class="sd">    Return:</span>
-<span class="sd">        amount user contributed in a year</span>
-<span class="sd">    """</span>
-    <span class="n">monthly</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How much did you contribute to "</span><span class="o">+</span><span class="n">thing</span><span class="o">+</span><span class="s2">" each month? $"</span><span class="p">))</span>
-    <span class="n">annually</span> <span class="o">=</span> <span class="n">monthly</span> <span class="o">*</span> <span class="mi">12</span>
-    <span class="k">return</span> <span class="n">annually</span>
-    
-<span class="k">def</span> <span class="nf">compute_deductions</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Calculate total deduction based on contributions</span>
-
-<span class="sd">    Return:</span>
-<span class="sd">        user's total deducation</span>
-<span class="sd">    """</span>
-    <span class="n">charity</span> <span class="o">=</span> <span class="n">contribute</span><span class="p">(</span><span class="s2">"charity"</span><span class="p">)</span>
-    <span class="n">ira</span> <span class="o">=</span> <span class="n">contribute</span><span class="p">(</span><span class="s2">"a traditional IRA"</span><span class="p">)</span>
-    <span class="n">total</span> <span class="o">=</span> <span class="n">charity</span> <span class="o">+</span> <span class="n">ira</span>
-    <span class="k">return</span> <span class="n">total</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">"Ruth Bader Ginsburg"</span>
+<span class="n">initials</span> <span class="o">=</span> <span class="n">name</span><span class="p">[</span><span class="n">___</span><span class="p">]</span> <span class="o">+</span> <span class="n">name</span><span class="p">[</span><span class="n">___</span><span class="p">]</span> <span class="o">+</span> <span class="n">name</span><span class="p">[</span><span class="n">___</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">initials</span><span class="p">)</span>
+<span class="n">initials</span> <span class="o">=</span> <span class="n">initials</span><span class="p">[</span><span class="n">___</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"."</span> <span class="o">+</span> <span class="n">initials</span><span class="p">[</span><span class="n">___</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"."</span> <span class="o">+</span> <span class="n">initials</span><span class="p">[</span><span class="n">___</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">initials</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=332fd78c-0bc5-45cd-b936-0212b37a97f3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Your taxable income is $48200.0
-</pre>
-</div>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
+<p>Expected output:</p>
+<pre><code>RBG
+R.B.G.
+</code></pre>
 </div>
 </div>
 </div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=746282ee-8032-4d2b-b974-302780f48d11">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Lists">Lists<a class="anchor-link" href="#Lists">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9bf4124f-2045-4e76-b11f-7f45e90aa3d3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
+<p><em>What does the following code ouput? If a particular print statement causes an error, describe what is wrong with that statement; assume subsequent print statements still execute.</em></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_worksheet-code-only" id="cell-id=84a442e9-fcf2-43e0-85e3-cc187051ae9a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">99</span><span class="p">]</span>
+<span class="n">w</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"plus"</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">"equals"</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">"=8"</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'a)'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'b)'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'c)'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'d)'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'e)'</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'f)'</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_worksheet-code-only" id="cell-id=45ccf859-5d13-42b3-9894-95d05122b1ca">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'g)'</span><span class="p">,</span> <span class="n">w</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'h)'</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'i)'</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_worksheet-code-only" id="cell-id=836db96f-7471-4d34-9e85-996e78ee742a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'j)'</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'k)'</span><span class="p">,</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'l)'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=852f0b9c-b31b-4831-a86d-2a286e316ef5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7881,198 +7635,104 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4e365e63-1427-496d-a07d-bed198105cd6">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d3d6833f-3775-469c-a44d-22820405b787">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>What is the output of this program? (Remember to draw a reference diagram!)</em></p>
+<p><em>Fill-in the blanks such that the program produces the expected output.</em></p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=a9b12674-7d52-40f5-8f21-b583cbc0423a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_question" id="cell-id=65c20e0b-33fc-4686-a4e7-1d2f1928ea6c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">alpha</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-
-<span class="k">def</span> <span class="nf">beta</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">4</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">beta</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-
-<span class="n">main</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">phrase1</span> <span class="o">=</span> <span class="s2">"Let it go, "</span>
+<span class="n">phrase2</span> <span class="o">=</span> <span class="s2">"Can't hold it back anymore."</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">__________</span> <span class="o">*</span> <span class="n">__________</span> <span class="o">+</span> <span class="n">__________</span><span class="p">)</span>
+<span class="n">phrase3</span> <span class="o">=</span> <span class="s2">"Turn away and slam the door."</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">__________</span> <span class="o">*</span> <span class="n">__________</span> <span class="o">+</span> <span class="n">__________</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"~Elsa from Frozen"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>49
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ea241ebd-d068-40df-972f-d860f1c4e09a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a8ca95a5-3587-40a8-bb6e-e7b8960641fb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>What is the output of this program? (Remember to draw a reference diagram!)</em></p>
+<p>Expected output:</p>
+<pre><code>Let it go, Let it go, Can't hold it back anymore.
+Let it go, Let it go, Turn away and slam the door.
+~Elsa from Frozen
+</code></pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=3a93663c-6d7f-45ee-999e-6ffe23bfb83d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-
-<span class="k">def</span> <span class="nf">func2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">z</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">"A"</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">"B"</span>
-    <span class="n">result1</span> <span class="o">=</span> <span class="n">func1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">result1</span><span class="p">)</span>
-    <span class="n">result2</span> <span class="o">=</span> <span class="n">func2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">result2</span><span class="p">)</span>
-
-<span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>A B
-AB
-B A
-A B None
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c1ead8cd-88d3-4dbb-a17a-0ed99e1f1568">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>Add type annotations to the functions in the program above.</em></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=908f3fe1-d335-42eb-80ac-fb2e4a052a3e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>Label each of the following in the program below:</em></p>
-<ol>
-<li>Function bodies</li>
-<li>Function calls</li>
-<li>Function definitions</li>
-<li>Arguments</li>
-<li>Parameters</li>
-<li>Return types</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=1f2fb92d-9631-4b70-8d35-793cc99156ed">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
-    
-    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
-    
-    <span class="n">b</span> <span class="o">=</span> <span class="n">update</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-
-<span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>5 20
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_answer" id="cell-id=8b0d6439-eacf-4e7d-9164-69fe46dfe5da">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span> <span class="c1"># Function definition; x is a parameter; None is the return type</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>       <span class="c1"># Function body</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>    <span class="c1"># Function body</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># Function definition; None is the return type</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>           <span class="c1"># Function body</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">update</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>   <span class="c1"># Function body; function call; a is an argument</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>     <span class="c1"># Function body; function call; a and b are arguments</span>
-
-<span class="n">main</span><span class="p">()</span> <span class="c1"># Function call</span>
-</pre></div>
-</div>
-</div>
-</div>
+</div></section></section>
 </div>
 </div>
 </main>
 </body>
+<script>
+require(
+    {
+      // it makes sense to wait a little bit when you are loading
+      // reveal from a cdn in a slow connection environment
+      waitSeconds: 15
+    },
+    [
+      "https://unpkg.com/reveal.js@4.0.2/dist/reveal.js",
+      "https://unpkg.com/reveal.js@4.0.2/plugin/notes/notes.js"
+    ],
+
+    function(Reveal, RevealNotes){
+        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            transition: "slide",
+            slideNumber: "",
+            plugins: [RevealNotes],
+            width: 960,
+			      height: 700,
+
+        });
+
+        var update = function(event){
+          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
+            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
+          }
+        };
+
+        Reveal.addEventListener('slidechanged', update);
+
+        function setScrollingSlide() {
+            var scroll = false
+            if (scroll === true) {
+              var h = $('.reveal').height() * 0.95;
+              $('section.present').find('section')
+                .filter(function() {
+                  return $(this).height() > h;
+                })
+                .css('height', 'calc(95vh)')
+                .css('overflow-y', 'scroll')
+                .css('margin-top', '20px');
+            }
+        }
+
+        // check and set the scrolling slide every time the slide change
+        Reveal.addEventListener('slidechanged', setScrollingSlide);
+    }
+);
+</script>
 </html>
