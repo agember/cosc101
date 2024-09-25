@@ -15,5 +15,6 @@
 
 ## Iteration
 * strings and lists [[Worksheet]](2024-09-18.worksheet.html)[[Solution]](2024-09-18.solution.html)
-* for loops [[Worksheet]](2024-09-20.worksheet.html)
+* for loops [[Worksheet]](2024-09-20.worksheet.html)[[Solution]](2024-09-20.solution.html)
 * range; accumulator pattern [[Worksheet]](2024-09-23.worksheet.html)
+* mapping patterns to loops [[Worksheet]](2024-09-25.worksheet.html)
