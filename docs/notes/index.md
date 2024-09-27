@@ -18,3 +18,6 @@
 * for loops [[Worksheet]](2024-09-20.worksheet.html)[[Solution]](2024-09-20.solution.html)
 * range; accumulator pattern [[Worksheet]](2024-09-23.worksheet.html)[[Solution]](2024-09-23.solution.html)
 * mapping patterns to loops [[Worksheet]](2024-09-25.worksheet.html)[[Solution]](2024-09-25.solution.html)
+
+## Conditionals
+* boolean expressions; if/else [[Worksheet]](2024-09-27.worksheet.html)
