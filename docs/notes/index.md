@@ -20,4 +20,7 @@
 * mapping patterns to loops [[Worksheet]](2024-09-25.worksheet.html)[[Solution]](2024-09-25.solution.html)
 
 ## Conditionals
-* boolean expressions; if/else [[Worksheet]](2024-09-27.worksheet.html)
+* boolean expressions; if/else [[Worksheet]](2024-09-27.worksheet.html)[[Solution]](2024-09-27.solution.html)
+
+## None
+* Exam 1 review [[Worksheet]](2024-09-30.worksheet.html)
