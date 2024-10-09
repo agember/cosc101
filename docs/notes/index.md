@@ -26,5 +26,6 @@
 * Exam 1 review [[Worksheet]](2024-09-30.worksheet.html)[[Solution]](2024-09-30.solution.html)
 
 ## Conditionals
-* boolean expressions; if/elif/else [[Worksheet]](2024-10-04.worksheet.html)
-* nesting [[Worksheet]](2024-10-07.worksheet.html)
+* boolean expressions; if/elif/else [[Worksheet]](2024-10-04.worksheet.html)[[Solution]](2024-10-04.solution.html)
+* nesting [[Worksheet]](2024-10-07.worksheet.html)[[Solution]](2024-10-07.solution.html)
+* refactoring [[Worksheet]](2024-10-09.worksheet.html)
