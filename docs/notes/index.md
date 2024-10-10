@@ -28,4 +28,8 @@
 ## Conditionals
 * boolean expressions; if/elif/else [[Worksheet]](2024-10-04.worksheet.html)[[Solution]](2024-10-04.solution.html)
 * nesting [[Worksheet]](2024-10-07.worksheet.html)[[Solution]](2024-10-07.solution.html)
-* refactoring [[Worksheet]](2024-10-09.worksheet.html)
+* refactoring [[Worksheet]](2024-10-09.worksheet.html)[[Solution]](2024-10-09.solution.html)
+
+## Iteration
+* definite vs indefinite; while loops [[Worksheet]](2024-10-11.worksheet.html)
+* patterns [[Worksheet]](2024-10-16.worksheet.html)
