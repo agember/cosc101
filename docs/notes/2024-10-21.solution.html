@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>2024-10-18</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>2024-10-21</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <link href="custom.css" rel="stylesheet"/>
 <style type="text/css">
     pre { line-height: 125%; }
@@ -7511,17 +7511,17 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e3f73e0d-4654-4749-b02c-cac690b0b700">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5f7022fe-ef2e-490a-8b8b-ed4ff5a60402">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Iteration:-break-and-continue">Iteration: break and continue<a class="anchor-link" href="#Iteration:-break-and-continue">¶</a></h1><p><em>COSC 101, Introduction to Computing I, 2024-10-18</em></p>
+<h1 id="Sequences:-slicing;-non-mutating-methods">Sequences: slicing; non-mutating methods<a class="anchor-link" href="#Sequences:-slicing;-non-mutating-methods">¶</a></h1><p><em>COSC 101, Introduction to Computing I, 2024-10-21</em></p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=85e6cec0-348a-4c9f-8ce5-eb93f712bdb5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5fbe855e-7d2a-4780-8032-aa853e71a230">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7537,32 +7537,46 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=befccad1-d0ae-48a6-b857-e988f7f4c909">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=df02a0da-5467-4fc9-8928-8d5a7f693fd6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="break-and-continue">break and continue<a class="anchor-link" href="#break-and-continue">¶</a></h2>
+<h2 id="doctests">doctests<a class="anchor-link" href="#doctests">¶</a></h2>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=e235e6fe-333f-42c6-983a-bfb0ad303a88">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7b4fbb13-ca53-4e4f-b6d0-3bd74a1e54a1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">total_sold_abort</span><span class="p">(</span><span class="n">goal</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">total</span> <span class="o">&lt;</span> <span class="n">goal</span><span class="p">):</span>
-        <span class="n">sold</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many did you sell? "</span><span class="p">))</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">sold</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="k">break</span>
-        <span class="n">total</span> <span class="o">+=</span> <span class="n">sold</span>
-    <span class="k">return</span> <span class="n">total</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">doctest</span>
 
-<span class="n">total_sold_abort</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">funcA</span><span class="p">(</span><span class="n">w</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Computes the minimum</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    * w: first number</span>
+<span class="sd">    * x: second number</span>
+<span class="sd">    Returns</span>
+<span class="sd">    The minimum of the two numbers</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; funcA(1, 2)</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt; funcA(2, 1)</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt; funcA(2, 2)</span>
+<span class="sd">    2</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">w</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">w</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7572,211 +7586,180 @@ a.anchor-link {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-</div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>9</pre>
+<pre>TestResults(failed=0, attempted=3)</pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=5eba3b3e-3fae-40be-9b41-3128cf87e174">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6721fa52-e8f7-46c0-91a8-92bad4566c77">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
+<p><em>Write 4 good doctests for each of the following functions:</em></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_question" id="cell-id=cc1013f2-5f7e-4506-bd18-1c872532666a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">total_sold_retry</span><span class="p">(</span><span class="n">goal</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">total</span> <span class="o">&lt;</span> <span class="n">goal</span><span class="p">):</span>
-        <span class="n">sold</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many did you sell? "</span><span class="p">))</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">sold</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"Must be a positive number"</span><span class="p">)</span>
-            <span class="k">continue</span>
-        <span class="n">total</span> <span class="o">+=</span> <span class="n">sold</span>
-    <span class="k">return</span> <span class="n">total</span>
-
-<span class="n">total_sold_retry</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Must be a positive number
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>12</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=94ba2649-60ce-4b0d-a559-33693c68a3c4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<h2 id="Practice">Practice<a class="anchor-link" href="#Practice">¶</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7a7d6f65-ab89-48a0-b186-bd71a8db0355">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>Write a function called <code>ask_question</code> that takes a yes/no question and returns <code>True</code> or <code>False</code> depending on whether the user answered yes or no, respectively. (Hint: use the polling pattern)</em></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_answer" id="cell-id=91f76aa0-7b93-423d-a547-e1ee1f2b36f5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ask_question</span><span class="p">(</span><span class="n">question</span><span class="p">):</span>
-    <span class="n">choice</span> <span class="o">=</span> <span class="s2">""</span>
-    <span class="k">while</span> <span class="n">choice</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"yes"</span><span class="p">,</span> <span class="s2">"no"</span><span class="p">]:</span>
-        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">question</span> <span class="o">+</span> <span class="s2">" (yes/no) "</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"yes"</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">round10</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Rounds a number to the nearest multiple of ten</span>
+<span class="sd">    Parameter:</span>
+<span class="sd">    * n: number to round</span>
+<span class="sd">    Returns:</span>
+<span class="sd">    number rounded to the nearest multiple of ten</span>
+<span class="sd">    """</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span>
+    <span class="k">if</span> <span class="n">p</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">-</span> <span class="n">p</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="p">(</span><span class="mi">10</span> <span class="o">-</span> <span class="n">p</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=18892dfd-0700-4e9a-aa32-e8ce409e2ef5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>Write a function called <code>total_caffeine</code> that asks the user to enter the milligrams (mg) of caffeine for each beverage they consumed in a day until the user indicates they are done consuming beverages. The function should return the total caffeine consumed. (Hint: use the sentinel pattern and the accumulator pattern)</em></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_answer" id="cell-id=f483dda5-fb1b-450e-90c2-5ebd95aa4955">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_answer" id="cell-id=3f130254-e2b7-4d66-b199-cfbdf562ea42">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">total_caffeine</span><span class="p">():</span>
-    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">still_consuming</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">while</span> <span class="n">still_consuming</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many mg of caffeine did the beverage contain? "</span><span class="p">))</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">content</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="n">still_consuming</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">content</span>
-    <span class="k">return</span> <span class="n">total</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e9b86b6a-5b6c-4bb0-95f5-c4e0f9846269">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>Discount Airlines, Inc. has asked you to write a Python program to help its customers calculate how many reward miles they have earned. Your program should repeatedly ask the user for the distance of a flight until the user enters 0. Then your program will output the total number of miles flown and whether the customer achieved bronze (less than 20,000 miles flown), silver (20,000-50,000 miles flown), or gold (more than 50,000 miles flown) status.</em></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_answer" id="cell-id=e66b65aa-9885-4c6b-90ff-5540e0557296">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_miles</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="n">more_flights</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="n">total_distance</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="n">more_flights</span><span class="p">:</span>
-        <span class="n">dist</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"What was the distance of flight "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"? "</span><span class="p">))</span>
-        <span class="k">if</span> <span class="n">dist</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">more_flights</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
-            <span class="n">total_distance</span> <span class="o">=</span> <span class="n">total_distance</span> <span class="o">+</span> <span class="n">dist</span>
-    <span class="k">return</span> <span class="n">total_distance</span>
-    
-<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">total_distance</span> <span class="o">=</span> <span class="n">get_miles</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"You flew"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_distance</span><span class="p">),</span> <span class="s2">"miles."</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">total_distance</span> <span class="o">&lt;</span> <span class="mi">20000</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"You earned bronze status."</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">total_distance</span> <span class="o">&lt;=</span> <span class="mi">50000</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"You earned silver status."</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">round10</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Rounds a number to the nearest multiple of ten</span>
+<span class="sd">    Parameter:</span>
+<span class="sd">    * n: number to round</span>
+<span class="sd">    Returns:</span>
+<span class="sd">    number rounded to the nearest multiple of ten</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; funcC(13)</span>
+<span class="sd">    10</span>
+<span class="sd">    &gt;&gt;&gt; funcC(27)</span>
+<span class="sd">    30</span>
+<span class="sd">    &gt;&gt;&gt; funcC(30)</span>
+<span class="sd">    30</span>
+<span class="sd">    &gt;&gt;&gt; funcC(45)</span>
+<span class="sd">    40</span>
+<span class="sd">    """</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span>
+    <span class="k">if</span> <span class="n">p</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">-</span> <span class="n">p</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"You earned gold status."</span><span class="p">)</span>
-
-<span class="n">main</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="p">(</span><span class="mi">10</span> <span class="o">-</span> <span class="n">p</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_question" id="cell-id=0e3639b2-37a0-4103-8e19-83f638aa5cc8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_words</span><span class="p">(</span><span class="n">paragraph</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Counts the number of words in a paragraph</span>
+<span class="sd">    Parameter</span>
+<span class="sd">    * paragraph: paragraph where each word is separated by a space</span>
+<span class="sd">    Return</span>
+<span class="sd">    the number of words (i.e., spaces) in a paragraph</span>
+<span class="sd">    """</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">paragraph</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">' '</span><span class="p">:</span>
+            <span class="n">words</span> <span class="o">=</span> <span class="n">words</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">words</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Include last word, which won't have a space afterwards</span>
+    <span class="k">return</span> <span class="n">words</span>
+</pre></div>
 </div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>You flew 18000 miles.
-You earned bronze status.
-</pre>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_answer" id="cell-id=57957794-e0a5-4698-98df-f8b290ec739b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_words</span><span class="p">(</span><span class="n">paragraph</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Counts the number of words in a paragraph</span>
+<span class="sd">    Parameter</span>
+<span class="sd">    * paragraph: paragraph where each word is separated by a space</span>
+<span class="sd">    Return</span>
+<span class="sd">    the number of words (i.e., spaces) in a paragraph</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; count_words("Once upon a time, there lived a COSC 101 student. They loved programming.")</span>
+<span class="sd">    13</span>
+<span class="sd">    &gt;&gt;&gt; count_words("They loved programming.")</span>
+<span class="sd">    3</span>
+<span class="sd">    &gt;&gt;&gt; count_words("Hooray.")</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt; count_words(""Once upon a time, there lived a COSC 101 student.")</span>
+<span class="sd">    10</span>
+<span class="sd">    """</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">paragraph</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">' '</span><span class="p">:</span>
+            <span class="n">words</span> <span class="o">=</span> <span class="n">words</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">words</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Include last word, which won't have a space afterwards</span>
+    <span class="k">return</span> <span class="n">words</span>
+</pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=02e5bbe7-aba6-464b-95e4-743df81ed5f7">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b7e9fd7a-8623-4217-bd82-317c4a19a7df">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Slicing">Slicing<a class="anchor-link" href="#Slicing">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d952fc5d-30e0-4310-bb4e-de38b900e75a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><em>For each of the following programs, fill-in the blanks such that the program produces the expected output.</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a8ddeb4d-46df-4b75-8b73-b550ba437ac0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p>Customers at the Cost Mincer grocery store have complained about the long checkout lines, so the store manager wants to measure the average checkout time per item. Your task is to write a program that, for each customer, asks for the number of items purchased and the time required to complete the transaction. The program should continue to ask for inputs until 0 is entered for the number of items. After all inputs have been entered, the program should output the average checkout time per item.</p>
-<p>Example input/output:</p>
-<pre><code>Number of items? 20
-Checkout time (seconds)? 80
-Number of items? 60
-Checkout time (seconds)? 160
-Number of items? 0
-Average checkout time per item is 3.0 seconds
+<p>Expected output:</p>
+<pre><code>You may write me down in history
+With your bitter, twisted lies,
+You may trod me in the very dirt
+But still, like dust, I'll rise.
+~Maya Angelou
 </code></pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_answer" id="cell-id=db431df3-42f6-431f-ba90-3a6a85c26b74">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_answer" id="cell-id=aabdbd6f-5ba9-4a24-a004-5a7d96092b57">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7784,20 +7767,15 @@ Average checkout time per item is 3.0 seconds
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="n">total_items</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">total_time</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
-        <span class="n">items</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Number of items? "</span><span class="p">))</span>
-        <span class="k">if</span> <span class="n">items</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Checkout time (seconds)? "</span><span class="p">))</span>
-            <span class="n">total_items</span> <span class="o">+=</span> <span class="n">items</span>
-            <span class="n">total_time</span> <span class="o">+=</span> <span class="n">time</span>
-    
-    <span class="n">average</span> <span class="o">=</span> <span class="n">total_time</span> <span class="o">/</span> <span class="n">total_items</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Average checkout time per item is"</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="s2">"seconds"</span><span class="p">)</span>
+    <span class="n">line1</span> <span class="o">=</span> <span class="s2">"You may write me down in history"</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line1</span><span class="p">)</span>
+    <span class="n">line2</span> <span class="o">=</span> <span class="s2">"W"</span> <span class="o">+</span> <span class="n">line1</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span> <span class="o">+</span> <span class="n">line1</span><span class="p">[</span><span class="o">-</span><span class="mi">7</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" your bitter, twisted lies,"</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line2</span><span class="p">)</span>
+    <span class="n">line3</span> <span class="o">=</span> <span class="n">line1</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"trod me"</span> <span class="o">+</span> <span class="n">line1</span><span class="p">[</span><span class="o">-</span><span class="mi">11</span><span class="p">:</span><span class="o">-</span><span class="mi">7</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"the very dirt"</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line3</span><span class="p">)</span>
+    <span class="n">line4</span> <span class="o">=</span> <span class="s2">"But still"</span> <span class="o">+</span> <span class="n">line2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" like dust"</span> <span class="o">+</span> <span class="n">line2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" I'll rise."</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line4</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"~Maya Angelou"</span><span class="p">)</span>
 <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -7809,11 +7787,334 @@ Average checkout time per item is 3.0 seconds
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>You may write me down in history
+With your bitter, twisted lies,
+You may trod me in the very dirt
+But still, like dust, I'll rise.
+~Maya Angelou
+</pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7d173633-6c7b-4b08-894d-28d30cce072e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
+<p>Expected output:</p>
+<pre><code>tin
+figure
+king
+kat
+</code></pre>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_answer" id="cell-id=bf032011-a956-42b0-807a-46cfd4aaced0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">sport</span> <span class="o">=</span> <span class="s1">'figure skating'</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sport</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">13</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sport</span><span class="p">[:</span><span class="mi">6</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sport</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">+</span> <span class="n">sport</span><span class="p">[</span><span class="mi">11</span><span class="p">:])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sport</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Average checkout time per item is 3.0 seconds
+<pre>tin
+figure
+king
+kat
 </pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=af4733b4-8946-40ab-b8f7-7c9149f09ed2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
+<p>Expected output:</p>
+<pre><code>When the light is green you go.
+When the light is red you stop.
+But what do you do
+When the light turns blue
+With orange and lavender spots?
+~Shel Silverstein
+</code></pre>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_answer" id="cell-id=3b42d77a-5b30-462f-9523-da1eaa0ded1f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">line1</span> <span class="o">=</span> <span class="s2">"When the light is green you go."</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line1</span><span class="p">)</span>
+    <span class="n">line2</span> <span class="o">=</span> <span class="n">line1</span><span class="p">[:</span><span class="mi">18</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"red"</span> <span class="o">+</span> <span class="n">line1</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"stop."</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"But what do you do"</span><span class="p">)</span>
+    <span class="n">line4</span> <span class="o">=</span> <span class="n">line2</span><span class="p">[:</span><span class="mi">15</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"turns blue"</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line4</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"With orange and lavender spots?"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"~Shel Silverstein"</span><span class="p">)</span>
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>When the light is green you go.
+When the light is red you stop.
+But what do you do
+When the light turns blue
+With orange and lavender spots?
+~Shel Silverstein
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6e76c192-5a0f-416d-a90a-92241e72e695">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="String-methods">String methods<a class="anchor-link" href="#String-methods">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=64aec5f8-ecf3-4788-84be-50b81ec5dbdf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
+<p><em>What is the output of each of the following programs?</em></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=99adc335-c764-4a8a-8db7-219d344cbde3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="s1">'five hundred twenty five thousand six hundred minutes'</span>
+    <span class="n">hundred</span> <span class="o">=</span> <span class="n">year</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' hundred '</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">hundred</span><span class="p">)</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">year</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'-'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]))</span>
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>['five', 'twenty five thousand six', 'minutes']
+twenty-five-thousand
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_worksheet-code-only" id="cell-id=cbd1dacf-71bd-40e1-97b8-95a0db61a6fb">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">units1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"daylights"</span><span class="p">,</span> <span class="s2">"sunsets"</span><span class="p">,</span> <span class="s2">"midnights"</span><span class="p">,</span> <span class="s2">"cups of coffee"</span><span class="p">]</span>
+    <span class="n">how1</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">for</span> <span class="n">unit</span> <span class="ow">in</span> <span class="n">units1</span><span class="p">:</span>
+        <span class="n">how1</span> <span class="o">=</span> <span class="n">how1</span> <span class="o">+</span> <span class="s2">"In "</span> <span class="o">+</span> <span class="n">unit</span> <span class="o">+</span> <span class="s2">"? "</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">how1</span><span class="p">)</span>
+    <span class="n">units2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"inches"</span><span class="p">,</span> <span class="s2">"miles"</span><span class="p">,</span> <span class="s2">"laughter"</span><span class="p">,</span> <span class="s2">"strife"</span><span class="p">]</span>
+    <span class="n">how2</span> <span class="o">=</span> <span class="s2">"In "</span> <span class="o">+</span> <span class="s2">", in "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">units2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"?"</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">how2</span><span class="p">)</span>
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>In daylights? In sunsets? In midnights? In cups of coffee? 
+In inches, in miles, in laughter, in strife?
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2a3f7a31-9d21-4c02-8f3d-94b9692b493f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
+<p><em>Complete the following functions</em>:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_answer" id="cell-id=9794c9b3-1338-4668-92e8-78aa0e4824c8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">emph</span><span class="p">(</span><span class="n">phrase</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Make the first occurrence of word in phrase uppercase</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    * phrase: phrase containing word</span>
+<span class="sd">    * word: word to emphasize</span>
+<span class="sd">    Returns</span>
+<span class="sd">    phrase with first occurrence of word in uppercase</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; emph('"A person who never made a mistake never tried anything new."', "NEVER")</span>
+<span class="sd">    '"A person who NEVER made a mistake never tried anything new."'</span>
+<span class="sd">    &gt;&gt;&gt; emph('"A person who never made a mistake never tried anything new."', "the")</span>
+<span class="sd">    '"A person who never made a mistake never tried anything new."'</span>
+<span class="sd">    """</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">phrase</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">phrase</span><span class="p">[:</span><span class="n">start</span><span class="p">]</span> <span class="o">+</span> <span class="n">phrase</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">phrase</span><span class="p">[</span><span class="n">end</span><span class="p">:]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">phrase</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_answer" id="cell-id=ebfc194f-d8b8-4a50-9a32-e9bff3b06d0e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bleep</span><span class="p">(</span><span class="n">phrase</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">swear_words</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Replace any words in phrase in the list of swear_words with BLEEP</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    * phrase: string in which to bleep out swear words</span>
+<span class="sd">    * swear_words: list of words to bleep out</span>
+<span class="sd">    Returns</span>
+<span class="sd">    phrase with BLEEP in place of any occurrences of swear words</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; bleep("Oh crap!", ["shit", "crap"])</span>
+<span class="sd">    'Oh BLEEP!'</span>
+<span class="sd">    &gt;&gt;&gt; bleep("Oh crap, this shit doesn't work!", ["shit", "crap"])</span>
+<span class="sd">    "Oh BLEEP, this BLEEP doesn't work!"</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">swear</span> <span class="ow">in</span> <span class="n">swear_words</span><span class="p">:</span>
+        <span class="n">phrase</span> <span class="o">=</span> <span class="n">phrase</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">swear</span><span class="p">,</span> <span class="s2">"BLEEP"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">phrase</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=040b414b-044d-4e78-8e5a-bf51940a28db">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Extra-practice">Extra practice<a class="anchor-link" href="#Extra-practice">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ed62c14a-c171-4d6b-ada5-9ae114935326">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
+<p><em>Complete the following functions</em>:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_answer" id="cell-id=6197cfd4-f9fe-4e85-a3d4-1c61439f6609">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">slice</span><span class="p">(</span><span class="n">phrase</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Return the slice notation (as a string) for extracting word from phrase</span>
+<span class="sd">    Parameter</span>
+<span class="sd">    * phrase: string to slice</span>
+<span class="sd">    * word: word to extract</span>
+<span class="sd">    Return</span>
+<span class="sd">    string representation of slice notation to use</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; slice("A piece of pizza", "of")</span>
+<span class="sd">    '[8:10]'</span>
+<span class="sd">    &gt;&gt;&gt; slice("A piece of pizza", "pie")</span>
+<span class="sd">    '[2:5]'</span>
+<span class="sd">    &gt;&gt;&gt; slice("A piece of pizza", "A")</span>
+<span class="sd">    '[:1]'</span>
+<span class="sd">    &gt;&gt;&gt; slice("A piece of pizza", "pizza")</span>
+<span class="sd">    '[11:]'</span>
+<span class="sd">    """</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">phrase</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">if</span> <span class="n">end</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">phrase</span><span class="p">):</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">return</span> <span class="s2">"["</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">start</span><span class="p">)</span><span class="o">+</span><span class="s2">":"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">end</span><span class="p">)</span><span class="o">+</span><span class="s2">"]"</span>
+</pre></div>
 </div>
 </div>
 </div>
