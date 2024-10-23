@@ -37,3 +37,4 @@
 
 ## Sequences
 * slicing; non-mutating methods [[Worksheet]](2024-10-21.worksheet.html)
+* mutating lists [[Worksheet]](2024-10-23.worksheet.html)
