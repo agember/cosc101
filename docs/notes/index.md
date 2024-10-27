@@ -39,7 +39,7 @@
 * slicing; non-mutating methods [[Worksheet]](2024-10-21.worksheet.html)[[Solution]](2024-10-21.solution.html)
 
 ## Review
-* Exam 2 [[Worksheet]](2024-10-25.worksheet.html)
+* Exam 2 [[Worksheet]](2024-10-25.worksheet.html)[[Solution]](2024-10-25.solution.html)
 
 ## Sequences
 * mutating lists [[Worksheet]](2024-10-30.worksheet.html)
