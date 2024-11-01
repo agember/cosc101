@@ -42,4 +42,5 @@
 * Exam 2 [[Worksheet]](2024-10-25.worksheet.html)[[Solution]](2024-10-25.solution.html)
 
 ## Sequences
-* mutating lists; references [[Worksheet]](2024-10-30.worksheet.html)
+* mutating lists [[Worksheet]](2024-10-30.worksheet.html)[[Solution]](2024-10-30.solution.html)
+* references [[Worksheet]](2024-11-01.worksheet.html)
