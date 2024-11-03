@@ -47,3 +47,5 @@
 
 ## Files
 * reading [[Worksheet]](2024-11-04.worksheet.html)
+* writing; CSV [[Worksheet]](2024-11-06.worksheet.html)
+* exceptions [[Worksheet]](2024-11-08.worksheet.html)
