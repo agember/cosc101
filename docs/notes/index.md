@@ -43,4 +43,7 @@
 
 ## Sequences
 * mutating lists [[Worksheet]](2024-10-30.worksheet.html)[[Solution]](2024-10-30.solution.html)
-* references [[Worksheet]](2024-11-01.worksheet.html)
+* references [[Worksheet]](2024-11-01.worksheet.html)[[Solution]](2024-11-01.solution.html)
+
+## Files
+* reading [[Worksheet]](2024-11-04.worksheet.html)
