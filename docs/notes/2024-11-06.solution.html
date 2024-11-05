@@ -7516,7 +7516,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Files:-writing;-CSV">Files: writing; CSV<a class="anchor-link" href="#Files:-writing;-CSV">¶</a></h1><p><em>COSC 101, Introduction to Computing I, 2024-11-06</em></p>
+<h1 id="Files:-writing">Files: writing<a class="anchor-link" href="#Files:-writing">¶</a></h1><p><em>COSC 101, Introduction to Computing I, 2024-11-06</em></p>
 </div>
 </div>
 </div>
@@ -7530,69 +7530,6 @@ a.anchor-link {
 <li>Revisions to up to two parts from Homework 3 and/or 4 due tomorrow @ 11:59pm</li>
 <li>Exam 2 reattempts Friday during class</li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Warm-up">Warm-up<a class="anchor-link" href="#Warm-up">¶</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>Write a function called <code>odd_lines</code> that takes the name of a file and returns a list containing the 1st, 3rd, 5th, etc. line of the file.</em></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_colab-only">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'warm-up.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">myfile</span><span class="p">:</span>
-    <span class="n">myfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'First</span><span class="se">\n</span><span class="s1">Second</span><span class="se">\n</span><span class="s1">Third</span><span class="se">\n</span><span class="s1">Fourth</span><span class="se">\n</span><span class="s1">Fifth</span><span class="se">\n</span><span class="s1">Sixth</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_answer">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">odd_lines</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">'''</span>
-<span class="sd">    Construct a list containing the 1st, 3rd, 5th, etc. line of the file</span>
-<span class="sd">    </span>
-<span class="sd">    &gt;&gt;&gt; odd_lines('warm-up.txt')</span>
-<span class="sd">    ['First\\n', 'Third\\n', 'Fifth\\n']</span>
-<span class="sd">    '''</span>
-    <span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Read first line</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">while</span> <span class="n">line</span> <span class="o">!=</span> <span class="s1">''</span><span class="p">:</span> <span class="c1"># Repeat until end of file</span>
-        <span class="n">lines</span> <span class="o">=</span> <span class="n">lines</span> <span class="o">+</span> <span class="p">[</span><span class="n">line</span><span class="p">]</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Skip a line</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-    <span class="n">infile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">lines</span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -7895,7 +7832,7 @@ Cell <span class="ansi-green-fg">In[12], line 4</span>, in <span class="ansi-cya
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="CSV-files">CSV files<a class="anchor-link" href="#CSV-files">¶</a></h2>
+<h2 id="Extra-practice">Extra practice<a class="anchor-link" href="#Extra-practice">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7904,14 +7841,8 @@ Cell <span class="ansi-green-fg">In[12], line 4</span>, in <span class="ansi-cya
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Assume the file <code>people.csv</code> contains the following data on notable computer scientists:</p>
-<pre><code>LastName,FirstName,KnownFor
-Johnson,Katherine,was a "human computer" at NASA
-Dean,Mark,co-created the IBM personal computer
-Berners-Lee,Tim,invented the World Wide Web
-Hopper,Grace,found the first computer bug
-</code></pre>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
+<p><em>Write a function called <code>odd_lines</code> that takes the name of a file and returns a list containing the 1st, 3rd, 5th, etc. line of the file.</em></p>
 </div>
 </div>
 </div>
@@ -7922,21 +7853,39 @@ Hopper,Grace,found the first computer bug
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Run this code cell to create people.csv</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'people.csv'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">people</span><span class="p">:</span>
-    <span class="n">people</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"""LastName,FirstName,KnownFor</span><span class="se">\n</span><span class="s2">Johnson,Katherine,was a "Human computer" at NASA</span><span class="se">\n</span><span class="s2">Dean,Mark,co-created the IBM personal computer</span><span class="se">\n</span><span class="s2">Berners-Lee,Tim,invented the World Wide Web</span><span class="se">\n</span><span class="s2">Hopper,Grace,found the first computer bug"""</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'warm-up.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">myfile</span><span class="p">:</span>
+    <span class="n">myfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'First</span><span class="se">\n</span><span class="s1">Second</span><span class="se">\n</span><span class="s1">Third</span><span class="se">\n</span><span class="s1">Fourth</span><span class="se">\n</span><span class="s1">Fifth</span><span class="se">\n</span><span class="s1">Sixth</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_answer">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Extra-practice">Extra practice<a class="anchor-link" href="#Extra-practice">¶</a></h2>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">odd_lines</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">'''</span>
+<span class="sd">    Construct a list containing the 1st, 3rd, 5th, etc. line of the file</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; odd_lines('warm-up.txt')</span>
+<span class="sd">    ['First\\n', 'Third\\n', 'Fifth\\n']</span>
+<span class="sd">    '''</span>
+    <span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Read first line</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">line</span> <span class="o">!=</span> <span class="s1">''</span><span class="p">:</span> <span class="c1"># Repeat until end of file</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">lines</span> <span class="o">+</span> <span class="p">[</span><span class="n">line</span><span class="p">]</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Skip a line</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="n">infile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lines</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
