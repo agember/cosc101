@@ -46,6 +46,6 @@
 * references [[Worksheet]](2024-11-01.worksheet.html)[[Solution]](2024-11-01.solution.html)
 
 ## Files
-* reading [[Worksheet]](2024-11-04.worksheet.html)
-* writing [[Worksheet]](2024-11-06.worksheet.html)
+* reading [[Worksheet]](2024-11-04.worksheet.html)[[Solution]](2024-11-04.solution.html)
+* writing [[Worksheet]](2024-11-06.worksheet.html)[[Solution]](2024-11-06.solution.html)
 * exceptions [[Worksheet]](2024-11-08.worksheet.html)
