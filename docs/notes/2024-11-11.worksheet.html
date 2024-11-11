@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>2024-11-06</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>2024-11-11</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <link href="custom.css" rel="stylesheet"/>
 <style type="text/css">
     pre { line-height: 125%; }
@@ -7516,7 +7516,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Files:-writing">Files: writing<a class="anchor-link" href="#Files:-writing">¶</a></h1><p><em>COSC 101, Introduction to Computing I, 2024-11-06</em></p>
+<h1 id="Key/value-data:-dictionary-operations">Key/value data: dictionary operations<a class="anchor-link" href="#Key/value-data:-dictionary-operations">¶</a></h1><p><em>COSC 101, Introduction to Computing I, 2024-11-11</em></p>
 </div>
 </div>
 </div>
@@ -7527,8 +7527,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h2><ul>
-<li>Revisions to up to two parts from Homework 3 and/or 4 due tomorrow @ 11:59pm</li>
-<li>Exam 2 reattempts Friday during class</li>
+<li>Homework 7 due Thursday at 11:59pm</li>
 </ul>
 </div>
 </div>
@@ -7539,7 +7538,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Writing-files">Writing files<a class="anchor-link" href="#Writing-files">¶</a></h2>
+<h2 id="Dictionaries">Dictionaries<a class="anchor-link" href="#Dictionaries">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7549,39 +7548,13 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
-<p style="height:30em;"></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Debugging-file-reading/writing">Debugging file reading/writing<a class="anchor-link" href="#Debugging-file-reading/writing">¶</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Assume the file <code>months.txt</code> contains the following data:</p>
-<pre><code>January
-February
-March
-April
-May
-June
-July
-August
-September
-October
-November
-December
+<pre><code>
+
+
+
+
+
+
 </code></pre>
 </div>
 </div>
@@ -7592,140 +7565,11 @@ December
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>Identify and correct the error(s) in each of the following functions.</em></p>
+<p><em>What is the output of each of the following programs?</em></p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_worksheet-code-only">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_file</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Print the contents of the file"""</span>
-    <span class="n">months</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'months.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">months</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-<span class="n">print_file</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
-<p style="height:10em;"></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_worksheet-code-only">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_character_counts</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Print the number of characters in each month"""</span>
-    <span class="n">months</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'months.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
-    <span class="k">while</span> <span class="n">months</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">''</span><span class="p">:</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="n">months</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
-    <span class="n">months</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">print_character_counts</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
-<p style="height:10em;"></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_worksheet-code-only">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">store_line_count</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Store the number of lines in months.txt in a new file called count.txt"""</span>
-    <span class="n">months</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'months.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">months</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">months</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'size.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
-    <span class="n">size</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'lines: '</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span>
-    <span class="n">size</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">store_line_count</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
-<p style="height:10em;"></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Extra-practice">Extra practice<a class="anchor-link" href="#Extra-practice">¶</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>Write a function called <code>odd_lines</code> that takes the name of a file and returns a list containing the 1st, 3rd, 5th, etc. line of the file.</em></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
-<p style="height:20em;"></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
-<p><em>What is the contents of <code>seasons.txt</code> after the program has finished?</em></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_question">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7733,16 +7577,12 @@ December
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">seasons</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">'Winter'</span><span class="p">,</span> <span class="s1">'cold'</span><span class="p">,</span> <span class="s1">'snowy'</span><span class="p">],</span> 
-               <span class="p">[</span><span class="s1">'Spring'</span><span class="p">,</span> <span class="s1">'warm'</span><span class="p">,</span> <span class="s1">'rainy'</span><span class="p">],</span> 
-               <span class="p">[</span><span class="s1">'Summer'</span><span class="p">,</span> <span class="s1">'hot'</span><span class="p">,</span> <span class="s1">'sunny'</span><span class="p">],</span> 
-               <span class="p">[</span><span class="s1">'Autumn'</span><span class="p">,</span> <span class="s1">'cool'</span><span class="p">,</span> <span class="s1">'windy'</span><span class="p">]]</span>
-    <span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'seasons.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'In Hamilton:</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">season</span> <span class="ow">in</span> <span class="n">seasons</span><span class="p">:</span>
-        <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">season</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">' is...'</span><span class="p">)</span>
-        <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">' and '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">season</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">teams</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'Colgate'</span> <span class="p">:</span> <span class="s1">'Raiders'</span><span class="p">,</span> <span class="s1">'Yale'</span> <span class="p">:</span> <span class="s1">'Bulldogs'</span> <span class="p">}</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">teams</span><span class="p">[</span><span class="s1">'Yale'</span><span class="p">])</span>
+    <span class="n">teams</span><span class="p">[</span><span class="s1">'Brown'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Bears'</span>
+    <span class="n">teams</span><span class="p">[</span><span class="s1">'Princeton'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Tigers'</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">teams</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">teams</span><span class="p">))</span>
 <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -7755,7 +7595,206 @@ December
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
-<p style="height:10em;"></p>
+<pre><code>
+
+
+
+</code></pre>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_worksheet-code-only">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">ranks</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">ranks</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Brown'</span>
+    <span class="n">ranks</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Princeton'</span>
+    <span class="n">ranks</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Colgate'</span>
+    <span class="n">ranks</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Yale'</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ranks</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ranks</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
+<pre><code>
+
+
+
+</code></pre>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_worksheet-code-only">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">players</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'McCorkle'</span> <span class="p">:</span> <span class="s1">'Colgate'</span><span class="p">,</span> <span class="s1">'Yale'</span> <span class="p">:</span> <span class="s1">'Wendell'</span> <span class="p">}</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">players</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">players</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
+<pre><code>
+
+
+
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Dictionary-operations">Dictionary operations<a class="anchor-link" href="#Dictionary-operations">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_question" data-mime-type="text/markdown">
+<p><em>What is the output of each of the following programs?</em></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_worksheet-code-only">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">players</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'McCorkle'</span> <span class="p">:</span> <span class="s1">'Colgate'</span><span class="p">,</span> <span class="s1">'Wendell'</span> <span class="p">:</span> <span class="s1">'Yale'</span><span class="p">,</span> <span class="s1">'Olnowich'</span> <span class="p">:</span> <span class="s1">'Princeton'</span> <span class="p">,</span> <span class="s1">'Edwards'</span> <span class="p">:</span> <span class="s1">'Brown'</span><span class="p">}</span>
+    <span class="n">teams</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Colgate'</span><span class="p">:</span> <span class="s1">'Raiders'</span><span class="p">,</span> <span class="s1">'Yale'</span><span class="p">:</span> <span class="s1">'Bulldogs'</span><span class="p">,</span> <span class="s1">'Brown'</span><span class="p">:</span> <span class="s1">'Bears'</span><span class="p">,</span> <span class="s1">'Princeton'</span><span class="p">:</span> <span class="s1">'Tigers'</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">players</span><span class="p">:</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">players</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">teams</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
+<pre><code>
+
+
+
+
+
+</code></pre>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_worksheet-code-only">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">teams</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Colgate'</span><span class="p">:</span> <span class="s1">'Raiders'</span><span class="p">,</span> <span class="s1">'Yale'</span><span class="p">:</span> <span class="s1">'Bulldogs'</span><span class="p">,</span> <span class="s1">'Brown'</span><span class="p">:</span> <span class="s1">'Bears'</span><span class="p">,</span> <span class="s1">'Princeton'</span><span class="p">:</span> <span class="s1">'Tigers'</span><span class="p">}</span>
+    <span class="n">played</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Brown'</span><span class="p">,</span> <span class="s1">'Yale'</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">played</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">teams</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Go"</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Go"</span><span class="p">,</span><span class="n">teams</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Well done"</span><span class="p">,</span><span class="n">teams</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
+<pre><code>
+
+
+
+
+
+</code></pre>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_worksheet-code-only">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">teams</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">players</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'McCorkle'</span> <span class="p">:</span> <span class="s1">'Colgate'</span><span class="p">,</span> <span class="s1">'Wendell'</span> <span class="p">:</span> <span class="s1">'Yale'</span><span class="p">,</span> <span class="s1">'Murphy'</span> <span class="p">:</span> <span class="s1">'Colgate'</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">players</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">teams</span><span class="p">:</span>
+            <span class="n">teams</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">teams</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">teams</span><span class="p">)</span>
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_blank" data-mime-type="text/markdown">
+<pre><code>
+
+
+
+
+
+</code></pre>
 </div>
 </div>
 </div>
