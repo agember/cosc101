@@ -52,3 +52,4 @@
 
 ## Key/value data
 * dictionary operations [[Worksheet]](2024-11-11.worksheet.html)
+* dictionary methods [[Worksheet]](2024-11-13.worksheet.html)
