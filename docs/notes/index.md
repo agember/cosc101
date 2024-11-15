@@ -51,5 +51,8 @@
 * exceptions [[Worksheet]](2024-11-08.worksheet.html)[[Solution]](2024-11-08.solution.html)
 
 ## Key/value data
-* dictionary operations [[Worksheet]](2024-11-11.worksheet.html)
-* dictionary methods [[Worksheet]](2024-11-13.worksheet.html)
+* dictionary operations [[Worksheet]](2024-11-11.worksheet.html)[[Solution]](2024-11-11.solution.html)
+* dictionary methods [[Worksheet]](2024-11-13.worksheet.html)[[Solution]](2024-11-13.solution.html)
+
+## Nested data
+* nested lists [[Worksheet]](2024-11-15.worksheet.html)
