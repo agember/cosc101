@@ -56,3 +56,4 @@
 
 ## Nested data
 * nested lists [[Worksheet]](2024-11-15.worksheet.html)
+* nested loops [[Worksheet]](2024-11-18.worksheet.html)
