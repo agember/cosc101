@@ -60,3 +60,6 @@
 
 ## None
 * Exam 3 review [[Worksheet]](2024-11-20.worksheet.html)[[Solution]](2024-11-20.solution.html)
+
+## Nesting
+* recursion [[Worksheet]](2024-12-02.worksheet.html)
