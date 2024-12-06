@@ -65,4 +65,5 @@
 * recursion [[Worksheet]](2024-12-02.worksheet.html)[[Solution]](2024-12-02.solution.html)
 
 ## Machine learning
-* introduction [[Worksheet]](2024-12-04.worksheet.html)
+* introduction [[Worksheet]](2024-12-04.worksheet.html)[[Solution]](2024-12-04.solution.html)
+* implementation [[Worksheet]](2024-12-06.worksheet.html)
