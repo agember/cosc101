@@ -1,0 +1,28 @@
+Thing,Flies,Has wings,Travels in groups,Swims (underwater),Lays eggs,Landing gears,Travels on land,Long neck,Has propellers,Native to North America,Wing:body-size > .5,Has wheels,Is bug,Has spots,Has legs,Eats food
+penguin,False,True,True,True,True ,False,True,False,False,False,False,False,False,False,True,True
+ostrich,False,True,True,False,True ,False,True,True,False,False,False,False,False,False,True,True
+truck,False,False,False,False,False ,False,True,False,False,True,False,True,False,False,False,False
+car,False,False,False,False,False,False,True,False,False,True,False,True,False,False,False,False
+caterpillar,False,False,True,False,True,False,True,False,False,True,False,False,True,True,True,True
+ant,False,False,True,False,True,False,True,False,False,True,False,False,True,False,True,True
+dog,False,False,True,False,False,False,True,False,False,True,False,False,False,True,True,True
+caterpillar,False,False,True,False,True,False,True,False,False,True,False,False,True,True,True,True
+biplane,True,True,False,False,False,False,False,False,False,True,False,True,False,False,False,False
+jetplane,True,True,False,False,False,False,False,False,False,True,False,True,False,False,False,False
+butterfly,True,True,True,False,True,False,False,False,False,True,True,False,True,True,True,True
+ladybug,True,True,False,False,True,False,False,False,False,True,True,False,True,True,True,True
+eagle,True,True,False,False,True,False,False,False,False,True,True,False,False,False,True,True
+hummingbird,True,True,False,False,True,False,False,False,False,True,True,False,False,False,True,True
+helicopter,True,False,False,False,False,True,False,False,True,True,False,True,False,False,False,False
+drone,True,False,False,False,False,True,False,False,True,True,False,False,False,False,False,False
+bike,False,False,False,False,False,False,True,False,False,False,False,True,False,False,False,False
+kite,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+flying squirrel ,True,False,False,False,False,False,True,False,False,False,False,False,False,False,True,True
+pencil,False,False,False,False,False,False,False,False,False,True ,False,False,False,False,False,False
+computer,False,False,False,False,False,False,False,false,False,true,false,False,True?,False,False,False
+book,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+house,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False
+Lebron,False,False,True,True,False,False,True,False,False,True,False,False,False,False,True,False
+hot air balloon 1,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+hot air balloon 2,True,False,False,False,False ,True ,False,False,False,False,False ,False ,False ,True ,False ,False
+door,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False

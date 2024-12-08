@@ -66,4 +66,5 @@
 
 ## Machine learning
 * introduction [[Worksheet]](2024-12-04.worksheet.html)[[Solution]](2024-12-04.solution.html)
-* implementation [[Worksheet]](2024-12-06.worksheet.html)
+* mathematics [[Worksheet]](2024-12-06.worksheet.html)[[Solution]](2024-12-06.solution.html)
+* coding [[Worksheet]](2024-12-09.worksheet.html)
