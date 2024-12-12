@@ -58,8 +58,8 @@
 * nested lists [[Worksheet]](2024-11-15.worksheet.html)[[Solution]](2024-11-15.solution.html)
 * nested loops [[Worksheet]](2024-11-18.worksheet.html)[[Solution]](2024-11-18.solution.html)
 
-## None
-* Exam 3 review [[Worksheet]](2024-11-20.worksheet.html)[[Solution]](2024-11-20.solution.html)
+## Review
+* Exam 3 [[Worksheet]](2024-11-20.worksheet.html)[[Solution]](2024-11-20.solution.html)
 
 ## Nesting
 * recursion [[Worksheet]](2024-12-02.worksheet.html)[[Solution]](2024-12-02.solution.html)
@@ -67,4 +67,7 @@
 ## Machine learning
 * introduction [[Worksheet]](2024-12-04.worksheet.html)[[Solution]](2024-12-04.solution.html)
 * mathematics [[Worksheet]](2024-12-06.worksheet.html)[[Solution]](2024-12-06.solution.html)
-* coding [[Worksheet]](2024-12-09.worksheet.html)
+* coding [[Worksheet]](2024-12-09.worksheet.html)[[Solution]](2024-12-09.solution.html)
+
+## Review
+* Final Exam [[Worksheet]](2024-12-13.worksheet.html)
