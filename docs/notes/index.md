@@ -70,4 +70,4 @@
 * coding [[Worksheet]](2024-12-09.worksheet.html)[[Solution]](2024-12-09.solution.html)
 
 ## Review
-* Final Exam [[Worksheet]](2024-12-13.worksheet.html)
+* Final Exam [[Worksheet]](2024-12-13.worksheet.html)[[Solution]](2024-12-13.solution.html)
